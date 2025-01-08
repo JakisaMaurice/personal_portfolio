@@ -1,0 +1,176 @@
+.project-home-automation{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.home-automation-details{
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+}
+.home-automation-image{
+  width: 50%;
+  background: url('assets/images/home-automation/1.jpg');
+  height: 70vh;
+  /* background-position: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px 0 0 8px;
+}
+.home-automation-information{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  background: rgb(237, 236, 236);
+  border-radius: 0 8px 8px 0;
+}
+.project-web-dev{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.web-dev-details{
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+}
+.web-dev-information{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  background: rgb(237, 236, 236);
+  border-radius: 0 8px 8px 0;
+}
+.web-dev-image{
+  width: 50%;
+  background: url('assets/images/web-dev/2.jpg');
+  height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px 0 0 8px;
+}
+.project-server-configuration{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.server-configuration-details{
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+
+}
+
+@media (max-width:1025px) {
+  body{
+    font-size: 14px;
+  }
+  .home-automation-information, .web-dev-information{
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .home-automation-details, .web-dev-details{
+    height: 60vh;
+    font-size: 14px;
+  }
+
+  .web-dev-image, .home-automation-image{
+    height: 100%;
+
+  }
+  .card-details{
+    line-height: 12px;
+    font-size: 10px;
+  }
+}
+@media (max-width:680px) {
+  body{
+    font-size: 14px;
+  }
+  .home-automation-information, .web-dev-information{
+    line-height: 20px;
+  }
+  .card-details{
+    line-height: 10px;
+    font-size: 10px;
+  }
+  
+}
+@media (max-width:480px) {
+  body{
+    font-size: 10px;
+  }
+  .home-automation-information, .web-dev-information{
+    line-height: 20px;
+  }
+  .card-details{
+    line-height: 10px;
+    font-size: 0.3rem;
+  }
+  .home-automation-details, .web-dev-details{
+    display: flex;
+    flex-direction: column;
+  }
+  .home-automation-image, .web-dev-image{
+    width: 100%;
+    border-radius:0;
+    height: 40vh;
+  }
+  .home-automation-information, .web-dev-information{
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.card{
+  width: 33%;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  transition: all 0.4s ease-in;
+}
+.card:hover{
+  width: 40%;
+  .card-image-detail{
+    height: 50%;
+    transition: all 0.4s ease;
+  }
+  .card-details{
+    display: block;
+    transition: all 0.4s ease;
+  }
+}
+
+.card-image-detail{
+  position: relative;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+.card-image-detail h3{
+  position: absolute;
+  bottom: 10px;
+  background: rgba(255,255,255,0.5);
+  width: 100%;
+}
+.card-image{
+  width: 100%;
+  /* object-fit: cover; */
+  height: 100%;
+}
+.card-details{
+  display: none;
+  transition: all 0.4s ease;
+}
