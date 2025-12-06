@@ -357,6 +357,53 @@
                 padding: var(--space-lg);
             }
         }
+    /* GitHub Projects Link Style */
+    .github-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-sm);
+        background: var(--primary-color);
+        color: var(--bg-white);
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 6px;
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: var(--space-md);
+        transition: all var(--transition-fast);
+    }
+
+    .github-link:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .github-link i {
+        font-size: var(--font-size-md);
+    }
+
+    /* GitHub Projects Section Specific Styles */
+    .projects-category:last-child {
+        margin-bottom: 0;
+    }
+
+    .server-config-content {
+        padding: var(--space-xl);
+    }
+
+    .server-config-title {
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--space-md);
+    }
+
+    .server-config-description {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: var(--space-lg);
+    }
     </style>
 </head>
 <body>
@@ -586,6 +633,72 @@
                                     <li>Storage and network management</li>
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Projects Section -->
+            <div class="projects-category">
+                <div class="category-header">
+                    <h2 class="category-title">GitHub Projects</h2>
+                    <p class="category-description">
+                        My open-source projects and contributions on GitHub
+                    </p>
+                </div>
+
+                <div class="server-config-grid">
+                    <div class="server-config-card">
+                        <div class="server-config-content">
+                            <h3 class="server-config-title">recipe_app</h3>
+                            <p class="server-config-description">
+                                Flutter recipe book application for easy convenience
+                            </p>
+                            <ul class="server-config-features">
+                                <li>Flutter framework</li>
+                                <li>Mobile app development</li>
+                                <li>Recipe management system</li>
+                                <li>Created: April 2025</li>
+                            </ul>
+                            <a href="https://github.com/JakisaMaurice/recipe_app" class="github-link" target="_blank">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="server-config-card">
+                        <div class="server-config-content">
+                            <h3 class="server-config-title">schoolWebsite</h3>
+                            <p class="server-config-description">
+                                School website project with HTML/CSS
+                            </p>
+                            <ul class="server-config-features">
+                                <li>Educational platform</li>
+                                <li>Responsive design</li>
+                                <li>School management features</li>
+                                <li>Created: February 2025</li>
+                            </ul>
+                            <a href="https://github.com/JakisaMaurice/schoolWebsite" class="github-link" target="_blank">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="server-config-card">
+                        <div class="server-config-content">
+                            <h3 class="server-config-title">personal_portfolio</h3>
+                            <p class="server-config-description">
+                                My personal portfolio website (this site!)
+                            </p>
+                            <ul class="server-config-features">
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>Responsive portfolio design</li>
+                                <li>Project showcase</li>
+                                <li>Created: January 2025</li>
+                            </ul>
+                            <a href="https://github.com/JakisaMaurice/personal_portfolio" class="github-link" target="_blank">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
