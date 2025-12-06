@@ -203,20 +203,6 @@ ul, ol {
     height: 70px;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    font-size: var(--font-size-xl);
-    color: var(--primary-color);
-}
-
-.nav-logo-text {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
 
 .nav-menu {
     display: flex;
@@ -515,7 +501,7 @@ ul, ol {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     border-radius: 4px;
     width: 0;
     transition: width 1.5s ease-out;

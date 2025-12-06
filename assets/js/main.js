@@ -217,19 +217,86 @@ const animations = {
                     if (entry.isIntersecting) {
                         const progressBar = entry.target;
                         const progress = progressBar.dataset.progress || 0;
-                        
+
                         setTimeout(() => {
                             progressBar.style.width = progress + '%';
                         }, 200);
-                        
+
                         skillObserver.unobserve(progressBar);
+                    }
+                });
+            },
+            { threshold: 0.1 } // Lower threshold to catch bars sooner
+        );
+
+        // Also set initial width for bars that are already visible
+        skillBars.forEach(bar => {
+            if (utils.isInViewport(bar, 0.1)) {
+                // If already visible, animate immediately
+                setTimeout(() => {
+                    bar.style.width = (bar.dataset.progress || 0) + '%';
+                }, 200);
+            } else {
+                skillObserver.observe(bar);
+            }
+        });
+    }
+}
+
+// ===== STATISTICS ANIMATION MODULE =====
+const statistics = {
+    init() {
+        // Animate statistics when they come into view
+        this.animateStats();
+    },
+
+    animateStats() {
+        const statElements = document.querySelectorAll('.stat-number');
+        const statObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statElement = entry.target;
+                        const targetValue = this.extractTargetValue(statElement.textContent);
+                        const duration = 2000; // 2 seconds animation
+                        const startTime = performance.now();
+
+                        // Start animation
+                        const animate = (currentTime) => {
+                            const elapsedTime = currentTime - startTime;
+                            const progress = Math.min(elapsedTime / duration, 1);
+                            const currentValue = Math.floor(targetValue * progress);
+
+                            // Format the value with + if it's a plus value
+                            const formattedValue = targetValue.toString().includes('+')
+                                ? `${currentValue}+`
+                                : currentValue;
+
+                            statElement.textContent = formattedValue;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                // Mark as animated when complete
+                                statElement.setAttribute('data-animated', 'true');
+                            }
+                        };
+
+                        requestAnimationFrame(animate);
+                        statObserver.unobserve(statElement);
                     }
                 });
             },
             { threshold: 0.5 }
         );
 
-        skillBars.forEach(bar => skillObserver.observe(bar));
+        statElements.forEach(stat => statObserver.observe(stat));
+    },
+
+    extractTargetValue(text) {
+        // Extract numeric value from text (e.g., "3+" -> 3, "15+" -> 15, "24/7" -> 24)
+        const match = text.match(/(\d+)/);
+        return match ? parseInt(match[1], 10) : 0;
     }
 };
 
@@ -475,6 +542,7 @@ class PortfolioApp {
             navigation.init();
             smoothScroll.init();
             animations.init();
+            statistics.init();
             contactForm.init();
             performance.init();
             accessibility.init();

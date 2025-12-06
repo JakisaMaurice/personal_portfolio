@@ -122,16 +122,6 @@ ul, ol {
     color: var(--text-primary);
 }
 
-.loading-logo {
-    margin-bottom: var(--space-xl);
-}
-
-.loading-text {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: var(--space-md);
-}
 
 .loading-spinner {
     width: 40px;
@@ -341,20 +331,6 @@ ul, ol {
     height: 70px;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    font-size: var(--font-size-xl);
-    color: var(--primary-color);
-}
-
-.nav-logo-text {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
 
 .nav-menu {
     display: flex;
@@ -470,7 +446,7 @@ ul, ol {
 }
 
 .hero-highlight {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -504,6 +480,12 @@ ul, ol {
     font-size: var(--font-size-4xl);
     font-weight: 700;
     color: var(--secondary-color);
+    transition: all 0.3s ease;
+    will-change: contents;
+}
+
+.stat-number[data-animated="true"] {
+    color: var(--primary-color);
 }
 
 .stat-label {
@@ -641,6 +623,213 @@ ul, ol {
     margin-bottom: var(--space-md);
 }
 
+/* LinkedIn icon color */
+.fab.fa-linkedin { color: #0A66C2; } /* Official LinkedIn blue */
+
+/* Professional Icon Colors - Technology Specific */
+.fab.fa-html5 { color: #E34F26; } /* HTML5 orange */
+.fab.fa-js-square { color: #F7DF1E; } /* JavaScript yellow */
+.fab.fa-php { color: #777BB4; } /* PHP purple */
+.fab.fa-python { color: #3776AB; } /* Python blue */
+.fab.fa-git-alt { color: #F05032; } /* Git orange */
+.fab.fa-github { color: #181717; } /* GitHub black */
+.fab.fa-docker { color: #2496ED; } /* Docker blue */
+.fab.fa-react { color: #61DAFB; } /* React cyan */
+.fas.fa-microchip { color: #007ACC; } /* Microchip blue */
+.fas.fa-home { color: #4285F4; } /* Home blue */
+.fas.fa-server { color: #0078D4; } /* Server blue */
+.fas.fa-network-wired { color: #00A1F1; } /* Network blue */
+.fas.fa-users-cog { color: #0066CC; } /* Active Directory blue */
+.fas.fa-windows { color: #0078D6; } /* Windows blue */
+.fas.fa-linux { color: #FCC624; } /* Linux yellow */
+.fas.fa-cube { color: #4285F4; } /* Virtualization blue */
+.fas.fa-shield-alt { color: #00A86B; } /* Security green */
+.fas.fa-tools { color: #FF6B35; } /* Tools orange */
+.fas.fa-diagnoses { color: #FF4500; } /* Diagnostics red */
+.fas.fa-cog { color: #4CAF50; } /* Cog green */
+.fas.fa-sync-alt { color: #2B3A67; } /* CI/CD dark blue */
+.fas.fa-code { color: #3178C6; } /* Code blue */
+.fas.fa-cogs { color: #1a73e8; } /* DevOps blue */
+.fas.fa-server { color: #0078D4; } /* Server blue */
+.fas.fa-tools { color: #FF6B35; } /* Tools orange */
+.fas.fa-diagnoses { color: #FF4500; } /* Diagnostics red */
+.fas.fa-cog { color: #4CAF50; } /* Cog green */
+.fas.fa-windows { color: #0078D6; } /* Windows blue */
+.fas.fa-linux { color: #FCC624; } /* Linux yellow */
+.fas.fa-cube { color: #4285F4; } /* Virtualization blue */
+.fas.fa-shield-alt { color: #00A86B; } /* Security green */
+.fas.fa-globe { color: #4285F4; } /* Web development blue */
+.fas.fa-microchip { color: #007ACC; } /* Embedded systems blue */
+.fas.fa-server { color: #0078D4; } /* Server administration blue */
+.fas.fa-tools { color: #FF6B35; } /* Technical consulting orange */
+.fas.fa-hiking { color: #4CAF50; } /* Hiking green */
+.fas.fa-gamepad { color: #FF5722; } /* Gaming orange */
+.fas.fa-music { color: #9C27B0; } /* Music purple */
+.fas.fa-lightbulb { color: #FFC107; } /* Technology yellow */
+.fas.fa-briefcase { color: #2196F3; } /* Work blue */
+.fas.fa-graduation-cap { color: #0078D4; } /* Education blue */
+.fas.fa-envelope { color: #4285F4; } /* Email blue */
+.fas.fa-phone { color: #4CAF50; } /* Phone green */
+.fas.fa-map-marker-alt { color: #F44336; } /* Location red */
+.fas.fa-clock { color: #FF9800; } /* Time orange */
+.fas.fa-calendar { color: #3F51B5; } /* Calendar indigo */
+.fas.fa-user { color: #2196F3; } /* User blue */
+.fas.fa-heart { color: #F44336; } /* Heart red */
+.fas.fa-star { color: #FFC107; } /* Star yellow */
+.fas.fa-check { color: #4CAF50; } /* Check green */
+.fas.fa-times { color: #F44336; } /* Times red */
+.fas.fa-info { color: #2196F3; } /* Info blue */
+.fas.fa-exclamation { color: #FF9800; } /* Warning orange */
+.fas.fa-question { color: #9C27B0; } /* Question purple */
+.fas.fa-plus { color: #4CAF50; } /* Plus green */
+.fas.fa-minus { color: #F44336; } /* Minus red */
+.fas.fa-arrow-right { color: #2196F3; } /* Arrow blue */
+.fas.fa-arrow-left { color: #2196F3; } /* Arrow blue */
+.fas.fa-arrow-up { color: #2196F3; } /* Arrow blue */
+.fas.fa-arrow-down { color: #2196F3; } /* Arrow blue */
+.fas.fa-search { color: #2196F3; } /* Search blue */
+.fas.fa-cog { color: #9E9E9E; } /* Settings gray */
+.fas.fa-home { color: #4285F4; } /* Home blue */
+.fas.fa-bars { color: #616161; } /* Menu gray */
+.fas.fa-times { color: #616161; } /* Close gray */
+.fas.fa-chevron-down { color: #616161; } /* Chevron gray */
+.fas.fa-chevron-up { color: #616161; } /* Chevron gray */
+.fas.fa-chevron-left { color: #616161; } /* Chevron gray */
+.fas.fa-chevron-right { color: #616161; } /* Chevron gray */
+.fas.fa-external-link-alt { color: #2196F3; } /* External link blue */
+.fas.fa-download { color: #4CAF50; } /* Download green */
+.fas.fa-upload { color: #2196F3; } /* Upload blue */
+.fas.fa-share { color: #2196F3; } /* Share blue */
+.fas.fa-bookmark { color: #FFC107; } /* Bookmark yellow */
+.fas.fa-eye { color: #2196F3; } /* Eye blue */
+.fas.fa-eye-slash { color: #9E9E9E; } /* Eye slash gray */
+.fas.fa-lock { color: #616161; } /* Lock gray */
+.fas.fa-unlock { color: #4CAF50; } /* Unlock green */
+.fas.fa-link { color: #2196F3; } /* Link blue */
+.fas.fa-unlink { color: #F44336; } /* Unlink red */
+.fas.fa-copy { color: #2196F3; } /* Copy blue */
+.fas.fa-cut { color: #F44336; } /* Cut red */
+.fas.fa-paste { color: #4CAF50; } /* Paste green */
+.fas.fa-save { color: #4CAF50; } /* Save green */
+.fas.fa-print { color: #616161; } /* Print gray */
+.fas.fa-trash { color: #F44336; } /* Trash red */
+.fas.fa-edit { color: #2196F3; } /* Edit blue */
+.fas.fa-pencil-alt { color: #2196F3; } /* Pencil blue */
+.fas.fa-pen { color: #2196F3; } /* Pen blue */
+.fas.fa-file { color: #616161; } /* File gray */
+.fas.fa-folder { color: #FFC107; } /* Folder yellow */
+.fas.fa-image { color: #9C27B0; } /* Image purple */
+.fas.fa-video { color: #F44336; } /* Video red */
+.fas.fa-camera { color: #616161; } /* Camera gray */
+.fas.fa-microphone { color: #F44336; } /* Microphone red */
+.fas.fa-volume-up { color: #2196F3; } /* Volume blue */
+.fas.fa-volume-down { color: #2196F3; } /* Volume blue */
+.fas.fa-volume-off { color: #9E9E9E; } /* Volume off gray */
+.fas.fa-play { color: #4CAF50; } /* Play green */
+.fas.fa-pause { color: #FF9800; } /* Pause orange */
+.fas.fa-stop { color: #F44336; } /* Stop red */
+.fas.fa-forward { color: #2196F3; } /* Forward blue */
+.fas.fa-backward { color: #2196F3; } /* Backward blue */
+.fas.fa-step-forward { color: #2196F3; } /* Step forward blue */
+.fas.fa-step-backward { color: #2196F3; } /* Step backward blue */
+.fas.fa-eject { color: #9E9E9E; } /* Eject gray */
+.fas.fa-plus-circle { color: #4CAF50; } /* Plus circle green */
+.fas.fa-minus-circle { color: #F44336; } /* Minus circle red */
+.fas.fa-times-circle { color: #F44336; } /* Times circle red */
+.fas.fa-check-circle { color: #4CAF50; } /* Check circle green */
+.fas.fa-question-circle { color: #2196F3; } /* Question circle blue */
+.fas.fa-info-circle { color: #2196F3; } /* Info circle blue */
+.fas.fa-exclamation-circle { color: #FF9800; } /* Exclamation circle orange */
+.fas.fa-exclamation-triangle { color: #FF9800; } /* Exclamation triangle orange */
+.fas.fa-ban { color: #F44336; } /* Ban red */
+.fas.fa-check-square { color: #4CAF50; } /* Check square green */
+.fas.fa-square { color: #9E9E9E; } /* Square gray */
+.fas.fa-circle { color: #9E9E9E; } /* Circle gray */
+.fas.fa-dot-circle { color: #2196F3; } /* Dot circle blue */
+.fas.fa-star-half { color: #FFC107; } /* Star half yellow */
+.fas.fa-star-half-alt { color: #FFC107; } /* Star half alt yellow */
+.fas.fa-thumbs-up { color: #4CAF50; } /* Thumbs up green */
+.fas.fa-thumbs-down { color: #F44336; } /* Thumbs down red */
+.fas.fa-hand-pointer { color: #2196F3; } /* Hand pointer blue */
+.fas.fa-hand-paper { color: #FF9800; } /* Hand paper orange */
+.fas.fa-hand-rock { color: #9E9E9E; } /* Hand rock gray */
+.fas.fa-hand-scissors { color: #F44336; } /* Hand scissors red */
+.fas.fa-hand-lizard { color: #4CAF50; } /* Hand lizard green */
+.fas.fa-hand-spock { color: #2196F3; } /* Hand spock blue */
+.fas.fa-flag { color: #F44336; } /* Flag red */
+.fas.fa-book { color: #2196F3; } /* Book blue */
+.fas.fa-newspaper { color: #616161; } /* Newspaper gray */
+.fas.fa-graduation-cap { color: #0078D4; } /* Graduation cap blue */
+.fas.fa-briefcase { color: #2196F3; } /* Briefcase blue */
+.fas.fa-building { color: #616161; } /* Building gray */
+.fas.fa-hospital { color: #F44336; } /* Hospital red */
+.fas.fa-university { color: #0078D4; } /* University blue */
+.fas.fa-school { color: #FF9800; } /* School orange */
+.fas.fa-industry { color: #616161; } /* Industry gray */
+.fas.fa-factory { color: #616161; } /* Factory gray */
+.fas.fa-warehouse { color: #FF9800; } /* Warehouse orange */
+.fas.fa-store { color: #4CAF50; } /* Store green */
+.fas.fa-shopping-cart { color: #2196F3; } /* Shopping cart blue */
+.fas.fa-credit-card { color: #4CAF50; } /* Credit card green */
+.fas.fa-money-bill { color: #4CAF50; } /* Money bill green */
+.fas.fa-coins { color: #FFC107; } /* Coins yellow */
+.fas.fa-gem { color: #9C27B0; } /* Gem purple */
+.fas.fa-diamond { color: #2196F3; } /* Diamond blue */
+.fas.fa-gift { color: #F44336; } /* Gift red */
+.fas.fa-birthday-cake { color: #FF9800; } /* Birthday cake orange */
+.fas.fa-glass-cheers { color: #FFC107; } /* Glass cheers yellow */
+.fas.fa-coffee { color: #795548; } /* Coffee brown */
+.fas.fa-beer { color: #FFC107; } /* Beer yellow */
+.fas.fa-wine-glass { color: #9C27B0; } /* Wine glass purple */
+.fas.fa-cocktail { color: #F44336; } /* Cocktail red */
+.fas.fa-utensils { color: #616161; } /* Utensils gray */
+.fas.fa-pizza-slice { color: #FF9800; } /* Pizza slice orange */
+.fas.fa-hamburger { color: #FF9800; } /* Hamburger orange */
+.fas.fa-fish { color: #2196F3; } /* Fish blue */
+.fas.fa-carrot { color: #FF9800; } /* Carrot orange */
+.fas.fa-apple-alt { color: #F44336; } /* Apple red */
+.fas.fa-lemon { color: #FFC107; } /* Lemon yellow */
+.fas.fa-pepper-hot { color: #F44336; } /* Pepper hot red */
+.fas.fa-seedling { color: #4CAF50; } /* Seedling green */
+.fas.fa-tree { color: #4CAF50; } /* Tree green */
+.fas.fa-mountain { color: #795548; } /* Mountain brown */
+.fas.fa-sun { color: #FFC107; } /* Sun yellow */
+.fas.fa-moon { color: #616161; } /* Moon gray */
+.fas.fa-cloud { color: #9E9E9E; } /* Cloud gray */
+.fas.fa-cloud-sun { color: #FFC107; } /* Cloud sun yellow */
+.fas.fa-cloud-moon { color: #9E9E9E; } /* Cloud moon gray */
+.fas.fa-cloud-rain { color: #2196F3; } /* Cloud rain blue */
+.fas.fa-cloud-showers-heavy { color: #2196F3; } /* Cloud showers heavy blue */
+.fas.fa-snowflake { color: #B3E5FC; } /* Snowflake light blue */
+.fas.fa-umbrella { color: #2196F3; } /* Umbrella blue */
+.fas.fa-temperature-high { color: #F44336; } /* Temperature high red */
+.fas.fa-temperature-low { color: #2196F3; } /* Temperature low blue */
+.fas.fa-wind { color: #9E9E9E; } /* Wind gray */
+.fas.fa-compass { color: #2196F3; } /* Compass blue */
+.fas.fa-map { color: #4CAF50; } /* Map green */
+.fas.fa-map-marked { color: #F44336; } /* Map marked red */
+.fas.fa-map-marked-alt { color: #F44336; } /* Map marked alt red */
+.fas.fa-globe { color: #2196F3; } /* Globe blue */
+.fas.fa-globe-africa { color: #4CAF50; } /* Globe Africa green */
+.fas.fa-globe-americas { color: #2196F3; } /* Globe Americas blue */
+.fas.fa-globe-asia { color: #FF9800; } /* Globe Asia orange */
+.fas.fa-globe-europe { color: #0078D4; } /* Globe Europe blue */
+.fas.fa-flag-usa { color: #F44336; } /* Flag USA red */
+.fas.fa-flag-uk { color: #0078D4; } /* Flag UK blue */
+.fas.fa-flag-canada { color: #F44336; } /* Flag Canada red */
+.fas.fa-flag-australia { color: #2196F3; } /* Flag Australia blue */
+.fas.fa-flag-germany { color: #F44336; } /* Flag Germany red */
+.fas.fa-flag-france { color: #2196F3; } /* Flag France blue */
+.fas.fa-flag-spain { color: #F44336; } /* Flag Spain red */
+.fas.fa-flag-italy { color: #4CAF50; } /* Flag Italy green */
+.fas.fa-flag-japan { color: #F44336; } /* Flag Japan red */
+.fas.fa-flag-china { color: #F44336; } /* Flag China red */
+.fas.fa-flag-india { color: #FF9800; } /* Flag India orange */
+.fas.fa-flag-brazil { color: #4CAF50; } /* Flag Brazil green */
+.fas.fa-flag-russia { color: #2196F3; } /* Flag Russia blue */
+.fas.fa-flag-south-africa { color: #FFC107; } /* Flag South Africa yellow */
+.fas.fa-flag-uganda { color: #FFC107; } /* Flag Uganda yellow */
+
 .skill-name {
     font-size: var(--font-size-lg);
     font-weight: 600;
@@ -657,7 +846,7 @@ ul, ol {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     border-radius: 4px;
     width: 0;
     transition: width 1.5s ease-out;
