@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Features Test - Mungu Jakisa Maurice</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .test-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-light);
+        }
+        
+        .test-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .test-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .test-item:last-child {
+            border-bottom: none;
+        }
+        
+        .test-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .test-status.pass {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .test-status.fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .demo-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .demo-card {
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="loading-text">MJM</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-message">Loading your experience...</p>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" aria-label="Homepage">
+                    <span class="nav-logo-text">MJM</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="feature-tester.html" class="nav-link active" aria-current="page">Test</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero" id="home">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Interactive Features Test</span>
+                        <br>Modern JavaScript & CSS Demo
+                    </h1>
+                    <p class="hero-description">
+                        Testing all interactive features and animations implemented for the portfolio website.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#tests" class="btn btn-primary btn-ripple">Run Tests</a>
+                        <a href="#demo" class="btn btn-secondary">View Demo</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number pulse-glow">✓</span>
+                        <span class="stat-label">Features Active</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Test Results</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tests" class="test-section">
+            <div class="container">
+                <h2>Feature Testing Results</h2>
+                <div id="testResults">
+                    <div class="test-item">
+                        <span>Loading Screen Animation</span>
+                        <span class="test-status" id="test-loading">Testing...</span>
+                    </div>
+                    <div class="test-item">
+                        <span>Mobile Navigation Toggle</span>
+                        <span class="test-status" id="test-nav">Testing...</span>
+                    </div>
+                    <div class="test-item">
+                        <span>Scroll Animations</span>
+                        <span class="test-status" id="test-scroll">Testing...</span>
+                    </div>
+                    <div class="test-item">
+                        <span>Form Validation</span>
+                        <span class="test-status" id="test-form">Testing...</span>
+                    </div>
+                    <div class="test-item">
+                        <span>Smooth Scrolling</span>
+                        <span class="test-status" id="test-smooth">Testing...</span>
+                    </div>
+                    <div class="test-item">
+                        <span>Keyboard Navigation</span>
+                        <span class="test-status" id="test-keyboard">Testing...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo-section">
+            <div class="container">
+                <h2>Interactive Demos</h2>
+                <div class="demo-section">
+                    <div class="demo-card animate-on-scroll">
+                        <h3>Button Effects</h3>
+                        <button class="btn btn-primary btn-ripple">Ripple Effect</button>
+                        <button class="btn btn-secondary pulse-glow">Pulse Effect</button>
+                    </div>
+                    
+                    <div class="demo-card animate-on-scroll">
+                        <h3>Loading Animations</h3>
+                        <div class="loading-spinner"></div>
+                        <div class="float-animation">🚀</div>
+                    </div>
+                    
+                    <div class="demo-card animate-on-scroll">
+                        <h3>Form Test</h3>
+                        <form class="contact-page-form">
+                            <input type="text" name="name" placeholder="Name" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0;">
+                            <input type="email" name="email" placeholder="Email" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0;">
+                            <input type="submit" value="Test Submit" class="btn btn-outline">
+                        </form>
+                    </div>
+                    
+                    <div class="demo-card animate-on-scroll">
+                        <h3>Scroll Progress</h3>
+                        <p>Scroll down to see progress indicator</p>
+                        <div style="height: 200px; overflow-y: auto; background: var(--bg-light); padding: 1rem;">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Feature Testing Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize tests after main JavaScript loads
+            setTimeout(runTests, 1000);
+            
+            function markTest(testId, status) {
+                const element = document.getElementById(testId);
+                element.textContent = status ? '✓ Pass' : '✗ Fail';
+                element.className = 'test-status ' + (status ? 'pass' : 'fail');
+            }
+            
+            function runTests() {
+                // Test 1: Loading screen (should be hidden by now)
+                markTest('test-loading', document.getElementById('loading-screen').style.display === 'none');
+                
+                // Test 2: Navigation elements exist
+                const navToggle = document.querySelector('.nav-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+                markTest('test-nav', navToggle && navMenu);
+                
+                // Test 3: Scroll animation elements
+                const scrollElements = document.querySelectorAll('.animate-on-scroll');
+                markTest('test-scroll', scrollElements.length > 0);
+                
+                // Test 4: Form elements
+                const contactForm = document.querySelector('.contact-page-form');
+                markTest('test-form', contactForm !== null);
+                
+                // Test 5: Smooth scrolling links
+                const smoothLinks = document.querySelectorAll('a[href^="#"]');
+                markTest('test-smooth', smoothLinks.length > 0);
+                
+                // Test 6: Keyboard navigation (check if keyboard-navigation class can be toggled)
+                const body = document.body;
+                body.classList.add('keyboard-navigation');
+                const hasKeyboardStyle = getComputedStyle(body).outline !== 'none';
+                body.classList.remove('keyboard-navigation');
+                markTest('test-keyboard', hasKeyboardStyle);
+                
+                // Update stats
+                const testResults = document.querySelectorAll('.test-status.pass').length;
+                document.querySelector('.hero-stats .stat-number:last-child').textContent = testResults + '/6';
+            }
+            
+            // Scroll progress indicator
+            window.addEventListener('scroll', function() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                
+                let progressBar = document.querySelector('.scroll-progress');
+                if (!progressBar) {
+                    progressBar = document.createElement('div');
+                    progressBar.className = 'scroll-progress';
+                    document.body.appendChild(progressBar);
+                }
+                progressBar.style.width = scrolled + '%';
+            });
+            
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Add floating animation to hero stats
+            setInterval(() => {
+                const floatingElements = document.querySelectorAll('.float-animation');
+                floatingElements.forEach(el => {
+                    el.style.animation = 'none';
+                    setTimeout(() => {
+                        el.style.animation = 'floating 6s ease-in-out infinite';
+                    }, 10);
+                });
+            }, 10000);
+        });
+    </script>
+    
+    <!-- Loading Screen Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>

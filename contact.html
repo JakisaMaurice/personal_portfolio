@@ -1,67 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/regular.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Mungu Jakisa Maurice for web development projects, Arduino automation solutions, or server configuration services. Get in touch today!">
+    <meta name="keywords" content="contact Maurice Jakisa, hire web developer, Arduino consultation, server setup services">
+    <meta name="author" content="Mungu Jakisa Maurice">
+    <meta property="og:title" content="Contact Mungu Jakisa Maurice">
+    <meta property="og:description" content="Get in touch for web development and automation projects">
+    <meta property="og:type" content="website">
+    <title>Contact - Mungu Jakisa Maurice</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Page-specific styles for contact page */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-hero p {
+            font-size: var(--font-size-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            padding: var(--space-4xl) 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .contact-info {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 600;
+            margin-bottom: var(--space-xl);
+            color: var(--text-primary);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            padding: var(--space-lg);
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: all var(--transition-base);
+        }
+
+        .contact-method:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-method:hover .contact-icon {
+            color: white;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: var(--space-lg);
+            font-size: var(--font-size-lg);
+            transition: all var(--transition-base);
+        }
+
+        .contact-method:hover .contact-icon {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .contact-method-content h3 {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .contact-method-content p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .contact-method:hover .contact-method-content p {
+            color: white;
+        }
+
+        .contact-form {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 600;
+            margin-bottom: var(--space-xl);
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-xl);
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-lg);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: var(--font-size-base);
+            font-family: inherit;
+            transition: all var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 145, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-lg) var(--space-2xl);
+            border: none;
+            border-radius: 8px;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .submit-btn:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .form-message {
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin-top: var(--space-lg);
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .social-links {
+            margin-top: var(--space-2xl);
+            text-align: center;
+        }
+
+        .social-links h3 {
+            margin-bottom: var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            border-radius: 50%;
+            transition: all var(--transition-base);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+                padding: 0 var(--space-md);
+            }
+
+            .contact-hero h1 {
+                font-size: var(--font-size-4xl);
+            }
+
+            .contact-hero p {
+                font-size: var(--font-size-lg);
+            }
+
+            .social-icons {
+                gap: var(--space-md);
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <section class="nav-section">
-      <a class="nav-a" href="index.html">home</a>
-      <a class="nav-a" href="about.html">about</a>
-      <a class="nav-a" href="projects.html">projects</a>
-      <a class="nav-a" href="contact.html">contact</a>
-    </section>
-  </nav>
-
-  <h1>CONTACT ME</h1>
-
-  <div class="font-awesome-icon">
-
-  </div>
-
-  <fieldset class="contact-page-fieldset">
-    <legend>Reach Out:</legend>
-    <div class="font-awesome-icons-div">
-      <a href="tel:+256779398911"><i class="fa-solid fa-phone fa-icon"></i></a>
-      <a href="http://wa.me/+256750302070"><i class="fa-brands fa-whatsapp fa-icon"></i></a>
-      <a href="mailto:jakisamaurice@gmail.com"><i class="fa-solid fa-envelope fa-icon"></i></a>
-      <a href="https://github.com/JakisaMaurice"><i class="fa-brands fa-github fa-icon"></i></a>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="loading-text">MJM</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-message">Loading your experience...</p>
+        </div>
     </div>
-    
-    <p>The contact form will be ready in a while. Click the above links to reach out.</p>
-    
-    <form class="contact-page-form" action="insert.php" method="post">
-      <input type="name" name="name" id="name" placeholder="Name">
-      <input type="email" name="email" id="email" placeholder="Email">
-      <input type="tel" name="telephone" id="telephone" placeholder="Telephone">
-      <textarea name="feedback" id="feedback" placeholder="Feedback or Message"></textarea>
-      <input type="submit" value="submit">
-    </form>
-  </fieldset>
 
+    <header class="site-header">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" aria-label="Homepage">
+                    <span class="nav-logo-text">MJM</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resume.html" class="nav-link">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-  <footer>
-    <div class="footer-contacts">
-      <h3>CONTACTS</h3>
-      <p>Tel: <a href="tel:+256750302070">+256750302070</a></p>
-      <p>Tel: <a href="tel:+256779398911">+256779398911</a></p>
-      <p>Email: <a href="mailto:jakisamaurice@gmail.com">jakisamaurice@gmail.com</a></p>
-    </div>
-    <!-- <div>
-      <h3>ADDRESS</h3>
-    </div> -->
-    <div>
-      <H3>DONATE</H3>
-      <p class="donation-text">Your donations to the numbers in the contacts are warmly received</p>
-    </div>
-  </footer>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h1>Get In Touch</h1>
+                <p>Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+256750302070">+256 750 302 070</a></p>
+                                <p><a href="tel:+256779398911">+256 779 398 911</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h3>Email</h3>
+                                <p><a href="mailto:jakisamaurice@gmail.com">jakisamaurice@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h3>Location</h3>
+                                <p>Kampala, Uganda</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h3>Response Time</h3>
+                                <p>Usually within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <h3>Connect With Me</h3>
+                        <div class="social-icons">
+                            <a href="https://github.com/JakisaMaurice" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="http://wa.me/+256750302070" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Me a Message</h2>
+                    <form id="contactForm" class="contact-page-form" action="api/contact.php" method="POST">
+                        <!-- CSRF Protection -->
+                        <input type="hidden" name="csrf_token" id="csrfToken">
+                        
+                        <!-- Honeypot for spam protection -->
+                        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">Phone Number *</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedback">Message *</label>
+                            <textarea id="feedback" name="feedback" placeholder="Tell me about your project or what you'd like to discuss..." required></textarea>
+                        </div>
+
+                        <input type="submit" class="submit-btn" id="submitBtn" value="Send Message">
+
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><a href="tel:+256750302070">+256 750 302 070</a></p>
+                    <p><a href="tel:+256779398911">+256 779 398 911</a></p>
+                    <p><a href="mailto:jakisamaurice@gmail.com">jakisamaurice@gmail.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p>Web Development</p>
+                    <p>Arduino Automation</p>
+                    <p>Server Configuration</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Me</h3>
+                    <div class="footer-social">
+                        <a href="https://github.com/JakisaMaurice" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="http://wa.me/+256750302070" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mungu Jakisa Maurice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <!-- Loading Screen Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            // Hide loading screen when page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }, 800); // Show loading for at least 800ms for smooth experience
+            });
+        });
+    </script>
 </body>
 </html>

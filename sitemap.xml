@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://mauricejakisa.com/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mauricejakisa.com/assets/images/profile picture.jpg</image:loc>
+      <image:title>Maurice Jakisa - Professional Portfolio</image:title>
+      <image:caption>Professional software developer and IT consultant portfolio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mauricejakisa.com/assets/images/banner_image.jpg</image:loc>
+      <image:title>Maurice Jakisa Portfolio Banner</image:title>
+      <image:caption>Modern web development and technology solutions</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://mauricejakisa.com/about.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Resume Page -->
+  <url>
+    <loc>https://mauricejakisa.com/resume.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mauricejakisa.com/assets/documents/Mungu_Jakisa_Maurice_CV.pdf</image:loc>
+      <image:title>Maurice Jakisa Professional Resume</image:title>
+      <image:caption>Comprehensive CV and professional experience</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://mauricejakisa.com/projects.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mauricejakisa.com/assets/images/web-dev/1.jpg</image:loc>
+      <image:title>Web Development Projects</image:title>
+      <image:caption>Modern web development portfolio showcase</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mauricejakisa.com/assets/images/home-automation/1.jpg</image:loc>
+      <image:title>Home Automation Solutions</image:title>
+      <image:caption>IoT and smart home automation projects</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mauricejakisa.com/assets/images/server-configuration/1.jpg</image:loc>
+      <image:title>Server Administration Projects</image:title>
+      <image:caption>Enterprise server configuration and management</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://mauricejakisa.com/contact.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://mauricejakisa.com/blog.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://mauricejakisa.com/blog-articles/getting-started-arduino-iot.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauricejakisa.com/blog-articles/modern-web-development-lessons.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauricejakisa.com/blog-articles/windows-server-administration-lessons.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Static Assets (important for SEO) -->
+  <url>
+    <loc>https://mauricejakisa.com/manifest.json</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Key Asset Directories -->
+  <url>
+    <loc>https://mauricejakisa.com/assets/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://mauricejakisa.com/assets/images/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://mauricejakisa.com/assets/documents/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

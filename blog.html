@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical blog by Mungu Jakisa Maurice - Insights on web development, Arduino programming, server configuration, and technology trends.">
+    <meta name="keywords" content="Maurice Jakisa blog, web development, Arduino, server configuration, technology insights, programming tutorials">
+    <meta name="author" content="Mungu Jakisa Maurice">
+    <meta property="og:title" content="Technical Blog - Mungu Jakisa Maurice">
+    <meta property="og:description" content="Thoughts on technology, development, and innovation">
+    <meta property="og:type" content="website">
+    <title>Blog - Mungu Jakisa Maurice</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Blog-specific styles */
+        .blog-page {
+            padding: var(--space-4xl) 0;
+            background-color: var(--bg-light);
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .blog-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .blog-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-3xl);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: var(--space-sm) var(--space-lg);
+            background-color: var(--bg-white);
+            color: var(--text-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-4xl);
+        }
+
+        .blog-card {
+            background-color: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: var(--space-md);
+            left: var(--space-md);
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 15px;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+        }
+
+        .blog-content {
+            padding: var(--space-xl);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-sm);
+            color: var(--text-light);
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .blog-read-time {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .blog-card-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .blog-tag {
+            background-color: var(--bg-light);
+            color: var(--text-secondary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 12px;
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .read-more i {
+            transition: transform var(--transition-base);
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(4px);
+        }
+
+        .featured-post {
+            background-color: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: var(--space-4xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .featured-image {
+            position: relative;
+            height: 400px;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: var(--space-4xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-category {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 15px;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: var(--space-lg);
+        }
+
+        .featured-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-xl);
+        }
+
+        .newsletter-signup {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: var(--space-4xl);
+            border-radius: 12px;
+            text-align: center;
+            margin-top: var(--space-4xl);
+        }
+
+        .newsletter-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+        }
+
+        .newsletter-description {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: var(--space-md);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: var(--space-md);
+            border: none;
+            border-radius: 8px;
+            font-size: var(--font-size-base);
+        }
+
+        .newsletter-btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        @media (max-width: 1024px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: var(--space-sm);
+            }
+            
+            .filter-btn {
+                white-space: nowrap;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .featured-content {
+                padding: var(--space-xl);
+            }
+            
+            .blog-content {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" aria-label="Homepage">
+                    <span class="nav-logo-text">MJM</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resume.html" class="nav-link">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link active" aria-current="page">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="blog-page">
+            <div class="container">
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Technical Insights & Thoughts</h1>
+                    <p class="blog-subtitle">
+                        Exploring the intersection of technology, innovation, and development. 
+                        Sharing knowledge about web development, IoT, and system administration.
+                    </p>
+                </header>
+
+                <!-- Featured Post -->
+                <article class="featured-post" onclick="openArticle('getting-started-arduino-iot')">
+                    <div class="featured-image">
+                        <img src="assets/images/home-automation/1.jpg" alt="Arduino IoT Project" loading="lazy">
+                        <span class="featured-category">Featured</span>
+                    </div>
+                    <div class="featured-content">
+                        <span class="featured-category">IoT Development</span>
+                        <h2 class="featured-title">Getting Started with Arduino and IoT: Building Your First Smart Home Project</h2>
+                        <p class="featured-excerpt">
+                            A comprehensive guide based on real Arduino home automation project experience. 
+                            Learn hardware setup, programming concepts, and integration with modern IoT platforms like Blynk. 
+                            Includes practical code examples and lessons learned from actual implementation.
+                        </p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>November 28, 2025</span>
+                            </div>
+                            <div class="blog-read-time">
+                                <i class="fas fa-clock"></i>
+                                <span>8 min read</span>
+                            </div>
+                        </div>
+                        <a href="blog-articles/getting-started-arduino-iot.md" class="btn btn-primary" target="_blank">Read Full Article</a>
+                    </div>
+                </article>
+
+                <!-- Category Filters -->
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all">All Posts</button>
+                    <button class="filter-btn" data-filter="web-development">Web Development</button>
+                    <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+                    <button class="filter-btn" data-filter="server">Server & DevOps</button>
+                    <button class="filter-btn" data-filter="career">Career & Learning</button>
+                </div>
+
+                <!-- Blog Grid -->
+                <div class="blog-grid">
+                    <!-- Web Development Articles -->
+                    <article class="blog-card" data-category="web-development" onclick="openArticle('modern-web-development-lessons')">
+                        <div class="blog-image">
+                            <img src="assets/images/web-dev/1.jpg" alt="Web Development Projects" loading="lazy">
+                            <span class="blog-category">Web Development</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>November 25, 2025</span>
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock"></i>
+                                    <span>7 min read</span>
+                                </div>
+                            </div>
+                            <h3 class="blog-card-title">Modern Web Development: Lessons from Building a Professional Portfolio</h3>
+                            <p class="blog-excerpt">
+                                Insights from real freelance web development projects and portfolio creation. 
+                                Covers mobile responsiveness, performance optimization, security considerations, 
+                                and lessons learned from working with actual clients.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Web Development</span>
+                                <span class="blog-tag">JavaScript</span>
+                                <span class="blog-tag">PHP</span>
+                            </div>
+                            <div class="blog-footer">
+                                <div class="author-info">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <span class="author-name">Mungu Jakisa Maurice</span>
+                                </div>
+                                <div class="read-more">
+                                    <a href="blog-articles/modern-web-development-lessons.md" target="_blank" style="text-decoration: none; color: var(--primary-color);">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Server Administration Articles -->
+                    <article class="blog-card" data-category="server" onclick="openArticle('windows-server-administration-lessons')">
+                        <div class="blog-image">
+                            <img src="assets/images/server-configuration/1.jpg" alt="Windows Server Administration" loading="lazy">
+                            <span class="blog-category">Server & DevOps</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>November 22, 2025</span>
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock"></i>
+                                    <span>9 min read</span>
+                                </div>
+                            </div>
+                            <h3 class="blog-card-title">Windows Server Administration: Lessons from a Real-World Internship</h3>
+                            <p class="blog-excerpt">
+                                Hands-on experience from NCR Uganda IT internship covering Windows Server 2019, 
+                                Active Directory, VMware virtualization, and enterprise infrastructure management 
+                                with real-world challenges and solutions.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Windows Server</span>
+                                <span class="blog-tag">Active Directory</span>
+                                <span class="blog-tag">VMware</span>
+                            </div>
+                            <div class="blog-footer">
+                                <div class="author-info">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <span class="author-name">Mungu Jakisa Maurice</span>
+                                </div>
+                                <div class="read-more">
+                                    <a href="blog-articles/windows-server-administration-lessons.md" target="_blank" style="text-decoration: none; color: var(--primary-color);">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Career & Learning Articles -->
+                    <article class="blog-card" data-category="career" onclick="openArticle('computer-science-student-guide')">
+                        <div class="blog-image">
+                            <img src="assets/images/banner_image.jpg" alt="Computer Science Learning" loading="lazy">
+                            <span class="blog-category">Career & Learning</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>October 28, 2025</span>
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock"></i>
+                                    <span>10 min read</span>
+                                </div>
+                            </div>
+                            <h3 class="blog-card-title">Surviving and Thriving as a Computer Science Student</h3>
+                            <p class="blog-excerpt">
+                                Practical advice for computer science students, including how to balance academics 
+                                with practical projects, building a portfolio, and preparing for the tech industry 
+                                based on real university experience.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Education</span>
+                                <span class="blog-tag">Career</span>
+                                <span class="blog-tag">Portfolio</span>
+                            </div>
+                            <div class="blog-footer">
+                                <div class="author-info">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <span class="author-name">Mungu Jakisa Maurice</span>
+                                </div>
+                                <div class="read-more">
+                                    Read More <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Academic Projects Article -->
+                    <article class="blog-card" data-category="career" onclick="openArticle('tech-industry-uganda-insights')">
+                        <div class="blog-image">
+                            <img src="assets/images/arduino, home automation.jpg" alt="Tech Industry Uganda" loading="lazy">
+                            <span class="blog-category">Career & Learning</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <div class="blog-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>October 20, 2025</span>
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock"></i>
+                                    <span>6 min read</span>
+                                </div>
+                            </div>
+                            <h3 class="blog-card-title">The Tech Industry in Uganda: Opportunities and Challenges</h3>
+                            <p class="blog-excerpt">
+                                An insider's perspective on Uganda's growing tech sector, from startup culture 
+                                to international companies, and how to position yourself for success in the local market.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Uganda Tech</span>
+                                <span class="blog-tag">Industry</span>
+                                <span class="blog-tag">Career</span>
+                            </div>
+                            <div class="blog-footer">
+                                <div class="author-info">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <span class="author-name">Mungu Jakisa Maurice</span>
+                                </div>
+                                <div class="read-more">
+                                    Read More <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <section class="newsletter-signup">
+                    <h3 class="newsletter-title">Stay Updated</h3>
+                    <p class="newsletter-description">
+                        Get notified about new articles, tutorials, and insights on technology and development.
+                    </p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input 
+                            type="email" 
+                            class="newsletter-input" 
+                            placeholder="Enter your email address" 
+                            required
+                            aria-label="Email address for newsletter subscription"
+                        >
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Information</h3>
+                    <div class="contact-list">
+                        <a href="tel:+256750302070" class="contact-link">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>+256 750 302 070</span>
+                        </a>
+                        <a href="tel:+256779398911" class="contact-link">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>+256 779 398 911</span>
+                        </a>
+                        <a href="mailto:jakisamaurice@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>jakisamaurice@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Let's Connect</h3>
+                    <p class="footer-description">
+                        Ready to work together? Let's create something amazing!
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/JakisaMaurice" class="social-link" aria-label="GitHub Profile">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="http://wa.me/+256750302070" class="social-link" aria-label="WhatsApp Contact">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Mungu Jakisa Maurice. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Blog-specific functionality
+        function openArticle(articleId) {
+            // In a real application, this would navigate to the article page
+            console.log('Opening article:', articleId);
+            // For demo purposes, show an alert
+            alert(`Opening article: ${articleId}\\n\\nThis would typically open a detailed article page.`);
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('.newsletter-input').value;
+            
+            // Simulate subscription
+            alert(`Thank you for subscribing with email: ${email}\\n\\nYou will receive notifications about new articles!`);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Category filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

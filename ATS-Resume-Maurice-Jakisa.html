@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mungu Jakisa Maurice - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 12px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e40af;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .summary {
+            text-align: justify;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
+        .company {
+            font-size: 13px;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        
+        .date {
+            font-size: 12px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .description {
+            font-size: 12px;
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+        
+        .description ul {
+            margin-left: 15px;
+        }
+        
+        .description li {
+            margin-bottom: 3px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            color: #475569;
+        }
+        
+        .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .project-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 3px;
+        }
+        
+        .project-tech {
+            font-size: 11px;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .cert-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .cert-issuer {
+            color: #64748b;
+        }
+        
+        .cert-date {
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        
+        .language-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .language-level {
+            color: #64748b;
+        }
+        
+        .achievement-item {
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .achievement-title {
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
+        .achievement-org {
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                padding: 0.25in;
+                font-size: 11px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-header">
+        <div class="name">MUNGU JAKISA MAURICE</div>
+        <div class="title">COMPUTER SCIENCE STUDENT & ASPIRING DEVELOPER</div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Phone:</strong> +256 750 302 070
+            </div>
+            <div class="contact-item">
+                <strong>Email:</strong> jakisamaurice@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong> Kampala, Uganda
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong> linkedin.com/in/maurice-jakisa
+            </div>
+            <div class="contact-item">
+                <strong>GitHub:</strong> github.com/JakisaMaurice
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+        <div class="summary">
+            Computer Science student at Makerere University with hands-on experience in web development, Arduino programming, enterprise server administration, and computer hardware maintenance. Proven ability to work independently and collaboratively on projects emphasizing autonomy, security, and innovation. Successfully completed IT internship at NCR Uganda with focus on Windows Server configuration, Active Directory management, VMware virtualization, and network security. Skilled in TypeScript, computer repair and maintenance, and advanced server configuration. Seeking opportunities to contribute to meaningful technology projects while continuing to grow expertise in software development and system administration.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">TECHNICAL SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Programming Languages</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">TypeScript</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Web Development</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Computer Repair</span>
+                    <span class="skill-tag">Hardware Maintenance</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Systems Administration</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">VMware vSphere</span>
+                    <span class="skill-tag">Cisco Networking</span>
+                    <span class="skill-tag">Server Configuration</span>
+                    <span class="skill-tag">Network Security</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Hardware & IoT</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Arduino</span>
+                    <span class="skill-tag">Raspberry Pi</span>
+                    <span class="skill-tag">Blynk IoT</span>
+                    <span class="skill-tag">Sensor Integration</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Tools & Technologies</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">PowerShell</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="experience-item">
+            <div class="item-header">
+                <div>
+                    <div class="job-title">IT INTERN</div>
+                    <div class="company">NCR Uganda | Kampala, Uganda</div>
+                </div>
+                <div class="date">June 2024 - August 2024</div>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Configured and maintained Windows Server 2019 environments and Active Directory Domain Services</li>
+                    <li>Implemented VMware ESXi virtualization setup with proper resource allocation and network configuration</li>
+                    <li>Provided technical support for hardware and software troubleshooting across enterprise infrastructure</li>
+                    <li>Participated in system maintenance procedures, backup implementations, and security hardening</li>
+                    <li>Gained hands-on experience with enterprise-level IT infrastructure supporting business operations</li>
+                    <li>Collaborated with senior IT staff on network configuration and user access management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="item-header">
+                <div>
+                    <div class="job-title">FREELANCE WEB DEVELOPER</div>
+                    <div class="company">Self-Employed | Kampala, Uganda</div>
+                </div>
+                <div class="date">2023 - Present</div>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Designed and developed responsive websites using HTML5, CSS3, JavaScript, and PHP</li>
+                    <li>Implemented server-side functionality with database integration and user authentication systems</li>
+                    <li>Created user-friendly interfaces focused on accessibility, performance optimization, and cross-browser compatibility</li>
+                    <li>Collaborated with clients to understand requirements and deliver tailored solutions meeting business objectives</li>
+                    <li>Managed project timelines and client communications for multiple concurrent web development projects</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">KEY PROJECTS</h2>
+        
+        <div class="project-item">
+            <div class="project-title">Arduino Home Automation System | 2024</div>
+            <div class="project-tech">Technologies: Arduino, C++, Blynk IoT, Sensors, Relay Modules</div>
+            <div class="description">
+                Developed comprehensive home automation prototype emphasizing security, access control, and autonomous operation. Integrated multiple sensors (temperature, humidity, motion) with mobile app control via Blynk platform. Implemented energy-efficient design with smart scheduling and automated response systems.
+                <br><strong>Outcome:</strong> Functional prototype demonstrating IoT integration capabilities and mobile control functionality.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Professional Portfolio Website | 2024</div>
+            <div class="project-tech">Technologies: HTML5, CSS3, JavaScript, PHP, Responsive Design</div>
+            <div class="description">
+                Created modern, responsive portfolio website featuring advanced CSS animations and accessibility features. Implemented optimized performance across all devices with mobile-first design approach. Developed blog system with content management capabilities and SEO optimization.
+                <br><strong>Outcome:</strong> Fully functional professional website showcasing technical skills and project portfolio.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Server Infrastructure Setup | 2024</div>
+            <div class="project-tech">Technologies: Windows Server, Active Directory, VMware, Cisco Networking</div>
+            <div class="description">
+                Configured complete server setup during NCR Uganda internship including domain controller setup. Implemented Active Directory with proper organizational unit structure and group policies. Set up VMware virtualization environment with proper resource allocation and network segmentation.
+                <br><strong>Outcome:</strong> Enterprise-ready infrastructure supporting organizational IT operations.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">EDUCATION</h2>
+        
+        <div class="education-item">
+            <div class="item-header">
+                <div>
+                    <div class="job-title">DIPLOMA IN COMPUTER SCIENCE</div>
+                    <div class="company">Makerere University | Kampala, Uganda</div>
+                </div>
+                <div class="date">2022 - 2024</div>
+            </div>
+            <div class="description">
+                Completed comprehensive Computer Science diploma with focus on software development and system administration. Relevant Coursework: Data Structures, Algorithms, Database Systems, Computer Networks, Software Engineering.
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="section">
+        <h2 class="section-title">LANGUAGES</h2>
+        <div class="languages">
+            <div class="language-item">
+                <span class="language-name">English</span>
+                <span class="language-level">Fluent (Written & Verbal)</span>
+            </div>
+            <div class="language-item">
+                <span class="language-name">Alur</span>
+                <span class="language-level">Native Speaker</span>
+            </div>
+            <div class="language-item">
+                <span class="language-name">Luganda</span>
+                <span class="language-level">Conversational</span>
+            </div>
+        </div>
+
+        <div class="language-item">
+            <span class="language-name">Swahili</span>
+            <span class="language-level">Beginner</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">ACHIEVEMENTS</h2>
+        <div class="achievement-item">
+            <div class="achievement-title">Dean's List</div>
+            <div class="achievement-org">Makerere University Computer Science Department | 2023</div>
+        </div>
+        <div class="achievement-item">
+            <div class="achievement-title">Successful Project Completion</div>
+            <div class="achievement-org">NCR Uganda IT Internship with commendation for technical aptitude</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">REFERENCES</h2>
+        <div class="description">
+            <strong>Available upon request</strong> - Contact information provided for professional references including:
+            <ul>
+                <li>NCR Uganda IT Department Supervisor</li>
+                <li>Makerere University Academic Advisor</li>
+                <li>Freelance Project Clients</li>
+                <li>Computer Science Department Faculty</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

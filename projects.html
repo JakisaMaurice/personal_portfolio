@@ -1,158 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Projects</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="projects.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/regular.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Mungu Jakisa Maurice's projects including Arduino home automation, web development work, and server configuration at NCR Uganda.">
+    <meta name="keywords" content="Maurice Jakisa projects, Arduino home automation, web development portfolio, server configuration projects">
+    <meta name="author" content="Mungu Jakisa Maurice">
+    <meta property="og:title" content="Projects by Mungu Jakisa Maurice">
+    <meta property="og:description" content="Portfolio of web development, automation, and server configuration projects">
+    <meta property="og:type" content="website">
+    <title>Projects - Mungu Jakisa Maurice</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Page-specific styles for projects page */
+        .projects-hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-hover));
+            color: white;
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .projects-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-hero h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-hero p {
+            font-size: var(--font-size-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-section {
+            padding: var(--space-4xl) 0;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .projects-category {
+            margin-bottom: var(--space-4xl);
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .category-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .category-description {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: var(--space-2xl);
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-slow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .project-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: var(--space-2xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+
+        .project-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--text-primary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 20px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+        }
+
+        .project-features {
+            list-style: none;
+        }
+
+        .project-features li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+
+        .project-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Special layout for single card */
+        .project-card.single {
+            grid-template-columns: 1fr;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Server Configuration Grid */
+        .server-config-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-2xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .server-config-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-slow);
+        }
+
+        .server-config-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .server-config-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .server-config-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .server-config-card:hover .server-config-image img {
+            transform: scale(1.05);
+        }
+
+        .server-config-content {
+            padding: var(--space-xl);
+        }
+
+        .server-config-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .server-config-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+
+        .server-config-features {
+            list-style: none;
+        }
+
+        .server-config-features li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+            position: relative;
+            padding-left: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .server-config-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            background: var(--bg-light);
+            padding: var(--space-4xl) 0;
+            margin: var(--space-4xl) 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-2xl);
+            text-align: center;
+        }
+
+        .stat-item {
+            background: var(--bg-white);
+            padding: var(--space-2xl);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .projects-hero h1 {
+                font-size: var(--font-size-4xl);
+            }
+
+            .projects-hero p {
+                font-size: var(--font-size-lg);
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .project-image {
+                height: 250px;
+            }
+
+            .server-config-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-content {
+                padding: var(--space-lg);
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <section class="nav-section">
-      <a class="nav-a" href="index.html">home</a>
-      <a class="nav-a" href="about.html">about</a>
-      <a class="nav-a" href="projects.html">projects</a>
-      <a class="nav-a" href="contact.html">contact</a>
-    </section>
-  </nav>
-
-  <marquee behavior="" direction="" ><h1 class="page-heading">PROJECTS I HAVE WORKED ON</h1></marquee>
-  
-  <section class="project-home-automation" id="project-home-automation">
-    <h2>HOME AUTOMATION</h2>
-    <div class="home-automation-details">
-      <div class="home-automation-image"></div>
-      <div class="home-automation-information">
-        <p>
-          Worked with a team to develop a controlled-spaces prototype
-          focusing first on security, access and autonomy.
-        </p>
-        <p>
-          With a product under development, we are growing the prototype 
-          with extensive testing and integrating more services to the system.
-        </p>
-        <p>
-          <b>Technologies used:</b> C/C++, Arduino, Blynk
-        </p>
-        <p>
-          <b>Key Features:</b> Access and security, autonomy
-        </p>
-        <p>
-          Designed and developed the backend.
-        </p>
-        <p>
-          Implemented a shared set of programmable code to run the system.
-        </p>
-      </div>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="loading-text">MJM</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-message">Loading your experience...</p>
+        </div>
     </div>
-  </section>
 
-  <section class="project-web-dev" id="project-web-dev">
-    <h2>WEB DEVELOPMENT</h2>
-    <div class="web-dev-details">
-      <div class="web-dev-image"></div>
-      <div class="web-dev-information">
-        <p>Developed multiple websites and provided hosting services.</p>
-        <p>Provided maintenance and problem solving of website code.</p>
-        <p>Initiated server-side configuration for websites.</p>
-        <p>
-          <b>Technologies used: </b>HTML & CSS, JAVASCRIPT, PHP
-        </p>
-        <p>
-          <b>Key features: </b>Responsiveness, logins and signups.
-        </p>
-        <p>
-          Designed and developed frontend and backend.
-        </p>
-        <p>
-          Provided help and research material for development of websites.
-        </p>
-      </div>
-      
-    </div>
-  </section>
+    <header class="site-header">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" aria-label="Homepage">
+                    <span class="nav-logo-text">MJM</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link active" aria-current="page">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resume.html" class="nav-link">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-  <section class="project-server-configuration" id="project-server-configuration">
-    <h2>SERVER CONFIGURATION AND SET-UP</h2>
-    <div class="server-configuration-details">
-      <div class="card">
-        <div class="card-image-detail">
-          <img class="card-image"   src="assets/images/server-configuration/2.jpg" alt="">
-          <h3>SERVER CONFIGURATION</h3>
-        </div>
-        <div class="card-details">
-          <p>
-            Server software installation and set up with emphasis on resources required
-            and user inclusion.
-          </p>
-          <p>
-            <b>Technologies used: </b> Windows Server Operating system, Active Directory Domain Service.
-          </p>
-          <p>
-            <b>Key features: </b> Monitoring & maintenance, Remote access, troubleshooting and support,UPS and power management, User access.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image-detail">
-          <img class="card-image"   src="assets/images/server-configuration/4.jpg" alt="">
-          <h3>NETWORK CONFIGURATION</h3>
-        </div>
-        <div class="card-details">
-          <p>Terminated and performed network configurations while considering routing
-            and addressing.
-          </p>
-          <p>
-            <b>Technologies used: </b> Cisco Packet tracer, network cards, Routers and switches, DHCP,DNS.
-          </p>
-          <p>
-            <b>Key features: </b>Network design and setup, security configuration, Monitoring and troubleshooting.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image-detail">
-          <img class="card-image"   src="assets/images/server-configuration/5.jpg" alt="">
-          <h3>HYPERVISOR CONFIGURATION</h3>
-        </div>
-        <div class="card-details">
-          <p>
-            Virtual Machine installation and configuration with emphasis on 
-            purpose for virtual machines.
-          </p>
-          <p>
-            <b>Technologies used: </b>VMware/ESXi, Windows Server, Virtual switches, VMFS.
-          </p>
-          <p>
-            <b>Key features: </b>Virtual Machine creation and management, Network configuration, Storage management, Security and Access control, Remote access and management.
-          </p>
-        </div>
-      </div>
-      
-    </div>
-    
-  </section>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="projects-hero">
+            <div class="projects-hero-content">
+                <h1>My Projects</h1>
+                <p>A showcase of my work in web development, automation, and server configuration</p>
+            </div>
+        </section>
 
+        <!-- Statistics Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <div class="footer-contacts">
-      <h3>CONTACTS</h3>
-      <p>Tel: <a href="tel:+256750302070">+256750302070</a></p>
-      <p>Tel: <a href="tel:+256779398911">+256779398911</a></p>
-      <p>Email: <a href="mailto:jakisamaurice@gmail.com">jakisamaurice@gmail.com</a></p>
-    </div>
-    <!-- <div>
-      <h3>ADDRESS</h3>
-    </div> -->
-    <div>
-      <H3>DONATE</H3>
-      <p class="donation-text">Your donations to the numbers in the contacts are warmly received</p>
-    </div>
-  </footer>
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="projects-container">
+                <!-- Home Automation Project -->
+                <div class="projects-category">
+                    <div class="category-header">
+                        <h2 class="category-title">Home Automation</h2>
+                        <p class="category-description">
+                            Intelligent home automation system with Arduino-based control, featuring security, access management, and autonomous operation.
+                        </p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/images/home-automation/1.jpg" alt="Home Automation System">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Smart Home Control System</h3>
+                                <p class="project-description">
+                                    Developed a comprehensive home automation prototype focusing on security, access control, and autonomous operation. The system integrates multiple sensors and control modules for intelligent home management.
+                                </p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">C/C++</span>
+                                    <span class="tech-tag">Arduino</span>
+                                    <span class="tech-tag">Blynk</span>
+                                    <span class="tech-tag">IoT</span>
+                                </div>
+                                <ul class="project-features">
+                                    <li>Access and security management</li>
+                                    <li>Autonomous operation capabilities</li>
+                                    <li>Mobile app integration</li>
+                                    <li>Real-time monitoring and control</li>
+                                    <li>Energy efficient design</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Projects -->
+                <div class="projects-category">
+                    <div class="category-header">
+                        <h2 class="category-title">Web Development</h2>
+                        <p class="category-description">
+                            Full-stack web development projects including frontend design, backend development, and hosting solutions.
+                        </p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="assets/images/web-dev/1.jpg" alt="Web Development Projects">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Full-Stack Web Applications</h3>
+                                <p class="project-description">
+                                    Developed multiple responsive websites and web applications with modern frontend technologies and robust backend systems. Includes user authentication, database integration, and responsive design.
+                                </p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                </div>
+                                <ul class="project-features">
+                                    <li>Responsive design for all devices</li>
+                                    <li>User authentication and authorization</li>
+                                    <li>Database management systems</li>
+                                    <li>Modern UI/UX design</li>
+                                    <li>SEO optimization</li>
+                                    <li>Performance optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Server Configuration Projects -->
+                <div class="projects-category">
+                    <div class="category-header">
+                        <h2 class="category-title">Server Configuration</h2>
+                        <p class="category-description">
+                            Enterprise-level server setup and configuration services including network design, virtual infrastructure, and system administration.
+                        </p>
+                    </div>
+                    
+                    <div class="server-config-grid">
+                        <div class="server-config-card">
+                            <div class="server-config-image">
+                                <img src="assets/images/server-configuration/2.jpg" alt="Server Configuration">
+                            </div>
+                            <div class="server-config-content">
+                                <h3 class="server-config-title">Server Configuration & Setup</h3>
+                                <p class="server-config-description">
+                                    Professional server software installation and configuration with focus on resource optimization and user management.
+                                </p>
+                                <ul class="server-config-features">
+                                    <li>Windows Server Operating System</li>
+                                    <li>Active Directory Domain Service</li>
+                                    <li>Monitoring & maintenance</li>
+                                    <li>Remote access configuration</li>
+                                    <li>UPS and power management</li>
+                                    <li>User access control</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="server-config-card">
+                            <div class="server-config-image">
+                                <img src="assets/images/server-configuration/4.jpg" alt="Network Configuration">
+                            </div>
+                            <div class="server-config-content">
+                                <h3 class="server-config-title">Network Configuration</h3>
+                                <p class="server-config-description">
+                                    Network infrastructure design and setup with proper routing, addressing, and security configurations.
+                                </p>
+                                <ul class="server-config-features">
+                                    <li>Cisco Packet Tracer simulation</li>
+                                    <li>Network cards configuration</li>
+                                    <li>Routers and switches setup</li>
+                                    <li>DHCP and DNS configuration</li>
+                                    <li>Network design and topology</li>
+                                    <li>Security implementation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="server-config-card">
+                            <div class="server-config-image">
+                                <img src="assets/images/server-configuration/5.jpg" alt="Hypervisor Configuration">
+                            </div>
+                            <div class="server-config-content">
+                                <h3 class="server-config-title">Hypervisor Configuration</h3>
+                                <p class="server-config-description">
+                                    Virtual machine installation and management with emphasis on performance optimization and security.
+                                </p>
+                                <ul class="server-config-features">
+                                    <li>VMware/ESXi installation</li>
+                                    <li>Windows Server virtualization</li>
+                                    <li>Virtual switches configuration</li>
+                                    <li>VMFS file system</li>
+                                    <li>VM creation and management</li>
+                                    <li>Storage and network management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <p>Home Automation</p>
+                    <p>Web Development</p>
+                    <p>Server Configuration</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Technologies</h3>
+                    <p>C/C++, Arduino</p>
+                    <p>HTML, CSS, JavaScript, PHP</p>
+                    <p>Windows Server, VMware</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="footer-social">
+                        <a href="https://github.com/JakisaMaurice" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="http://wa.me/+256750302070" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mungu Jakisa Maurice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <!-- Loading Screen Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            // Hide loading screen when page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }, 800); // Show loading for at least 800ms for smooth experience
+            });
+        });
+    </script>
 </body>
 </html>

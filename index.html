@@ -1,112 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/regular.css">
-  <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mungu Jakisa Maurice - Computer Science student and software developer specializing in web development, Arduino automation, and server configuration.">
+    <meta name="keywords" content="Maurice Jakisa, web developer, Arduino, server configuration, computer science, portfolio">
+    <meta name="author" content="Mungu Jakisa Maurice">
+    <meta property="og:title" content="Mungu Jakisa Maurice - Portfolio">
+    <meta property="og:description" content="Computer Science student and software developer">
+    <meta property="og:type" content="website">
+    <title>Mungu Jakisa Maurice - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <nav>
-    <section class="nav-section">
-      <a class="nav-a" href="index.html">home</a>
-      <a class="nav-a" href="about.html">about</a>
-      <a class="nav-a" href="projects.html">projects</a>
-      <a class="nav-a" href="contact.html">contact</a>
-    </section>
-  </nav>
-  
-  <article class="banner">
-    <p class="banner-article">
-      I'm MUNGU JAKISA MAURICE, <br>a passionate Computer Science student and an aspiring <br>developer. 
-      With experience in working on growing projects, <br>I bring a resourceful and dedicated approach to coding. <br>
-      I’m constantly learning and striving to create impactful solutions <br>through technology.
-    </p>
-    <!-- <p class="skills-p">My skills are;</p>
-    <p class="scroll-arrows">>>></p>
-    <div class="skills-icons">
-      <img src="/assets/images/html-icon.svg" alt="">
-      <img src="/assets/images/css-icon.svg" alt="">
-      <img src="/assets/images/arduino.svg" alt="">
-      <img src="/assets/images/c-program-icon.svg" alt="">
-    </div> -->
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="loading-text">MJM</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-message">Loading your experience...</p>
+        </div>
+    </div>
 
-  </article>
-  <section class="projects-section">
-    <h3>projects i have worked on</h3>
-    <div class="projects-summary">
-      <div class="projects-detail" onclick="location.href='projects.html#project-home-automation'">
-        <div class="image_and_title">
-          <img class="projects-image arduino-image" src="assets/images/arduino, home automation.jpg" alt="">
-          <h3 class="project-title">
-            Arduino, Home Automation
-          </h3>
+    <header class="site-header">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" aria-label="Homepage">
+                    <span class="nav-logo-text">MJM</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resume.html" class="nav-link">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero" id="home">
+            <div class="hero-background">
+                <img src="assets/images/optimized/banner_image2.webp" alt="" class="hero-bg-image" loading="eager">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        I'm <span class="hero-highlight">Mungu Jakisa Maurice</span>,
+                        <br>a passionate Computer Science student
+                        <br>and software developer
+                    </h1>
+                    <p class="hero-description">
+                        With experience in growing projects, I bring a resourceful and dedicated approach to coding. 
+                        I'm constantly learning and striving to create impactful solutions through technology.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="projects.html" class="btn btn-primary">View My Work</a>
+                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Internship Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects" id="featured-projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card" data-project="home-automation">
+                        <div class="project-image">
+                            <img src="assets/images/optimized/arduino-home-automation.webp" alt="Arduino Home Automation System" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="projects.html#home-automation" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Arduino Home Automation</h3>
+                            <p class="project-description">
+                                Developed a controlled space system emphasizing autonomy and security access using Arduino and C++.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">C/C++</span>
+                                <span class="tech-tag">Blynk</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project="web-development">
+                        <div class="project-image">
+                            <img src="assets/images/optimized/web-development.webp" alt="Web Development Projects" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="projects.html#web-development" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Web Development</h3>
+                            <p class="project-description">
+                                Designed responsive websites focusing on front-end development and server-side configuration.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project="server-config">
+                        <div class="project-image">
+                            <img src="assets/images/optimized/server-configuration.webp" alt="Server Configuration and Management" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="projects.html#server-configuration" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Server Configuration</h3>
+                            <p class="project-description">
+                                Internship project at NCR Uganda involving server configuration, maintenance, and network setup.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Windows Server</span>
+                                <span class="tech-tag">Active Directory</span>
+                                <span class="tech-tag">VMware</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-cta">
+                    <a href="projects.html" class="btn btn-outline">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-preview">
+            <div class="container">
+                <h2 class="section-title">Core Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5 skill-icon"></i>
+                        <h3 class="skill-name">HTML5</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt skill-icon"></i>
+                        <h3 class="skill-name">CSS3</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js-square skill-icon"></i>
+                        <h3 class="skill-name">JavaScript</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="65"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-microchip skill-icon"></i>
+                        <h3 class="skill-name">Arduino</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="additional-skills-preview">
+            <div class="container">
+                <h2 class="section-title">Additional Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-code skill-icon"></i>
+                        <h3 class="skill-name">TypeScript</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tools skill-icon"></i>
+                        <h3 class="skill-name">Computer Repair</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-server skill-icon"></i>
+                        <h3 class="skill-name">Server Configuration</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-shield-alt skill-icon"></i>
+                        <h3 class="skill-name">Network Security</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Information</h3>
+                    <div class="contact-list">
+                        <a href="tel:+256750302070" class="contact-link">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>+256 750 302 070</span>
+                        </a>
+                        <a href="tel:+256779398911" class="contact-link">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>+256 779 398 911</span>
+                        </a>
+                        <a href="mailto:jakisamaurice@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>jakisamaurice@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Let's Connect</h3>
+                    <p class="footer-description">
+                        Ready to work together? Let's create something amazing!
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/JakisaMaurice" class="social-link" aria-label="GitHub Profile">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="http://wa.me/+256750302070" class="social-link" aria-label="WhatsApp Contact">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Mungu Jakisa Maurice. All rights reserved.
+                </p>
+            </div>
         </div>
-        <div class="project-brief">
-          <p>
-            Developed a controlled space system emphasizing autonomy and security access
-          </p>
-        </div>
-        <div>
-          <button class="view-project-button">View Project</button>
-        </div>
-      </div>
-      <div class="projects-detail" onclick="location.href='projects.html#project-web-dev'">
-        <div class="image_and_title">
-          <img class="projects-image" src="assets/images/htmlcssjs-pic.png" alt="">
-          <h3 class="project-title">
-            Web development
-          </h3>
-        </div>
-        <div class="project-brief">
-          <p>
-            Designed websites focusing on front-end development, and relevant server design. 
-          </p>
-          
-        </div>
-        <div>
-          <button class="view-project-button">View Project</button>
-        </div>
-      </div>
-      <div class="projects-detail" onclick="location.href='projects.html#project-server-configuration'">
-        <div class="image_and_title">
-          <img class="projects-image" src="assets/images/server configuration image" alt="">
-          <h3 class="project-title">
-            Server Configuration
-          </h3>
-        </div>
-        <div class="project-brief">
-          <p>
-            Intern project at NCR Uganda that involved configuring and maintaining servers
-          </p>
-        </div>
-        <div>
-          <button class="view-project-button">View Project</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="footer-contacts">
-      <h3>CONTACTS</h3>
-      <p>Tel: <a href="tel:+256750302070">+256750302070</a></p>
-      <p>Tel: <a href="tel:+256779398911">+256779398911</a></p>
-      <p>Email: <a href="mailto:jakisamaurice@gmail.com">jakisamaurice@gmail.com</a></p>
-    </div>
-    <!-- <div>
-      <h3>ADDRESS</h3>
-    </div> -->
-    <div class="footer-donate">
-      <H3>DONATE</H3>
-      <p class="donation-text">Your donations to the numbers in the contacts are warmly received</p>
-    </div>
-  </footer>
-  <script>
-    
-  </script>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <!-- Loading Screen Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            // Hide loading screen when page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }, 800); // Show loading for at least 800ms for smooth experience
+            });
+        });
+    </script>
 </body>
 </html>
