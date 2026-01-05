@@ -21,7 +21,7 @@
         .projects-hero {
             background: linear-gradient(135deg, var(--secondary-color), var(--secondary-hover));
             color: white;
-            padding: var(--space-4xl) 0 var(--space-3xl);
+            padding: var(--space-2xl) 0 var(--space-xl);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -58,7 +58,7 @@
         }
 
         .projects-section {
-            padding: var(--space-4xl) 0;
+            padding: var(--space-2xl) 0;
         }
 
         .projects-container {
@@ -68,12 +68,12 @@
         }
 
         .projects-category {
-            margin-bottom: var(--space-4xl);
+            margin-bottom: var(--space-2xl);
         }
 
         .category-header {
             text-align: center;
-            margin-bottom: var(--space-2xl);
+            margin-bottom: var(--space-lg);
         }
 
         .category-title {
@@ -106,7 +106,7 @@
 
         .projects-grid {
             display: grid;
-            gap: var(--space-2xl);
+            gap: var(--space-lg);
         }
 
         .project-card {
@@ -143,7 +143,7 @@
         }
 
         .project-content {
-            padding: var(--space-2xl);
+            padding: var(--space-lg);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -159,7 +159,7 @@
         .project-description {
             color: var(--text-secondary);
             line-height: 1.7;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-md);
         }
 
         .project-technologies {
@@ -208,8 +208,8 @@
         .server-config-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-2xl);
-            margin-top: var(--space-2xl);
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
         }
 
         .server-config-card {
@@ -244,7 +244,7 @@
         }
 
         .server-config-content {
-            padding: var(--space-xl);
+            padding: var(--space-lg);
         }
 
         .server-config-title {
@@ -257,7 +257,7 @@
         .server-config-description {
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-md);
         }
 
         .server-config-features {
@@ -283,8 +283,8 @@
         /* Statistics Section */
         .stats-section {
             background: var(--bg-light);
-            padding: var(--space-4xl) 0;
-            margin: var(--space-4xl) 0;
+            padding: var(--space-2xl) 0;
+            margin: var(--space-2xl) 0;
         }
 
         .stats-container {
@@ -370,6 +370,7 @@
         font-weight: 600;
         text-decoration: none;
         margin-top: var(--space-md);
+        margin-right: var(--space-sm);
         transition: all var(--transition-fast);
     }
 
@@ -381,6 +382,110 @@
 
     .github-link i {
         font-size: var(--font-size-md);
+    }
+
+    /* Live Demo Link Style */
+    .live-demo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-sm);
+        background: var(--secondary-color);
+        color: var(--bg-white);
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 6px;
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: var(--space-md);
+        transition: all var(--transition-fast);
+    }
+
+    .live-demo-link:hover {
+        background: var(--secondary-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .live-demo-link i {
+        font-size: var(--font-size-md);
+    }
+
+    /* Project Links Container */
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        margin-top: var(--space-md);
+    }
+
+    /* Project Thumbnail Images */
+    .project-thumbnail {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: var(--space-md);
+    }
+
+    /* Technology Badges */
+    .tech-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        margin-bottom: var(--space-md);
+    }
+
+    .tech-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+        background: var(--bg-light);
+        color: var(--text-primary);
+        padding: var(--space-xs) var(--space-sm);
+        border-radius: 20px;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        border: 1px solid var(--border-color);
+    }
+
+    .tech-badge i {
+        font-size: var(--font-size-sm);
+        color: var(--primary-color);
+    }
+
+    /* Enhanced Project Card */
+    .server-config-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .server-config-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .server-config-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    /* Project Duration Badge */
+    .project-duration {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: var(--space-xs) var(--space-sm);
+        border-radius: 12px;
+        font-size: var(--font-size-xs);
+        font-weight: 600;
+        margin-left: auto;
     }
 
     /* GitHub Projects Section Specific Styles */
@@ -499,7 +604,7 @@
                     </div>
                     
                     <div class="projects-grid">
-                        <div class="project-card">
+                        <div class="project-card single">
                             <div class="project-image">
                                 <img src="assets/images/home-automation/1.jpg" alt="Home Automation System">
                             </div>
@@ -536,7 +641,7 @@
                     </div>
                     
                     <div class="projects-grid">
-                        <div class="project-card">
+                        <div class="project-card single">
                             <div class="project-image">
                                 <img src="assets/images/web-dev/1.jpg" alt="Web Development Projects">
                             </div>
@@ -649,56 +754,252 @@
 
                 <div class="server-config-grid">
                     <div class="server-config-card">
+                        <img src="assets/images/projects/recipe-app.svg" alt="Flutter Recipe App" class="project-thumbnail">
                         <div class="server-config-content">
                             <h3 class="server-config-title">recipe_app</h3>
                             <p class="server-config-description">
                                 Flutter recipe book application for easy convenience
                             </p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">
+                                    <i class="fab fa-flutter"></i> Flutter
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-dart"></i> Dart
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fas fa-mobile-alt"></i> Mobile
+                                </span>
+                            </div>
                             <ul class="server-config-features">
-                                <li>Flutter framework</li>
-                                <li>Mobile app development</li>
-                                <li>Recipe management system</li>
-                                <li>Created: April 2025</li>
+                                <li>Cross-platform mobile application</li>
+                                <li>Recipe search and filtering</li>
+                                <li>User favorites and bookmarks</li>
+                                <li>Offline data storage</li>
+                                <li>Modern UI with animations</li>
                             </ul>
-                            <a href="https://github.com/JakisaMaurice/recipe_app" class="github-link" target="_blank">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
+                            <div class="project-links">
+                                <a href="https://jakisamaurice.github.io/recipe_app" class="live-demo-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/JakisaMaurice/recipe_app" class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="server-config-card">
+                        <img src="assets/images/projects/school-website.svg" alt="School Website" class="project-thumbnail">
                         <div class="server-config-content">
                             <h3 class="server-config-title">schoolWebsite</h3>
                             <p class="server-config-description">
-                                School website project with HTML/CSS
+                                Complete school website with student portal and admin dashboard
                             </p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">
+                                    <i class="fab fa-html5"></i> HTML5
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-css3-alt"></i> CSS3
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-js"></i> JavaScript
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-php"></i> PHP
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fas fa-database"></i> MySQL
+                                </span>
+                            </div>
                             <ul class="server-config-features">
-                                <li>Educational platform</li>
-                                <li>Responsive design</li>
-                                <li>School management features</li>
-                                <li>Created: February 2025</li>
+                                <li>Responsive educational platform</li>
+                                <li>Student and teacher portals</li>
+                                <li>Course management system</li>
+                                <li>Event calendar and announcements</li>
+                                <li>Contact forms and inquiries</li>
                             </ul>
-                            <a href="https://github.com/JakisaMaurice/schoolWebsite" class="github-link" target="_blank">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
+                            <div class="project-links">
+                                <a href="https://jakisamaurice.github.io/schoolWebsite" class="live-demo-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/JakisaMaurice/schoolWebsite" class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="server-config-card">
+                        <img src="assets/images/projects/attendance-system.svg" alt="Attendance Management System" class="project-thumbnail">
+                        <div class="server-config-content">
+                            <h3 class="server-config-title">School Attendance System</h3>
+                            <p class="server-config-description">
+                                Comprehensive school attendance tracking and management system
+                            </p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">
+                                    <i class="fab fa-html5"></i> HTML5
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-css3-alt"></i> CSS3
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-js"></i> JavaScript
+                                </span>
+                            </div>
+                            <ul class="server-config-features">
+                                <li>Real-time attendance tracking</li>
+                                <li>Teacher and admin dashboards</li>
+                                <li>Automated reporting system</li>
+                                <li>Student and class management</li>
+                                <li>Exportable attendance records</li>
+                                <li>Responsive and accessible UI</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://school-attendance-management-system.onrender.com" class="live-demo-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/JakisaMaurice/school-attendance-management-system" class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-config-card">
+                        <img src="assets/images/projects/portfolio-website.svg" alt="Personal Portfolio" class="project-thumbnail">
                         <div class="server-config-content">
                             <h3 class="server-config-title">personal_portfolio</h3>
                             <p class="server-config-description">
                                 My personal portfolio website (this site!)
                             </p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">
+                                    <i class="fab fa-html5"></i> HTML5
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-css3-alt"></i> CSS3
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fab fa-js"></i> JavaScript
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fas fa-paint-brush"></i> UI/UX
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fas fa-mobile-alt"></i> Responsive
+                                </span>
+                            </div>
                             <ul class="server-config-features">
-                                <li>HTML, CSS, JavaScript</li>
-                                <li>Responsive portfolio design</li>
-                                <li>Project showcase</li>
-                                <li>Created: January 2025</li>
+                                <li>Professional portfolio design</li>
+                                <li>Project showcase with live demos</li>
+                                <li>Skills and experience sections</li>
+                                <li>Contact and social media integration</li>
+                                <li>SEO optimized and fast loading</li>
+                                <li>Cross-browser compatibility</li>
                             </ul>
-                            <a href="https://github.com/JakisaMaurice/personal_portfolio" class="github-link" target="_blank">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
+                            <div class="project-links">
+                                <a href="https://mungujakisamaurice.onrender.com" class="live-demo-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/JakisaMaurice/personal_portfolio" class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Travel & Safaris Costing Software -->
+                    <div class="server-config-card">
+                        <img src="assets/images/projects/travel-safaris-costing.svg" alt="Travel & Safaris Costing Software" class="project-thumbnail">
+                        <div class="server-config-content">
+                            <h3 class="server-config-title">Travel & Safaris Costing Software</h3>
+                            <p class="server-config-description">
+                                A professional travel and safaris costing software designed to help tour operators generate accurate quotations, itineraries, and pricing based on suppliers, vehicles, fuel consumption, accommodation, activities, and markup rules.
+                            </p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">
+                                    <i class="fab fa-react"></i> React + TypeScript
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fas fa-server"></i> NestJS + TypeScript
+                                </span>
+                                <span class="tech-badge">
+                                    <i class="fas fa-database"></i> PostgreSQL
+                                </span>
+                            </div>
+                            <ul class="server-config-features">
+                                <li>Intelligent pricing & markup rule engine</li>
+                                <li>Modular itinerary creation</li>
+                                <li>Backend priority handling for markups</li>
+                                <li>Real-time cost recalculations</li>
+                                <li>Clean, scalable TypeScript architecture</li>
+                                <li>Designed for real-world tour operations</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linux Home Lab Server Project -->
+                <div class="projects-category">
+                    <div class="category-header">
+                        <h2 class="category-title">Linux Home Lab Server</h2>
+                        <p class="category-description">
+                            Self-hosted infrastructure project for practicing Linux system administration, networking, DevOps workflows, and self-hosting services.
+                        </p>
+                    </div>
+                    
+                    <div class="server-config-grid">
+                        <div class="server-config-card">
+                            <img src="assets/images/projects/linux-homelab.svg" alt="Linux Home Lab Server" class="project-thumbnail">
+                            <div class="server-config-content">
+                                <h3 class="server-config-title">Linux Home Lab Server (Self-Hosted Infrastructure)</h3>
+                                <p class="server-config-description">
+                                    Designed and deployed a personal Linux home lab server using repurposed hardware. The system is used to practice Linux system administration, networking, DevOps workflows, and self-hosting services.
+                                </p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">
+                                        <i class="fab fa-linux"></i> Ubuntu Server 22.04 LTS
+                                    </span>
+                                    <span class="tech-badge">
+                                        <i class="fas fa-network-wired"></i> Linux Networking
+                                    </span>
+                                    <span class="tech-badge">
+                                        <i class="fas fa-shield-alt"></i> SSH & Tailscale
+                                    </span>
+                                    <span class="tech-badge">
+                                        <i class="fas fa-server"></i> NFS
+                                    </span>
+                                    <span class="tech-badge">
+                                        <i class="fab fa-docker"></i> Docker & Docker Compose
+                                    </span>
+                                    <span class="tech-badge">
+                                        <i class="fas fa-chart-line"></i> Cockpit
+                                    </span>
+                                </div>
+                                <ul class="server-config-features">
+                                    <li>Configured a static IP server using Netplan</li>
+                                    <li>Disabled cloud-init network overrides</li>
+                                    <li>Set up secure remote access using SSH and Tailscale</li>
+                                    <li>Built an NFS file server accessible across devices</li>
+                                    <li>Managed services headlessly via SSH</li>
+                                    <li>Added web-based server management using Cockpit</li>
+                                    <li>Deployed containerized services using Docker</li>
+                                    <li>Implemented power & uptime considerations for server use</li>
+                                </ul>
+                                <div class="project-links">
+                                    <a href="https://github.com/JakisaMaurice" class="github-link" target="_blank">
+                                        <i class="fab fa-github"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -715,6 +1016,7 @@
                     <p>Home Automation</p>
                     <p>Web Development</p>
                     <p>Server Configuration</p>
+                    <p>GitHub Projects</p>
                 </div>
                 <div class="footer-section">
                     <h3>Technologies</h3>
@@ -735,7 +1037,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Mungu Jakisa Maurice. All rights reserved.</p>
+                <p>&copy; Mungu Jakisa Maurice. All rights reserved.</p>
             </div>
         </div>
     </footer>

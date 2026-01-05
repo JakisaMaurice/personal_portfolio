@@ -1,0 +1,70 @@
+<svg width="400" height="180" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="180" rx="12" fill="#00BCD4"/>
+  <rect x="20" y="30" width="360" height="120" rx="8" fill="white"/>
+  
+  <!-- Globe/World map background -->
+  <circle cx="200" cy="90" r="50" fill="#E0F7FA" stroke="#4DD0E1" stroke-width="2"/>
+  <path d="M160 70 Q180 60 200 70 Q220 80 240 70 Q250 85 240 95 Q220 105 200 95 Q180 85 160 95 Q150 85 160 70Z" fill="#81D4FA" opacity="0.7"/>
+  <path d="M170 100 Q185 95 200 105 Q215 110 230 100 Q240 110 230 120 Q215 125 200 115 Q185 110 170 120 Q160 115 170 100Z" fill="#81D4FA" opacity="0.7"/>
+  
+  <!-- Jeep/Vehicle icon -->
+  <rect x="60" y="80" width="50" height="25" rx="3" fill="#FF7043"/>
+  <rect x="65" y="85" width="40" height="15" rx="2" fill="#FFAB91"/>
+  <rect x="70" y="95" width="10" height="8" rx="2" fill="#81D4FA"/>
+  <rect x="85" y="95" width="10" height="8" rx="2" fill="#81D4FA"/>
+  <circle cx="70" cy="110" r="6" fill="#424242"/>
+  <circle cx="70" cy="110" r="3" fill="#9E9E9E"/>
+  <circle cx="100" cy="110" r="6" fill="#424242"/>
+  <circle cx="100" cy="110" r="3" fill="#9E9E9E"/>
+  
+  <!-- Lion/Animal icon -->
+  <circle cx="300" cy="75" r="12" fill="#FFA000"/>
+  <circle cx="295" cy="70" r="2" fill="black"/>
+  <circle cx="305" cy="70" r="2" fill="black"/>
+  <ellipse cx="300" cy="78" rx="4" ry="2" fill="#6D4C41"/>
+  <path d="M290 65 L285 58 L295 62 Z" fill="#FFA000"/>
+  <path d="M310 65 L315 58 L305 62 Z" fill="#FFA000"/>
+  
+  <!-- Calculator/Pricing icon -->
+  <rect x="300" y="95" width="40" height="50" rx="3" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+  <rect x="305" y="100" width="30" height="12" rx="2" fill="#FFFFFF"/>
+  <text x="320" y="108" font-family="Arial, sans-serif" font-size="8" fill="#4CAF50" text-anchor="middle">$</text>
+  <rect x="305" y="115" width="8" height="8" rx="1" fill="#81C784"/>
+  <rect x="315" y="115" width="8" height="8" rx="1" fill="#81C784"/>
+  <rect x="325" y="115" width="8" height="8" rx="1" fill="#81C784"/>
+  <rect x="305" y="125" width="8" height="8" rx="1" fill="#81C784"/>
+  <rect x="315" y="125" width="8" height="8" rx="1" fill="#4CAF50"/>
+  <rect x="325" y="125" width="8" height="8" rx="1" fill="#81C784"/>
+  <rect x="305" y="135" width="30" height="6" rx="1" fill="#4CAF50"/>
+  
+  <!-- Tech stack icons -->
+  <!-- React -->
+  <rect x="30" y="125" width="25" height="25" rx="3" fill="#61DAFB"/>
+  <circle cx="42" cy="135" r="8" fill="#282C34"/>
+  <ellipse cx="42" cy="135" rx="4" ry="8" fill="#61DAFB"/>
+  <ellipse cx="42" cy="135" rx="8" ry="4" fill="#61DAFB"/>
+  
+  <!-- TypeScript -->
+  <rect x="60" y="125" width="25" height="25" rx="3" fill="#3178C6"/>
+  <text x="72" y="140" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">TS</text>
+  
+  <!-- NestJS -->
+  <rect x="90" y="125" width="25" height="25" rx="3" fill="#E0234E"/>
+  <circle cx="102" cy="135" r="8" fill="white"/>
+  <circle cx="102" cy="135" r="5" fill="#E0234E"/>
+  
+  <!-- PostgreSQL -->
+  <rect x="120" y="125" width="25" height="25" rx="3" fill="#4169E1"/>
+  <circle cx="132" cy="130" r="6" fill="white"/>
+  <ellipse cx="132" cy="140" rx="6" ry="4" fill="white"/>
+  <text x="132" y="145" font-family="Arial, sans-serif" font-size="5" fill="#4169E1" text-anchor="middle">pg</text>
+  
+  <!-- Itinerary/Route icon -->
+  <rect x="320" y="60" width="30" height="25" rx="2" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+  <line x1="325" y1="68" x2="345" y2="68" stroke="#FF9800" stroke-width="2" stroke-dasharray="2,2"/>
+  <circle cx="325" cy="68" r="2" fill="#FF9800"/>
+  <circle cx="345" cy="68" r="2" fill="#FF9800"/>
+  
+  <!-- Title -->
+  <text x="200" y="165" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Travel & Safaris Costing Software</text>
+</svg>

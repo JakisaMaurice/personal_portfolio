@@ -1,0 +1,64 @@
+<svg width="400" height="180" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="180" rx="12" fill="#9C27B0"/>
+  <rect x="20" y="30" width="360" height="120" rx="8" fill="white"/>
+  
+  <!-- Computer screen -->
+  <rect x="30" y="50" width="180" height="100" rx="8" fill="#263238"/>
+  <rect x="35" y="55" width="170" height="85" rx="4" fill="#37474F"/>
+  <rect x="110" y="145" width="60" height="3" rx="1.5" fill="#546E7A"/>
+  
+  <!-- Dashboard on screen -->
+  <rect x="45" y="65" width="40" height="25" rx="3" fill="#4CAF50"/>
+  <rect x="90" y="65" width="40" height="25" rx="3" fill="#FF9800"/>
+  <rect x="135" y="65" width="40" height="25" rx="3" fill="#F44336"/>
+  
+  <!-- Attendance chart -->
+  <rect x="45" y="95" width="130" height="35" rx="3" fill="#E8F5E8"/>
+  <rect x="50" y="100" width="8" height="25" rx="2" fill="#4CAF50"/>
+  <rect x="65" y="105" width="8" height="20" rx="2" fill="#4CAF50"/>
+  <rect x="80" y="95" width="8" height="30" rx="2" fill="#4CAF50"/>
+  <rect x="95" y="100" width="8" height="25" rx="2" fill="#4CAF50"/>
+  <rect x="110" y="90" width="8" height="35" rx="2" fill="#4CAF50"/>
+  <rect x="125" y="105" width="8" height="20" rx="2" fill="#4CAF50"/>
+  <rect x="140" y="95" width="8" height="30" rx="2" fill="#4CAF50"/>
+  <rect x="155" y="100" width="8" height="25" rx="2" fill="#4CAF50"/>
+  
+  <!-- Check mark -->
+  <path d="M50 115 L60 125 L80 105" stroke="white" stroke-width="3" fill="none"/>
+  
+  <!-- Teacher icon -->
+  <circle cx="270" cy="70" r="15" fill="#FF7043"/>
+  <rect x="260" y="85" width="20" height="25" rx="3" fill="#3F51B5"/>
+  <rect x="255" y="85" width="5" height="30" rx="2" fill="#303F9F"/>
+  <rect x="280" y="85" width="5" height="30" rx="2" fill="#303F9F"/>
+  
+  <!-- Students icons -->
+  <circle cx="320" cy="70" r="8" fill="#42A5F5"/>
+  <rect x="315" y="78" width="10" height="12" rx="2" fill="#FF9800"/>
+  
+  <circle cx="340" cy="70" r="8" fill="#AB47BC"/>
+  <rect x="335" y="78" width="10" height="12" rx="2" fill="#E91E63"/>
+  
+  <circle cx="330" cy="90" r="8" fill="#66BB6A"/>
+  <rect x="325" y="98" width="10" height="12" rx="2" fill="#8BC34A"/>
+  
+  <circle cx="350" cy="90" r="8" fill="#FFA726"/>
+  <rect x="345" y="98" width="10" height="12" rx="2" fill="#FF7043"/>
+  
+  <!-- Attendance list -->
+  <rect x="250" y="110" width="80" height="40" rx="3" fill="#F5F5F5" stroke="#E0E0E0"/>
+  <rect x="255" y="115" width="30" height="3" rx="1.5" fill="#4CAF50"/>
+  <rect x="255" y="122" width="25" height="2" rx="1" fill="#81C784"/>
+  <rect x="255" y="127" width="28" height="2" rx="1" fill="#81C784"/>
+  <rect x="255" y="132" width="22" height="2" rx="1" fill="#81C784"/>
+  <rect x="255" y="137" width="26" height="2" rx="1" fill="#81C784"/>
+  
+  <!-- Clock icon -->
+  <circle cx="320" cy="125" r="12" fill="#FFC107"/>
+  <circle cx="320" cy="125" r="10" fill="white"/>
+  <line x1="320" y1="125" x2="320" y2="118" stroke="#FFC107" stroke-width="2"/>
+  <line x1="320" y1="125" x2="325" y2="125" stroke="#FFC107" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="200" y="165" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Attendance Management System</text>
+</svg>
