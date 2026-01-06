@@ -228,12 +228,59 @@
             border-radius: 8px;
             border-left: 4px solid var(--primary-color);
             margin-bottom: var(--space-lg);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .project-highlight:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-light);
         }
 
         .project-highlight h4 {
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-link:hover {
+            opacity: 0.8;
+        }
+
+        .project-link::after {
+            content: '↗';
+            font-size: var(--font-size-sm);
+            margin-left: var(--space-xs);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-top: var(--space-md);
+        }
+
+        .project-tag {
+            background: var(--bg-white);
+            color: var(--text-primary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 20px;
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-tag i {
+            margin-right: var(--space-xs);
+            color: var(--primary-color);
         }
 
         @media (max-width: 1024px) {
@@ -436,27 +483,79 @@
                             </h2>
                             
                             <div class="project-highlight">
-                                <h4>Arduino Home Automation System</h4>
+                                <h4>
+                                    <a href="projects.html#home-automation" class="project-link">Smart Home Control System</a>
+                                </h4>
                                 <p class="item-description">
-                                    Developed a controlled space system emphasizing autonomy and security access using Arduino 
-                                    and C++. Integrated with Blynk app for remote control and monitoring of home automation features.
+                                    Developed a comprehensive home automation prototype focusing on security, access control, and autonomous operation. The system integrates multiple sensors and control modules for intelligent home management.
                                 </p>
+                                <div class="project-tags">
+                                    <span class="project-tag"><i class="fas fa-microchip"></i>C/C++</span>
+                                    <span class="project-tag"><i class="fas fa-microchip"></i>Arduino</span>
+                                    <span class="project-tag"><i class="fas fa-wifi"></i>Blynk</span>
+                                    <span class="project-tag"><i class="fas fa-network-wired"></i>IoT</span>
+                                </div>
                             </div>
 
                             <div class="project-highlight">
-                                <h4>Personal Portfolio Website</h4>
+                                <h4>
+                                    <a href="projects.html#web-development" class="project-link">Full-Stack Web Applications</a>
+                                </h4>
                                 <p class="item-description">
-                                    Created a modern, responsive portfolio website featuring advanced CSS animations, 
-                                    accessibility features, and optimized performance across all devices.
+                                    Developed multiple responsive websites and web applications with modern frontend technologies and robust backend systems. Includes user authentication, database integration, and responsive design.
                                 </p>
+                                <div class="project-tags">
+                                    <span class="project-tag"><i class="fab fa-html5"></i>HTML5</span>
+                                    <span class="project-tag"><i class="fab fa-css3-alt"></i>CSS3</span>
+                                    <span class="project-tag"><i class="fab fa-js"></i>JavaScript</span>
+                                    <span class="project-tag"><i class="fab fa-php"></i>PHP</span>
+                                    <span class="project-tag"><i class="fas fa-database"></i>MySQL</span>
+                                </div>
                             </div>
 
                             <div class="project-highlight">
-                                <h4>Server Configuration Management</h4>
+                                <h4>
+                                    <a href="projects.html#server-configuration" class="project-link">Server Configuration & Setup</a>
+                                </h4>
                                 <p class="item-description">
-                                    Implemented comprehensive server setup during internship at NCR Uganda, including 
-                                    Active Directory configuration, network setup, and system maintenance procedures.
+                                    Professional server software installation and configuration with focus on resource optimization and user management. Includes Windows Server, Active Directory, and virtualization setup.
                                 </p>
+                                <div class="project-tags">
+                                    <span class="project-tag"><i class="fab fa-windows"></i>Windows Server</span>
+                                    <span class="project-tag"><i class="fas fa-network-wired"></i>Active Directory</span>
+                                    <span class="project-tag"><i class="fas fa-server"></i>VMware</span>
+                                    <span class="project-tag"><i class="fas fa-shield-alt"></i>Network Security</span>
+                                </div>
+                            </div>
+
+                            <div class="project-highlight">
+                                <h4>
+                                    <a href="projects.html#github-projects" class="project-link">Travel & Safaris Costing Software</a>
+                                </h4>
+                                <p class="item-description">
+                                    A professional travel and safaris costing software designed to help tour operators generate accurate quotations, itineraries, and pricing based on suppliers, vehicles, and markup rules.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag"><i class="fab fa-react"></i>React</span>
+                                    <span class="project-tag"><i class="fab fa-js"></i>TypeScript</span>
+                                    <span class="project-tag"><i class="fas fa-server"></i>NestJS</span>
+                                    <span class="project-tag"><i class="fas fa-database"></i>PostgreSQL</span>
+                                </div>
+                            </div>
+
+                            <div class="project-highlight">
+                                <h4>
+                                    <a href="projects.html#linux-homelab" class="project-link">Linux Home Lab Server</a>
+                                </h4>
+                                <p class="item-description">
+                                    Self-hosted infrastructure project for practicing Linux system administration, networking, DevOps workflows, and self-hosting services using Ubuntu Server 22.04 LTS.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="project-tag"><i class="fab fa-linux"></i>Ubuntu Server</span>
+                                    <span class="project-tag"><i class="fab fa-docker"></i>Docker</span>
+                                    <span class="project-tag"><i class="fas fa-network-wired"></i>Linux Networking</span>
+                                    <span class="project-tag"><i class="fas fa-shield-alt"></i>SSH & Tailscale</span>
+                                </div>
                             </div>
                         </section>
                     </div>
