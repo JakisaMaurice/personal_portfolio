@@ -2,7 +2,7 @@
 
 /* About Hero Section */
 .about-hero {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-xl) 0;
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
     text-align: center;
 }
@@ -53,6 +53,7 @@
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--space-lg);
+    margin-top: var(--space-xl)
 }
 
 .bio-description {

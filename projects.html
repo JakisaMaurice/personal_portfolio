@@ -19,7 +19,7 @@
     <style>
         /* Page-specific styles for projects page */
         .projects-hero {
-            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-hover));
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
             color: white;
             padding: var(--space-2xl) 0 var(--space-xl);
             text-align: center;
@@ -69,6 +69,9 @@
 
         .projects-category {
             margin-bottom: var(--space-2xl);
+            padding: var(--space-xl) 0;
+            margin-left: var(--space-sm);
+            margin-right: var(--space-sm);
         }
 
         .category-header {
@@ -83,6 +86,7 @@
             margin-bottom: var(--space-md);
             position: relative;
             display: inline-block;
+            margin-top: var(--space-xl);
         }
 
         .category-title::after {
@@ -913,7 +917,7 @@
 
                     <!-- Travel & Safaris Costing Software -->
                     <div class="server-config-card">
-                        <img src="assets/images/projects/travel-safaris-costing.svg" alt="Travel & Safaris Costing Software" class="project-thumbnail">
+                        <img src="/assets/images/projects/landing page swanair app.png" alt="Travel & Safaris Costing Software" class="project-thumbnail">
                         <div class="server-config-content">
                             <h3 class="server-config-title">Travel & Safaris Costing Software</h3>
                             <p class="server-config-description">
@@ -1009,35 +1013,52 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-container">
+        <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Projects</h3>
-                    <p>Home Automation</p>
-                    <p>Web Development</p>
-                    <p>Server Configuration</p>
-                    <p>GitHub Projects</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Technologies</h3>
-                    <p>C/C++, Arduino</p>
-                    <p>HTML, CSS, JavaScript, PHP</p>
-                    <p>Windows Server, VMware</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="footer-social">
-                        <a href="https://github.com/JakisaMaurice" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
+                    <h3 class="footer-title">Contact Information</h3>
+                    <div class="contact-list">
+                        <a href="tel:+256750302070" class="contact-link">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>+256 750 302 070</span>
                         </a>
-                        <a href="http://wa.me/+256750302070" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="tel:+256779398911" class="contact-link">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <span>+256 779 398 911</span>
+                        </a>
+                        <a href="mailto:jakisamaurice@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>jakisamaurice@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Let's Connect</h3>
+                    <p class="footer-description">
+                        Ready to work together? Let's create something amazing!
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/JakisaMaurice" class="social-link" aria-label="GitHub Profile">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="http://wa.me/+256750302070" class="social-link" aria-label="WhatsApp Contact">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mungu-jakisa-maurice-346036247" class="social-link" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; Mungu Jakisa Maurice. All rights reserved.</p>
+                <p class="footer-copyright">
+                    © <span id="current-year">2025</span> Mungu Jakisa Maurice. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
@@ -1057,6 +1078,12 @@
                     }, 500);
                 }, 800); // Show loading for at least 800ms for smooth experience
             });
+
+            // Update current year in footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
         });
     </script>
 </body>

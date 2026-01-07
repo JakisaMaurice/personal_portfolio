@@ -305,7 +305,7 @@
             
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2025 Mungu Jakisa Maurice. All rights reserved.
+                    © <span id="current-year">2025</span> Mungu Jakisa Maurice. All rights reserved.
                 </p>
             </div>
         </div>
@@ -339,6 +339,12 @@
                     console.log('Progress bars initialized:', progressBars.length);
                 }
             }, 1000);
+
+            // Update current year in footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
         });
     </script>
 </body>
