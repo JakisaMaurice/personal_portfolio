@@ -102,10 +102,10 @@ ul, ol {
 }
 
 .section-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-xl);
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-xl);
     color: var(--text-primary);
 }
 
@@ -359,7 +359,7 @@ ul, ol {
 
 /* ===== FEATURED PROJECTS ===== */
 .featured-projects {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-xl) 0;
     background-color: var(--bg-light);
 }
 
@@ -457,7 +457,7 @@ ul, ol {
 
 /* ===== SKILLS PREVIEW ===== */
 .skills-preview {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-xl) 0;
     background-color: var(--bg-white);
 }
 
