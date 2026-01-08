@@ -349,7 +349,7 @@ ul, ol {
     display: block;
     font-size: var(--font-size-4xl);
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .stat-label {
@@ -511,7 +511,7 @@ ul, ol {
 .site-footer {
     background-color: var(--text-primary);
     color: white;
-    padding: var(--space-4xl) 0 var(--space-xl);
+    padding: var(--space-xl) 0 var(--space-sm);
 }
 
 .footer-content {

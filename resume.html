@@ -19,15 +19,15 @@
     <style>
         /* Resume-specific styles */
         .resume-page {
-            padding: var(--space-4xl) 0;
+            padding: var(--space-sm) 0;
             background-color: var(--bg-light);
         }
 
         .resume-header {
             text-align: center;
-            margin-bottom: var(--space-4xl);
+            margin-bottom: var(--space-xl);
             background-color: var(--bg-white);
-            padding: var(--space-4xl);
+            padding: var(--space-xl);
             border-radius: 12px;
             box-shadow: var(--shadow-light);
         }
@@ -91,7 +91,7 @@
         .resume-content {
             display: grid;
             grid-template-columns: 1fr 300px;
-            gap: var(--space-4xl);
+            gap: var(--space-xl);
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -99,7 +99,7 @@
         .resume-main {
             display: flex;
             flex-direction: column;
-            gap: var(--space-3xl);
+            gap: var(--space-xl);
         }
 
         .resume-sidebar {
@@ -189,7 +189,7 @@
         }
 
         .skill-tag {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
             color: white;
             padding: var(--space-xs) var(--space-md);
             border-radius: 20px;
@@ -374,7 +374,7 @@
                         <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="profile-image" loading="eager">
                         <div class="profile-info">
                             <h1>Mungu Jakisa Maurice</h1>
-                            <p class="profile-title">Computer Science Student & Aspiring Developer</p>
+                            <p class="profile-title">Computer Science Student & Software Developer</p>
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <i class="fas fa-phone"></i>
@@ -443,9 +443,27 @@
                             
                             <div class="experience-item">
                                 <div class="item-header">
+                                    <h3 class="item-title">Full-stack Developer (Apprentice)</h3>
+                                    <p class="item-subtitle">Refactory Academy | Kampala, Uganda</p>
+                                    <p class="item-date">June 2025 - Present (8 mos)</p>
+                                </div>
+                                <div class="item-description">
+                                    <ul>
+                                        <li>Currently enrolled in intensive full-stack development apprenticeship program</li>
+                                        <li>Learning and applying modern web development technologies and best practices</li>
+                                        <li>Working on real-world projects with emphasis on full-stack development</li>
+                                        <li>Collaborating with mentors and fellow apprentices on team-based projects</li>
+                                        <li>Developing skills in project management and agile methodologies</li>
+                                    </ul>
+                                    <p><strong>Skills:</strong> Full-Stack Development · Project Management</p>
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="item-header">
                                     <h3 class="item-title">IT Intern</h3>
-                                    <p class="item-subtitle">NCR Uganda</p>
-                                    <p class="item-date">June 2024 - August 2024</p>
+                                    <p class="item-subtitle">NCR Uganda/Service and Computer Industries(SCI) Uganda</p>
+                                    <p class="item-date">June 2023</p>
                                 </div>
                                 <div class="item-description">
                                     <ul>
@@ -572,12 +590,24 @@
                             <div class="education-item">
                                 <div class="item-header">
                                     <h3 class="item-title">Diploma in Computer Science</h3>
-                                    <p class="item-subtitle">Makerere University</p>
-                                    <p class="item-date">2022 - 2024</p>
+                                    <p class="item-subtitle">Makerere University Business School</p>
+                                    <p class="item-date">2023 - present</p>
                                 </div>
                                 <div class="item-description">
                                     Completed comprehensive Computer Science diploma with focus on software
                                     development, algorithms, and system administration.
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">National Certificate in Accounting and Finance</h3>
+                                    <p class="item-subtitle">Uganda College of Commerce Pakwach</p>
+                                    <p class="item-date">2019 - 2021</p>
+                                </div>
+                                <div class="item-description">
+                                    Completed accounting and finance certification with focus on financial
+                                    management, bookkeeping, and business operations.
                                 </div>
                             </div>
 
@@ -609,8 +639,6 @@
                                     <span class="skill-tag">Node.js</span>
                                     <span class="skill-tag">MySQL</span>
                                     <span class="skill-tag">Responsive Design</span>
-                                    <span class="skill-tag">Computer Repair</span>
-                                    <span class="skill-tag">Hardware Maintenance</span>
                                 </div>
                             </div>
 
@@ -623,6 +651,8 @@
                                     <span class="skill-tag">VMware</span>
                                     <span class="skill-tag">Server Configuration</span>
                                     <span class="skill-tag">Network Security</span>
+                                    <span class="skill-tag">Computer Repair</span>
+                                    <span class="skill-tag">Hardware Maintenance</span>
                                 </div>
                             </div>
 
@@ -726,18 +756,30 @@
                         <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
+                        <a href="https://www.linkedin.com/in/mungu-jakisa-maurice-346036247" class="social-link" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2025 Mungu Jakisa Maurice. All rights reserved.
+                    © <span id="current-year">2025</span> Mungu Jakisa Maurice. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update current year in footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
 </html>
