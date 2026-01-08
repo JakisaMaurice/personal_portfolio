@@ -672,13 +672,16 @@
                         <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
+                        <a href="https://www.linkedin.com/in/mungu-jakisa-maurice-346036247" class="social-link" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2025 Mungu Jakisa Maurice. All rights reserved.
+                    © <span id="current-year">2025</span> Mungu Jakisa Maurice. All rights reserved.
                 </p>
             </div>
         </div>
@@ -738,6 +741,12 @@
                     });
                 });
             });
+
+            // Update current year in footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
         });
     </script>
 </body>
