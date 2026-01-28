@@ -327,29 +327,56 @@ const contactForm = {
     async handleSubmit() {
         const formData = new FormData(this.form);
         const submitBtn = this.form.querySelector('input[type="submit"]');
+        const messageElement = this.form.querySelector('#formMessage');
+        
+        // Check if running on local development server
+        if (window.location.host.includes('5500') || window.location.protocol === 'file:') {
+            this.showMessage('Contact form requires a PHP server to work. Please deploy to a web server with PHP support.', 'error');
+            return;
+        }
+        
+        // Validate all fields before submission
+        const inputs = this.form.querySelectorAll('input[required], textarea[required]');
+        let isValid = true;
+        
+        inputs.forEach(input => {
+            if (!this.validateField(input)) {
+                isValid = false;
+            }
+        });
+        
+        if (!isValid) {
+            this.showMessage('Please correct the errors above.', 'error');
+            return;
+        }
         
         // Disable submit button
         submitBtn.disabled = true;
         submitBtn.value = 'Sending...';
+        
+        // Clear previous messages
+        messageElement.style.display = 'none';
 
         try {
-            const response = await fetch('api/contact.php', {
+            const response = await fetch('api/contact-gmail-simple.php', {
                 method: 'POST',
                 body: formData
             });
 
-            if (response.ok) {
-                this.showMessage('Thank you! Your message has been sent successfully.', 'success');
+            const result = await response.json();
+            
+            if (response.ok && result.success) {
+                this.showMessage(result.message || 'Thank you! Your message has been sent successfully.', 'success');
                 this.form.reset();
             } else {
-                throw new Error('Network response was not ok');
+                this.showMessage(result.message || 'Sorry, there was an error sending your message. Please try again.', 'error');
             }
         } catch (error) {
             console.error('Form submission error:', error);
-            this.showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+            this.showMessage('Sorry, there was an error sending your message. Please try again later.', 'error');
         } finally {
             submitBtn.disabled = false;
-            submitBtn.value = 'Submit';
+            submitBtn.value = 'Send Message';
         }
     },
 
@@ -415,18 +442,18 @@ const contactForm = {
     },
 
     showMessage(message, type) {
-        const messageElement = document.createElement('div');
-        messageElement.className = `form-message ${type}`;
-        messageElement.textContent = message;
-        
-        // Insert message at the top of the form
-        this.form.insertBefore(messageElement, this.form.firstChild);
-        
-        // Auto-remove success messages
-        if (type === 'success') {
-            setTimeout(() => {
-                messageElement.remove();
-            }, 5000);
+        const messageElement = this.form.querySelector('#formMessage');
+        if (messageElement) {
+            messageElement.textContent = message;
+            messageElement.className = `form-message ${type}`;
+            messageElement.style.display = 'block';
+            
+            // Auto-remove success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageElement.style.display = 'none';
+                }, 5000);
+            }
         }
     }
 };

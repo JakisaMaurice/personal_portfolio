@@ -421,9 +421,9 @@
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <h2>Send Me a Message</h2>
-                    <form id="contactForm" class="contact-page-form" action="api/contact.php" method="POST">
+                    <form id="contactForm" class="contact-page-form" action="api/contact-gmail-simple.php" method="POST">
                         <!-- CSRF Protection -->
-                        <input type="hidden" name="csrf_token" id="csrfToken">
+                        <input type="hidden" name="csrf_token" id="csrfToken" value="">
                         
                         <!-- Honeypot for spam protection -->
                         <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
