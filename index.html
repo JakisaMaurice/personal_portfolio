@@ -3,348 +3,1472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mungu Jakisa Maurice - Computer Science student and software developer specializing in web development, Arduino automation, and server configuration.">
-    <meta name="keywords" content="Maurice Jakisa, web developer, Arduino, server configuration, computer science, portfolio">
-    <meta name="author" content="Mungu Jakisa Maurice">
-    <meta property="og:title" content="Mungu Jakisa Maurice - Portfolio">
-    <meta property="og:description" content="Computer Science student and software developer">
-    <meta property="og:type" content="website">
-    <title>Mungu Jakisa Maurice - Web Developer Portfolio</title>
+    <title>Mungu Jakisa Maurice - Portfolio</title>
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo { font-size: 1.5rem; font-weight: 700; color: #0091ff; }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { color: #0091ff; }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Navigation Dots */
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 145, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-dot.active {
+            background: #0091ff;
+            transform: scale(1.3);
+        }
+        
+        .nav-dot::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-dot:hover::after { opacity: 1; }
+        
+        /* Sections */
+        .section {
+            min-height: 80vh;
+            padding: 4rem 2rem 2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('assets/images/photo-1644325349124-d1756b79dd42.png') center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            text-align: left;
+        }
+        
+        .hero-image {
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero .highlight { color: #10b981; }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #0091ff;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 145, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #0066cc;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 145, 255, 0.5);
+        }
+        
+        .btn-secondary {
+            background: #10b981;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: #059669;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+        }
+        
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Skills Filter Styles */
+        .skills-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: #666;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #0091ff;
+            color: white;
+            border-color: #0091ff;
+        }
+
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        .category-icon {
+            color: #0091ff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .skill-icon {
+            font-size: 1.8rem;
+            color: #0091ff;
+            margin-bottom: 0.4rem;
+        }
+        
+        .skill-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+        
+        .skill-bar {
+            height: 3px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 0.4rem;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #0091ff, #00d4ff);
+            border-radius: 2px;
+            transition: width 1s ease;
+            width: 0;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Resume Section */
+        .resume {
+            background: #f8fafc;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0091ff;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 2rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: #0091ff;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #0091ff;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .timeline-company {
+            color: #0091ff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: #0091ff;
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            display: none;
+            font-weight: 500;
+        }
+        
+        .form-message.success {
+            background: #10b981;
+            color: white;
+            border: 1px solid #059669;
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+            .hero {
+                padding-top: 100px;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .hero-image {
+                order: -1;
+            }
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .timeline-item { width: 100% !important; left: 0 !important; padding: 0 0 0 2rem !important; }
+            .timeline::before { left: 0; }
+            .timeline-item::before { left: -10px !important; }
+            .nav-dots { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <p class="loading-message">Loading your experience...</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"></div>
+                <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" data-section="home" data-tooltip="Home"></div>
+        <div class="nav-dot" data-section="about" data-tooltip="About"></div>
+        <div class="nav-dot" data-section="projects" data-tooltip="Projects"></div>
+        <div class="nav-dot" data-section="resume" data-tooltip="Resume"></div>
+        <div class="nav-dot" data-section="contact" data-tooltip="Contact"></div>
     </div>
 
-    <header class="site-header">
-        <nav class="navigation" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo" aria-label="Homepage">
-                    
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="projects.html" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="resume.html" class="nav-link">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        <section class="hero" id="home">
-            <div class="hero-background">
-                <img src="assets/images/photo-1644325349124-d1756b79dd42.png" alt="" class="hero-bg-image" loading="eager">
-                <div class="hero-overlay"></div>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
-                        I'm <span class="hero-highlight">Mungu Jakisa Maurice</span>,
-                        <br>a passionate Computer Science student
-                        <br>and software developer
-                    </h1>
-                    <p class="hero-description">
-                        With experience in growing projects, I bring a resourceful and dedicated approach to coding. 
-                        I'm constantly learning and striving to create impactful solutions through technology.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="projects.html" class="btn btn-primary">View My Work</a>
-                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                    <h1>I'm <span class="highlight">Mungu Jakisa Maurice</span><br>a Software Developer</h1>
+                    <p>Full-stack software developer specializing in web applications, IoT systems, mobile development, and enterprise infrastructure</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Internship Experiences</span>
-                    </div>
+                <div class="hero-image">
+                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="featured-projects" id="featured-projects">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card" data-project="home-automation">
-                        <div class="project-image">
-                            <img src="assets/images/arduino, home automation.jpg" alt="Arduino Home Automation System" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="projects.html#home-automation" class="btn btn-small">View Details</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Arduino Home Automation</h3>
-                            <p class="project-description">
-                                Developed a controlled space system emphasizing autonomy and security access using Arduino and C++.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Arduino</span>
-                                <span class="tech-tag">C/C++</span>
-                                <span class="tech-tag">Blynk</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-project="web-development">
-                        <div class="project-image">
-                            <img src="assets/images/htmlcssjs-pic.png" alt="Web Development Projects" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="projects.html#web-development" class="btn btn-small">View Details</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Web Development</h3>
-                            <p class="project-description">
-                                Designed responsive websites focusing on front-end development and server-side configuration.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML/CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">PHP</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-project="server-config">
-                        <div class="project-image">
-                            <img src="assets/images/server configuration image" alt="Server Configuration and Management" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="projects.html#server-configuration" class="btn btn-small">View Details</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Server Configuration</h3>
-                            <p class="project-description">
-                                Internship project at NCR Uganda involving server configuration, maintenance, and network setup.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Windows Server</span>
-                                <span class="tech-tag">Active Directory</span>
-                                <span class="tech-tag">VMware</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="section-cta">
-                    <a href="projects.html" class="btn btn-outline">View All Projects</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills-preview">
-            <div class="container">
-                <h2 class="section-title">Core Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-html5 skill-icon"></i>
-                        <h3 class="skill-name">HTML5</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-css3-alt skill-icon"></i>
-                        <h3 class="skill-name">CSS3</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="80"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-js-square skill-icon"></i>
-                        <h3 class="skill-name">JavaScript / TypeScript</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="65"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-python skill-icon"></i>
-                        <h3 class="skill-name">Python</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="40"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-php skill-icon"></i>
-                        <h3 class="skill-name">PHP</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="40"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-microchip skill-icon"></i>
-                        <h3 class="skill-name">C / C++</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="60"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-robot skill-icon"></i>
-                        <h3 class="skill-name">Arduino</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="70"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="additional-skills-preview">
-            <div class="container">
-                <h2 class="section-title">Additional Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-code skill-icon"></i>
-                        <h3 class="skill-name">TypeScript</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="70"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-tools skill-icon"></i>
-                        <h3 class="skill-name">Computer Repair</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-server skill-icon"></i>
-                        <h3 class="skill-name">Server Configuration</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-shield-alt skill-icon"></i>
-                        <h3 class="skill-name">Network Security</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="65"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
+    <!-- About Section -->
+    <section id="about" class="section about">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">Contact Information</h3>
-                    <div class="contact-list">
-                        <a href="tel:+256750302070" class="contact-link">
-                            <i class="fas fa-phone" aria-hidden="true"></i>
-                            <span>+256 750 302 070</span>
-                        </a>
-                        <a href="tel:+256779398911" class="contact-link">
-                            <i class="fas fa-phone" aria-hidden="true"></i>
-                            <span>+256 779 398 911</span>
-                        </a>
-                        <a href="mailto:jakisamaurice@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <span>jakisamaurice@gmail.com</span>
-                        </a>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm a dedicated software developer with a passion for creating innovative technology solutions and building impactful digital experiences.</p>
+                    <p>My expertise spans full-stack software development, IoT and embedded systems, enterprise server administration, mobile app development, and system integration. I've gained hands-on experience through professional internships and diverse technical projects.</p>
+                    <p>I believe in continuous learning and staying updated with the latest technological trends to create impactful digital solutions.</p>
+                </div>
+            
+            <!-- Skills Filter Buttons -->
+            <div class="skills-filters">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="devops">DevOps</button>
+                <button class="filter-btn" data-filter="hardware">Hardware/IoT</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-filter="additional">Additional</button>
+            </div>
+
+            <div class="skills-categories">
+                    <div class="skill-category" data-category="programming">
+                        <h3 class="category-title">
+                            <i class="fas fa-code category-icon"></i>
+                            Programming & Development
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-html5 skill-icon"></i>
+                                <div class="skill-name">HTML5 & CSS3</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js-square skill-icon"></i>
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-php skill-icon"></i>
+                                <div class="skill-name">PHP</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-microchip skill-icon"></i>
+                                <div class="skill-name">C/C++</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python skill-icon"></i>
+                                <div class="skill-name">Python</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="60"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code skill-icon"></i>
+                                <div class="skill-name">TypeScript</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-mobile-alt skill-icon"></i>
+                                <div class="skill-name">Flutter</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="devops">
+                        <h3 class="category-title">
+                            <i class="fas fa-cogs category-icon"></i>
+                            DevOps & Version Control
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt skill-icon"></i>
+                                <div class="skill-name">Git & GitHub</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-docker skill-icon"></i>
+                                <div class="skill-name">Docker</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="hardware">
+                        <h3 class="category-title">
+                            <i class="fas fa-microchip category-icon"></i>
+                            Hardware & IoT
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-microchip skill-icon"></i>
+                                <div class="skill-name">Arduino</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-home skill-icon"></i>
+                                <div class="skill-name">Home Automation</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="infrastructure">
+                        <h3 class="category-title">
+                            <i class="fas fa-server category-icon"></i>
+                            Infrastructure & Administration
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-server skill-icon"></i>
+                                <div class="skill-name">Server Config</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <div class="skill-name">Network Admin</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-users-cog skill-icon"></i>
+                                <div class="skill-name">Active Directory</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-windows skill-icon"></i>
+                                <div class="skill-name">Windows Server</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-linux skill-icon"></i>
+                                <div class="skill-name">Linux Server</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cube skill-icon"></i>
+                                <div class="skill-name">VMware/ESXi</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-alt skill-icon"></i>
+                                <div class="skill-name">Network Security</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="additional">
+                        <h3 class="category-title">
+                            <i class="fas fa-tools category-icon"></i>
+                            Additional Skills
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-tools skill-icon"></i>
+                                <div class="skill-name">Hardware Repair</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react skill-icon"></i>
+                                <div class="skill-name">React</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Travel & Safaris Costing Software -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/landing page swanair app.png" alt="Travel Costing Software">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Travel & Safaris Costing Software</h3>
+                        <p class="project-description">Professional tour operator software with intelligent pricing engine, modular itinerary creation, and real-time cost calculations.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h3 class="footer-title">Let's Connect</h3>
-                    <p class="footer-description">
-                        Ready to work together? Let's create something amazing!
-                    </p>
-                    <div class="social-links">
-                        <a href="https://github.com/JakisaMaurice" class="social-link" aria-label="GitHub Profile">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="http://wa.me/+256750302070" class="social-link" aria-label="WhatsApp Contact">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        </a>
-                        <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/mungu-jakisa-maurice-346036247" class="social-link" aria-label="LinkedIn Profile">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
+                <!-- Arduino Home Automation -->
+                <div class="project-card" onclick="window.location.href='https://jakisamaurice.github.io/recipe_app'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/arduino, home automation.jpg" alt="Arduino Home Automation">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Arduino Home Automation</h3>
+                        <p class="project-description">Smart home control system with security access management, autonomous operation capabilities, mobile app integration, and real-time monitoring.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">C/C++</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Blynk</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Web Development Projects -->
+                <div class="project-card" onclick="window.location.href='https://jakisamaurice.github.io/schoolWebsite'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/htmlcssjs-pic.png" alt="Web Development">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Full-Stack Web Applications</h3>
+                        <p class="project-description">Responsive websites with user authentication, database integration, modern UI/UX design, SEO optimization, and performance optimization.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Server Configuration -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/server-configuration/2.jpg" alt="Server Configuration">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Enterprise Server Configuration</h3>
+                        <p class="project-description">Windows Server setup, Active Directory management, VMware virtualization, network infrastructure, and enterprise system maintenance.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">VMware</span>
+                            <span class="tech-tag">Network Security</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Portfolio -->
+                <div class="project-card" onclick="window.location.href='https://mungujakisamaurice.onrender.com'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/projects/portfolio-website.svg" alt="Personal Portfolio">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Personal Portfolio Website</h3>
+                        <p class="project-description">Professional portfolio design with project showcase, skills sections, contact integration, SEO optimization, and cross-browser compatibility.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GitHub Projects -->
+                <div class="project-card" onclick="window.location.href='https://github.com/JakisaMaurice/recipe_app'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/projects/recipe-app.svg" alt="Flutter Recipe App">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Flutter Recipe App</h3>
+                        <p class="project-description">Cross-platform mobile application with recipe search, filtering, user favorites, offline storage, and modern UI with animations.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" onclick="window.location.href='https://jakisamaurice.github.io/schoolWebsite'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/projects/school-website.svg" alt="School Website">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Complete School Website</h3>
+                        <p class="project-description">Educational platform with student/teacher portals, course management, event calendar, announcements, and inquiry system.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" onclick="window.location.href='https://school-attendance-management-system.onrender.com'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/projects/attendance-system.svg" alt="Attendance System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">School Attendance System</h3>
+                        <p class="project-description">Real-time attendance tracking with teacher/admin dashboards, automated reporting, student management, and exportable records.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/linux-homelab.svg" alt="Linux Home Lab">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Linux Home Lab Server</h3>
+                        <p class="project-description">Self-hosted infrastructure with Ubuntu Server, Docker containerization, NFS file server, SSH/Tailscale security, and Cockpit management.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Ubuntu Server</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Linux Networking</span>
+                            <span class="tech-tag">SSH</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © <span id="current-year">2025</span> Mungu Jakisa Maurice. All rights reserved.
-                </p>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="projects.html" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="assets/js/main.js"></script>
-    <!-- Loading Screen Handler -->
+    <!-- Resume Section -->
+    <section id="resume" class="section resume">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            
+            <!-- Resume Actions -->
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <a href="ATS-Resume-Maurice-Jakisa.html" class="btn btn-primary" target="_blank" style="margin: 0.5rem;">
+                    View Resume
+                </a>
+                <a href="assets/documents/MUNGU JAKISA MAURICE MASTER RESUME.pdf" class="btn btn-secondary" download style="margin: 0.5rem;">
+                    Download PDF
+                </a>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
+                            Full-stack Developer (Apprentice)
+                        </h3>
+                        <div class="timeline-company">Refactory Academy</div>
+                        <div class="timeline-date">June 2025 - Present</div>
+                        <p>Currently enrolled in intensive full-stack development apprenticeship program. Learning modern web technologies, working on real-world projects, and developing skills in project management and agile methodologies.</p>
+                        <div style="margin-top: 1rem;">
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Full-Stack Development</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Project Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
+                            IT Intern
+                        </h3>
+                        <div class="timeline-company">NCR Uganda/Service and Computer Industries(SCI)</div>
+                        <div class="timeline-date">June 2024</div>
+                        <p>Configured Windows Server environments, Active Directory systems, VMware virtualization, and provided technical support. Gained hands-on experience with enterprise-level IT infrastructure.</p>
+                        <div style="margin-top: 1rem;">
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Windows Server</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Active Directory</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">VMware</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
+                            Freelance Web Developer
+                        </h3>
+                        <div class="timeline-company">Self-Employed</div>
+                        <div class="timeline-date">2023 - Present</div>
+                        <p>Designed responsive websites using HTML, CSS, JavaScript, and PHP. Implemented server-side functionality with database integration and created user-friendly interfaces focused on accessibility.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-graduation-cap" style="color: #10b981; margin-right: 0.5rem;"></i>
+                            Diploma in Computer Science
+                        </h3>
+                        <div class="timeline-company">Makerere University Business School</div>
+                        <div class="timeline-date">2023 - Present</div>
+                        <p>Comprehensive computer science education with focus on software development, algorithms, and system administration.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-graduation-cap" style="color: #10b981; margin-right: 0.5rem;"></i>
+                            National Certificate in Accounting and Finance
+                        </h3>
+                        <div class="timeline-company">Uganda College of Commerce Pakwach</div>
+                        <div class="timeline-date">2019 - 2021</div>
+                        <p>Completed accounting and finance certification with focus on financial management, bookkeeping, and business operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section" style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">Exploring technology, development, and innovation through practical insights</p>
+            
+            <div class="projects-grid">
+                <div class="project-card" onclick="window.location.href='blog-articles/getting-started-arduino-iot.html'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/home-automation/1.jpg" alt="Arduino IoT Guide">
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: #0091ff; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Getting Started with Arduino and IoT</h3>
+                        <p class="project-description">A comprehensive guide based on real Arduino home automation project experience. Learn hardware setup, programming concepts, and integration with IoT platforms.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">C/C++</span>
+                            <span class="tech-tag">Blynk</span>
+                        </div>
+                        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666;">
+                            <span><i class="fas fa-calendar"></i> Nov 28, 2025</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" onclick="window.location.href='blog-articles/modern-web-development-lessons.html'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/web-dev/1.jpg" alt="Web Development Lessons">
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Web Dev</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Modern Web Development Lessons</h3>
+                        <p class="project-description">Insights from real freelance projects covering mobile responsiveness, performance optimization, security considerations, and client work lessons.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Performance</span>
+                        </div>
+                        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666;">
+                            <span><i class="fas fa-calendar"></i> Nov 25, 2025</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" onclick="window.location.href='blog-articles/windows-server-administration-lessons.html'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/server-configuration/1.jpg" alt="Server Administration">
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: #8b5cf6; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Server</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Windows Server Administration Lessons</h3>
+                        <p class="project-description">Hands-on experience from NCR Uganda internship covering Windows Server 2019, Active Directory, VMware virtualization, and enterprise infrastructure.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">VMware</span>
+                        </div>
+                        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666;">
+                            <span><i class="fas fa-calendar"></i> Nov 22, 2025</span>
+                            <span><i class="fas fa-clock"></i> 9 min read</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" onclick="window.location.href='blog-articles/computer-science-student-guide.html'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/banner_image.jpg" alt="CS Student Guide">
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Career</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Computer Science Student Guide</h3>
+                        <p class="project-description">Practical advice for CS students including balancing academics with projects, building portfolios, and preparing for the tech industry.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Education</span>
+                            <span class="tech-tag">Career</span>
+                            <span class="tech-tag">Portfolio</span>
+                        </div>
+                        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666;">
+                            <span><i class="fas fa-calendar"></i> Oct 28, 2025</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="blog.html" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <div>+256 750 302 070</div>
+                            <div>+256 779 398 911</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>jakisamaurice@gmail.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>Kampala, Uganda</div>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Phone</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Message</label>
+                        <textarea id="feedback" name="feedback" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadingScreen = document.getElementById('loading-screen');
+        // EmailJS
+        emailjs.init('WodX_wdPXT8DpPqZ_');
+        
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.submit-btn');
+            const msg = document.getElementById('formMessage');
+            
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            emailjs.sendForm('service_65f38bi', 'template_gdf9rpk', this)
+                .then(() => {
+                    msg.className = 'form-message success';
+                    msg.textContent = 'Message sent successfully!';
+                    msg.style.display = 'block';
+                    this.reset();
+                })
+                .finally(() => {
+                    btn.textContent = 'Send Message';
+                    btn.disabled = false;
+                });
+        });
 
-            // Hide loading screen when page is fully loaded
-            window.addEventListener('load', function() {
-                setTimeout(() => {
-                    loadingScreen.classList.add('fade-out');
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500);
-                }, 800); // Show loading for at least 800ms for smooth experience
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active section tracking
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const dots = document.querySelectorAll('.nav-dot');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
             });
 
-            // Test progress bars - force them to be visible
-            setTimeout(() => {
-                const progressBars = document.querySelectorAll('.skill-progress');
-                if (progressBars.length > 0) {
-                    progressBars.forEach(bar => {
-                        const progress = bar.dataset.progress || 0;
-                        bar.style.width = progress + '%';
-                        bar.style.transition = 'width 1s ease-out';
-                    });
-                    console.log('Progress bars initialized:', progressBars.length);
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-section') === current) {
+                    dot.classList.add('active');
                 }
-            }, 1000);
+            });
+        });
 
-            // Update current year in footer
-            const yearSpan = document.getElementById('current-year');
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
+        // Dot navigation
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const section = dot.getAttribute('data-section');
+                document.getElementById(section).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Skill bars animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        const progress = bar.getAttribute('data-progress');
+                        bar.style.width = progress + '%';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Initialize progress bars on page load
+        setTimeout(() => {
+            const progressBars = document.querySelectorAll('.skill-progress');
+            progressBars.forEach(bar => {
+                const progress = bar.getAttribute('data-progress');
+                bar.style.width = progress + '%';
+            });
+        }, 1000);
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const skillCategories = document.querySelectorAll('.skill-category');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                skillCategories.forEach(category => {
+                    const categoryType = category.getAttribute('data-category');
+                    if (filter === 'all' || categoryType === filter) {
+                        category.style.display = 'block';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
         });
     </script>
 </body>

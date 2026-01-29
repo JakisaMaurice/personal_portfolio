@@ -171,40 +171,60 @@
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navigation" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="../index.html" class="nav-logo" aria-label="Homepage">
-                    <!-- Logo removed as requested -->
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="../index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../about.html" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../projects.html" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../resume.html" class="nav-link">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../blog.html" class="nav-link active" aria-current="page">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../contact.html" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"></div>
+            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#resume">Resume</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo { font-size: 1.5rem; font-weight: 700; color: #0091ff; }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { color: #0091ff; }
+        
+        .hamburger{display:none;flex-direction:column;cursor:pointer;padding:0.5rem;}.hamburger span{width:25px;height:3px;background:#333;margin:3px 0;transition:0.3s;}@media (max-width:768px){.hamburger{display:flex;}.nav-links{position:fixed;top:80px;right:-100%;width:100%;height:calc(100vh - 80px);background:white;flex-direction:column;justify-content:flex-start;align-items:center;padding-top:2rem;transition:right 0.3s ease;box-shadow:0 2px 10px rgba(0,0,0,0.1);}.nav-links.active{right:0;}.nav-links li{margin:1rem 0;}.nav-links a{font-size:1.2rem;}}body{padding-top:80px;}
+    </style>
 
     <main class="main-content">
         <div class="article-page">
@@ -336,5 +356,5 @@
             }
         });
     </script>
-</body>
+<script>function toggleMenu(){document.querySelector(".nav-links").classList.toggle("active");}document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{document.querySelector(".nav-links").classList.remove("active");});});</script></body>
 </html>
