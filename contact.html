@@ -421,7 +421,7 @@
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <h2>Send Me a Message</h2>
-                    <form id="contactForm" class="contact-page-form" action="api/contact-gmail-simple.php" method="POST">
+                    <form id="contactForm" class="contact-page-form">
                         <!-- CSRF Protection -->
                         <input type="hidden" name="csrf_token" id="csrfToken" value="">
                         
@@ -495,6 +495,37 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // EmailJS configuration
+        emailjs.init('WodX_wdPXT8DpPqZ_'); // Replace with your EmailJS public key
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            submitBtn.disabled = true;
+            submitBtn.value = 'Sending...';
+            
+            emailjs.sendForm('service_65f38bi', 'template_gdf9rpk', this)
+                .then(function() {
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                    formMessage.style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = 'Failed to send message. Please try again.';
+                    formMessage.style.display = 'block';
+                })
+                .finally(function() {
+                    submitBtn.disabled = false;
+                    submitBtn.value = 'Send Message';
+                });
+        });
+    </script>
     <!-- Loading Screen Handler -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
