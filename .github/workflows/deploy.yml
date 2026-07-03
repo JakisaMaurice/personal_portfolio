@@ -1,4 +1,5 @@
 name: Deploy to Namecheap
+
 on:
   push:
     branches:
@@ -15,15 +16,16 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Deploy via rsync (safe for shared hosting)
+      - name: Deploy via rsync
         run: |
-          rsync -avz --delete \
-          --exclude='.git*' \
-          --exclude='.github' \
-          --exclude='.well-known' \
-          -e "ssh -i ~/.ssh/id_rsa" \
-          ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
+          rsync -av \
+            --exclude='.git*' \
+            --exclude='.github' \
+            --exclude='.well-known' \
+            -e "ssh -i ~/.ssh/id_rsa" \
+            ./ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
