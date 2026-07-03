@@ -15,11 +15,17 @@ jobs:
 
       - name: Setup SSH
         run: |
+          set -x
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_KEY_B64 }}" | base64 -d > ~/.ssh/id_rsa
+          echo "Decoded key"
+      
           chmod 600 ~/.ssh/id_rsa
+          echo "Permissions set"
+      
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
-
+          echo "Host key added"
+          
       - name: Deploy via rsync
         run: |
           rsync -avZ \
