@@ -304,6 +304,123 @@
             border: 8px solid white;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
+
+        /* Highlights Section */
+        .highlights {
+            background: white;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin: -1rem auto 2.5rem;
+            max-width: 720px;
+            font-size: 1.05rem;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .highlight-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: rgba(0, 145, 255, 0.1);
+            color: #0091ff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-card h3 {
+            margin-bottom: 0.75rem;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .highlight-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-list,
+        .interest-list,
+        .achievement-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: #eaf4ff;
+            color: #0f4c81;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .pill.green {
+            background: rgba(16, 185, 129, 0.12);
+            color: #047857;
+        }
+
+        .pill.gray {
+            background: #eef2f7;
+            color: #475569;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0091ff;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+        }
         
         /* Skills Filter Styles */
         .skills-filters {
@@ -738,6 +855,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#blog">Blog</a></li>
@@ -750,6 +868,7 @@
     <div class="nav-dots">
         <div class="nav-dot active" data-section="home" data-tooltip="Home"></div>
         <div class="nav-dot" data-section="about" data-tooltip="About"></div>
+        <div class="nav-dot" data-section="highlights" data-tooltip="Services"></div>
         <div class="nav-dot" data-section="projects" data-tooltip="Projects"></div>
         <div class="nav-dot" data-section="resume" data-tooltip="Resume"></div>
         <div class="nav-dot" data-section="contact" data-tooltip="Contact"></div>
@@ -991,6 +1110,75 @@
         </div>
     </section>
 
+    <!-- Highlights Section -->
+    <section id="highlights" class="section highlights">
+        <div class="container">
+            <h2 class="section-title">Services, Interests & Achievements</h2>
+            <p class="section-subtitle">A quick snapshot of the work I can help with, what I enjoy exploring, and the experience I bring to each project.</p>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Services I Offer</h3>
+                    <p>Practical support for businesses, students, and teams that need dependable technical delivery.</p>
+                    <div class="service-list">
+                        <span class="pill"><i class="fas fa-code"></i> Web Development</span>
+                        <span class="pill"><i class="fas fa-mobile-alt"></i> Mobile Apps</span>
+                        <span class="pill"><i class="fas fa-microchip"></i> IoT Solutions</span>
+                        <span class="pill"><i class="fas fa-server"></i> Server Setup</span>
+                        <span class="pill"><i class="fas fa-network-wired"></i> Network Support</span>
+                        <span class="pill"><i class="fas fa-tools"></i> Hardware Repair</span>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Interests & Hobbies</h3>
+                    <p>Outside of client work, I stay curious through hands-on learning and creative problem solving.</p>
+                    <div class="interest-list">
+                        <span class="pill green"><i class="fas fa-book-open"></i> Reading Tech Blogs</span>
+                        <span class="pill green"><i class="fas fa-lightbulb"></i> Electronics Experiments</span>
+                        <span class="pill green"><i class="fas fa-laptop-code"></i> Side Projects</span>
+                        <span class="pill green"><i class="fas fa-camera"></i> Photography</span>
+                        <span class="pill green"><i class="fas fa-futbol"></i> Sports</span>
+                        <span class="pill green"><i class="fas fa-music"></i> Music</span>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Achievements & Experience</h3>
+                    <p>Professional milestones and practical experience that shape how I approach each solution.</p>
+                    <div class="achievement-list">
+                        <span class="pill gray"><i class="fas fa-check"></i> Built live portfolio and web apps</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Windows Server and Active Directory experience</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Arduino IoT and automation projects</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Freelance front-end and back-end work</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <div class="stat-label">Core service areas</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <div class="stat-label">Projects shipped</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2+</span>
+                    <div class="stat-label">Years of hands-on experience</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <div class="stat-label">Focus areas: web, IoT, infrastructure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
@@ -1157,6 +1345,7 @@
     <section id="resume" class="section resume">
         <div class="container">
             <h2 class="section-title">Experience & Education</h2>
+            <p class="section-subtitle">A timeline of the roles, internships, and studies that have shaped my technical path.</p>
             
             <!-- Resume Actions -->
             <div style="text-align: center; margin-bottom: 3rem;">
