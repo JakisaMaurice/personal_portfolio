@@ -422,7 +422,7 @@
             font-size: 0.95rem;
         }
         
-        /* Skills Filter Styles */
+        /* Expertise Filter Styles */
         .skills-filters {
             display: flex;
             justify-content: center;
@@ -451,7 +451,7 @@
         }
 
         .skill-category {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .category-title {
@@ -470,13 +470,13 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.8rem;
-            margin-top: 1.5rem;
+            gap: 0.65rem;
+            margin-top: 1rem;
         }
         
         .skill-item {
             text-align: center;
-            padding: 0.8rem;
+            padding: 0.6rem 0.55rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -490,13 +490,23 @@
         .skill-icon {
             font-size: 1.8rem;
             color: #0091ff;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-icon-img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            margin-bottom: 0.3rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .skill-name {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.25rem;
         }
         
         .skill-bar {
@@ -879,11 +889,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>I'm <span class="highlight">Mungu Jakisa Maurice</span><br>a Software Developer</h1>
-                    <p>Full-stack software developer specializing in web applications, IoT systems, mobile development, and enterprise infrastructure</p>
+                    <h1>Building Reliable Software, Scalable Systems &amp; Cloud Infrastructure</h1>
+                    <p>I'm <strong class="highlight">Mungu Jakisa Maurice</strong>, a Full Stack Software Engineer based in Kampala, Uganda. I build modern web applications, enterprise systems, and cloud-backed solutions from concept to production.</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="assets/documents/MUNGU%20JAKISA%20MAURICE%20RESUME.pdf" class="btn btn-secondary" download>Download Resume</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -898,210 +909,577 @@
         <div class="container">
                 <div class="about-text">
                     <h2>About Me</h2>
-                    <p>I'm a dedicated software developer with a passion for creating innovative technology solutions and building impactful digital experiences.</p>
-                    <p>My expertise spans full-stack software development, IoT and embedded systems, enterprise server administration, mobile app development, and system integration. I've gained hands-on experience through professional internships and diverse technical projects.</p>
-                    <p>I believe in continuous learning and staying updated with the latest technological trends to create impactful digital solutions.</p>
+                    <p>Technology has always fascinated me because of its ability to solve real-world problems. For me, software engineering is not just about writing code. It is about understanding challenges, designing thoughtful solutions, and building products that continue creating value long after deployment.</p>
+                    <p>My experience extends beyond application development into systems administration, networking, DevOps, and cloud infrastructure. I enjoy understanding how every layer of a system works, from the user interface to the servers that keep it running. That broader perspective helps me build reliable, scalable solutions and take ownership of projects from concept to production.</p>
+                    <p>I have had the opportunity to contribute to production software for organizations such as Refactory Academy and SwanAir Travels &amp; Safaris, while also gaining hands-on experience in enterprise IT environments through systems administration and network support. Today, I am focused on building modern, maintainable software that solves meaningful business problems and supports long-term growth.</p>
                 </div>
             
-            <!-- Skills Filter Buttons -->
+            <div style="text-align: center; margin: 2rem 0 0;">
+                <h2 class="section-title" style="margin-bottom: 0.75rem;">Technical Expertise</h2>
+                <p class="section-subtitle" style="margin-top: 0; margin-bottom: 2rem;">A practical mix of software engineering, cloud infrastructure, enterprise systems, and embedded technologies.</p>
+            </div>
+
+            <!-- Expertise Filter Buttons -->
             <div class="skills-filters">
-                <button class="filter-btn active" data-filter="all">All Skills</button>
-                <button class="filter-btn" data-filter="programming">Programming</button>
-                <button class="filter-btn" data-filter="devops">DevOps</button>
-                <button class="filter-btn" data-filter="hardware">Hardware/IoT</button>
-                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
-                <button class="filter-btn" data-filter="additional">Additional</button>
+                <button class="filter-btn active" data-filter="all">All Expertise</button>
+                <button class="filter-btn" data-filter="programming">Programming Languages</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                <button class="filter-btn" data-filter="devops">DevOps &amp; Cloud</button>
+                <button class="filter-btn" data-filter="systems">Systems Admin</button>
+                <button class="filter-btn" data-filter="networking">Networking</button>
+                <button class="filter-btn" data-filter="tools">Development Tools</button>
+                <button class="filter-btn" data-filter="embedded">Embedded &amp; IoT</button>
             </div>
 
             <div class="skills-categories">
                     <div class="skill-category" data-category="programming">
                         <h3 class="category-title">
                             <i class="fas fa-code category-icon"></i>
-                            Programming & Development
+                            Programming Languages
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <i class="fab fa-html5 skill-icon"></i>
-                                <div class="skill-name">HTML5 & CSS3</div>
-                                <div class="skill-bar">
+                                <img class="skill-icon-img" src="assets/icons/javascript.svg" alt="JavaScript">
+                                <div class="skill-name">JavaScript (ES6+)</div>
+                                <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="90"></div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fab fa-js-square skill-icon"></i>
-                                <div class="skill-name">JavaScript</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-php skill-icon"></i>
-                                <div class="skill-name">PHP</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="70"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-microchip skill-icon"></i>
-                                <div class="skill-name">C/C++</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="65"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-python skill-icon"></i>
-                                <div class="skill-name">Python</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="60"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-code skill-icon"></i>
+                                <img class="skill-icon-img" src="assets/icons/typescript.svg" alt="TypeScript">
                                 <div class="skill-name">TypeScript</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="70"></div>
-                                </div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-mobile-alt skill-icon"></i>
-                                <div class="skill-name">Flutter</div>
-                                <div class="skill-bar">
+                                <img class="skill-icon-img" src="assets/icons/python.svg" alt="Python">
+                                <div class="skill-name">Python</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/php.svg" alt="PHP">
+                                <div class="skill-name">PHP</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/cplusplus.svg" alt="C and C++">
+                                <div class="skill-name">C/C++</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/dart.svg" alt="Dart">
+                                <div class="skill-name">Dart</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/bash.svg" alt="Bash shell scripting">
+                                <div class="skill-name">Bash / Shell Scripting</div>
+                                <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
-                                </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="frontend">
+                        <h3 class="category-title">
+                            <i class="fas fa-laptop-code category-icon"></i>
+                            Frontend Development
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/react.svg" alt="React">
+                                <div class="skill-name">React</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/html5.svg" alt="HTML5">
+                                <div class="skill-name">HTML5</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt skill-icon"></i>
+                                <div class="skill-name">CSS3</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/tailwindcss.svg" alt="Tailwind CSS">
+                                <div class="skill-name">Tailwind CSS</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/javascript.svg" alt="JavaScript">
+                                <div class="skill-name">JavaScript (ES6+)</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/typescript.svg" alt="TypeScript">
+                                <div class="skill-name">TypeScript</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="backend">
+                        <h3 class="category-title">
+                            <i class="fas fa-server category-icon"></i>
+                            Backend Development
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/nestjs.svg" alt="NestJS">
+                                <div class="skill-name">NestJS</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/django.svg" alt="Django">
+                                <div class="skill-name">Django</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/django.svg" alt="Django REST Framework">
+                                <div class="skill-name">Django REST Framework</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/nodedotjs.svg" alt="Node.js">
+                                <div class="skill-name">Node.js</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-plug skill-icon"></i>
+                                <div class="skill-name">REST APIs</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-alt skill-icon"></i>
+                                <div class="skill-name">JWT Authentication</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-user-shield skill-icon"></i>
+                                <div class="skill-name">RBAC</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="database">
+                        <h3 class="category-title">
+                            <i class="fas fa-database category-icon"></i>
+                            Database Engineering
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/postgresql.svg" alt="PostgreSQL">
+                                <div class="skill-name">PostgreSQL</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/mysql.svg" alt="MySQL">
+                                <div class="skill-name">MySQL</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/prisma.svg" alt="Prisma ORM">
+                                <div class="skill-name">Prisma ORM</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database skill-icon"></i>
+                                <div class="skill-name">Database Design</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <div class="skill-name">Relational Modeling</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-search skill-icon"></i>
+                                <div class="skill-name">Query Optimization</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cog skill-icon"></i>
+                                <div class="skill-name">Database Administration</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
 
                     <div class="skill-category" data-category="devops">
                         <h3 class="category-title">
-                            <i class="fas fa-cogs category-icon"></i>
-                            DevOps & Version Control
+                            <i class="fas fa-cloud category-icon"></i>
+                            DevOps &amp; Cloud Engineering
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <i class="fab fa-git-alt skill-icon"></i>
-                                <div class="skill-name">Git & GitHub</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-docker skill-icon"></i>
+                                <img class="skill-icon-img" src="assets/icons/docker.svg" alt="Docker">
                                 <div class="skill-name">Docker</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="60"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category" data-category="hardware">
-                        <h3 class="category-title">
-                            <i class="fas fa-microchip category-icon"></i>
-                            Hardware & IoT
-                        </h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <i class="fas fa-microchip skill-icon"></i>
-                                <div class="skill-name">Arduino</div>
-                                <div class="skill-bar">
+                                <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-home skill-icon"></i>
-                                <div class="skill-name">Home Automation</div>
-                                <div class="skill-bar">
+                                <img class="skill-icon-img" src="assets/icons/docker.svg" alt="Docker Compose">
+                                <div class="skill-name">Docker Compose</div>
+                                <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
-                                </div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/githubactions.svg" alt="GitHub Actions">
+                                <div class="skill-name">GitHub Actions</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-gears skill-icon"></i>
+                                <div class="skill-name">CI/CD Pipelines</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/digitalocean.svg" alt="DigitalOcean">
+                                <div class="skill-name">DigitalOcean</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/linux.svg" alt="Linux Servers">
+                                <div class="skill-name">Linux Servers</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/ubuntu.svg" alt="Ubuntu Server">
+                                <div class="skill-name">Ubuntu Server</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/nginx.svg" alt="Nginx">
+                                <div class="skill-name">Nginx</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-halved skill-icon"></i>
+                                <div class="skill-name">SSL/TLS Config</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line skill-icon"></i>
+                                <div class="skill-name">Production Monitoring</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
 
-                    <div class="skill-category" data-category="infrastructure">
+                    <div class="skill-category" data-category="systems">
                         <h3 class="category-title">
                             <i class="fas fa-server category-icon"></i>
-                            Infrastructure & Administration
+                            Systems Administration
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <i class="fas fa-server skill-icon"></i>
-                                <div class="skill-name">Server Config</div>
-                                <div class="skill-bar">
+                                <i class="fab fa-windows skill-icon"></i>
+                                <div class="skill-name">Windows Server 2019</div>
+                                <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="85"></div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-network-wired skill-icon"></i>
-                                <div class="skill-name">Network Admin</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
+                                <img class="skill-icon-img" src="assets/icons/ubuntu.svg" alt="Ubuntu Server">
+                                <div class="skill-name">Ubuntu Server</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
                                 <i class="fas fa-users-cog skill-icon"></i>
-                                <div class="skill-name">Active Directory</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="70"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-windows skill-icon"></i>
-                                <div class="skill-name">Windows Server</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-linux skill-icon"></i>
-                                <div class="skill-name">Linux Server</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
+                                <div class="skill-name">Active Directory Domain Services</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
                                 <i class="fas fa-cube skill-icon"></i>
-                                <div class="skill-name">VMware/ESXi</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="70"></div>
-                                </div>
+                                <div class="skill-name">VMware ESXi</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-shield-alt skill-icon"></i>
-                                <div class="skill-name">Network Security</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="65"></div>
-                                </div>
+                                <i class="fas fa-user-gear skill-icon"></i>
+                                <div class="skill-name">User &amp; Access Management</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-rotate-left skill-icon"></i>
+                                <div class="skill-name">Backup &amp; Recovery</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-wrench skill-icon"></i>
+                                <div class="skill-name">System Administration</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-hammer skill-icon"></i>
+                                <div class="skill-name">Hardware Troubleshooting</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
 
-                    <div class="skill-category" data-category="additional">
+                    <div class="skill-category" data-category="networking">
                         <h3 class="category-title">
-                            <i class="fas fa-tools category-icon"></i>
-                            Additional Skills
+                            <i class="fas fa-network-wired category-icon"></i>
+                            Network Administration
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <i class="fas fa-tools skill-icon"></i>
-                                <div class="skill-name">Hardware Repair</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <div class="skill-name">TCP/IP Networking</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fab fa-react skill-icon"></i>
-                                <div class="skill-name">React</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="65"></div>
-                                </div>
+                                <i class="fas fa-server skill-icon"></i>
+                                <div class="skill-name">DNS</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fab fa-wordpress skill-icon"></i>
-                                <div class="skill-name">WordPress</div>
-                                <div class="skill-bar">
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <div class="skill-name">DHCP</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <div class="skill-name">LAN Administration</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-signal skill-icon"></i>
+                                <div class="skill-name">Network Troubleshooting</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <div class="skill-name">Router &amp; Switch Config</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-print skill-icon"></i>
+                                <div class="skill-name">Printer &amp; Peripheral Mgmt</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="tools">
+                        <h3 class="category-title">
+                            <i class="fas fa-screwdriver-wrench category-icon"></i>
+                            Development Tools
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/git.svg" alt="Git">
+                                <div class="skill-name">Git</div>
+                                <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
-                                </div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/github.svg" alt="GitHub">
+                                <div class="skill-name">GitHub</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code skill-icon"></i>
+                                <div class="skill-name">Visual Studio Code</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/postman.svg" alt="Postman">
+                                <div class="skill-name">Postman</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/xampp.svg" alt="XAMPP">
+                                <div class="skill-name">XAMPP</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-microsoft skill-icon"></i>
+                                <div class="skill-name">Microsoft Office Suite</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/linuxmint.svg" alt="Linux Mint">
+                                <div class="skill-name">Linux Mint</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="embedded">
+                        <h3 class="category-title">
+                            <i class="fas fa-microchip category-icon"></i>
+                            Embedded Systems &amp; IoT
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/arduino.svg" alt="Arduino">
+                                <div class="skill-name">Arduino</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/raspberrypi.svg" alt="Raspberry Pi">
+                                <div class="skill-name">Raspberry Pi</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <img class="skill-icon-img" src="assets/icons/cplusplus.svg" alt="Embedded C and C++">
+                                <div class="skill-name">Embedded C/C++</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-wave-square skill-icon"></i>
+                                <div class="skill-name">Sensor Integration</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-mobile-screen-button skill-icon"></i>
+                                <div class="skill-name">Blynk IoT</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-toggle-on skill-icon"></i>
+                                <div class="skill-name">Relay Modules</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-sliders skill-icon"></i>
+                                <div class="skill-name">Control Systems Prototyping</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-microchip skill-icon"></i>
+                                <div class="skill-name">IoT Device Development</div>
+                                <!-- <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -1113,8 +1491,8 @@
     <!-- Highlights Section -->
     <section id="highlights" class="section highlights">
         <div class="container">
-            <h2 class="section-title">Services, Interests & Achievements</h2>
-            <p class="section-subtitle">A quick snapshot of the work I can help with, what I enjoy exploring, and the experience I bring to each project.</p>
+            <h2 class="section-title">Selected Highlights</h2>
+            <p class="section-subtitle">Production software, end-to-end ownership, infrastructure expertise, and continuous learning.</p>
 
             <div class="highlights-grid">
                 <div class="highlight-card">
@@ -1122,38 +1500,33 @@
                     <h3>Services I Offer</h3>
                     <p>Practical support for businesses, students, and teams that need dependable technical delivery.</p>
                     <div class="service-list">
-                        <span class="pill"><i class="fas fa-code"></i> Web Development</span>
-                        <span class="pill"><i class="fas fa-mobile-alt"></i> Mobile Apps</span>
-                        <span class="pill"><i class="fas fa-microchip"></i> IoT Solutions</span>
-                        <span class="pill"><i class="fas fa-server"></i> Server Setup</span>
-                        <span class="pill"><i class="fas fa-network-wired"></i> Network Support</span>
-                        <span class="pill"><i class="fas fa-tools"></i> Hardware Repair</span>
+                        <span class="pill"><i class="fas fa-code"></i> Full Stack Software Engineering</span>
+                        <span class="pill"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</span>
+                        <span class="pill"><i class="fas fa-server"></i> Systems &amp; Network Administration</span>
                     </div>
                 </div>
 
                 <div class="highlight-card">
                     <div class="highlight-icon"><i class="fas fa-heart"></i></div>
                     <h3>Interests & Hobbies</h3>
-                    <p>Outside of client work, I stay curious through hands-on learning and creative problem solving.</p>
+                    <p>I stay current through hands-on learning, systems exploration, and building side projects that strengthen my technical judgment.</p>
                     <div class="interest-list">
-                        <span class="pill green"><i class="fas fa-book-open"></i> Reading Tech Blogs</span>
-                        <span class="pill green"><i class="fas fa-lightbulb"></i> Electronics Experiments</span>
-                        <span class="pill green"><i class="fas fa-laptop-code"></i> Side Projects</span>
-                        <span class="pill green"><i class="fas fa-camera"></i> Photography</span>
-                        <span class="pill green"><i class="fas fa-futbol"></i> Sports</span>
-                        <span class="pill green"><i class="fas fa-music"></i> Music</span>
+                        <span class="pill green"><i class="fas fa-book-open"></i> Continuous Learning</span>
+                        <span class="pill green"><i class="fas fa-lightbulb"></i> System Exploration</span>
+                        <span class="pill green"><i class="fas fa-laptop-code"></i> Building Side Projects</span>
+                        <span class="pill green"><i class="fas fa-network-wired"></i> Networking Concepts</span>
                     </div>
                 </div>
 
                 <div class="highlight-card">
                     <div class="highlight-icon"><i class="fas fa-trophy"></i></div>
                     <h3>Achievements & Experience</h3>
-                    <p>Professional milestones and practical experience that shape how I approach each solution.</p>
+                    <p>Experience across production software delivery, enterprise support, and project ownership has shaped my approach to solving problems with reliability and clarity.</p>
                     <div class="achievement-list">
-                        <span class="pill gray"><i class="fas fa-check"></i> Built live portfolio and web apps</span>
-                        <span class="pill gray"><i class="fas fa-check"></i> Windows Server and Active Directory experience</span>
-                        <span class="pill gray"><i class="fas fa-check"></i> Arduino IoT and automation projects</span>
-                        <span class="pill gray"><i class="fas fa-check"></i> Freelance front-end and back-end work</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Production software delivery</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> End-to-end project ownership</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Infrastructure and systems expertise</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Continuous learning mindset</span>
                     </div>
                 </div>
             </div>
@@ -1161,19 +1534,19 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">5+</span>
-                    <div class="stat-label">Core service areas</div>
+                    <div class="stat-label">Core capability areas</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">10+</span>
-                    <div class="stat-label">Projects shipped</div>
+                    <span class="stat-number">End-to-End</span>
+                    <div class="stat-label">Ownership from concept to production</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">2+</span>
-                    <div class="stat-label">Years of hands-on experience</div>
+                    <span class="stat-number">Cloud</span>
+                    <div class="stat-label">Backed solutions and DevOps focus</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">3</span>
-                    <div class="stat-label">Focus areas: web, IoT, infrastructure</div>
+                    <span class="stat-number">Ops</span>
+                    <div class="stat-label">Systems, network, and administration</div>
                 </div>
             </div>
         </div>
@@ -1182,38 +1555,36 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
-                <!-- Travel & Safaris Costing Software -->
+                <!-- Refactory Interview Scheduler -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/landing page swanair app.png" alt="Travel Costing Software">
+                        <img src="assets/images/projects/portfolio-website.svg" alt="Refactory Interview Scheduler">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Travel & Safaris Costing Software</h3>
-                        <p class="project-description">Professional tour operator software with intelligent pricing engine, modular itinerary creation, and real-time cost calculations.</p>
+                        <h3 class="project-title">Refactory Interview Scheduler</h3>
+                        <p class="project-description">A scheduling platform designed to streamline interview coordination, reduce manual follow-up, and improve hiring workflow visibility.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">NestJS</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Product Design</span>
+                            <span class="tech-tag">Automation</span>
+                            <span class="tech-tag">Workflow</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Arduino Home Automation -->
+                <!-- SwanAir Travel & Safaris -->
                 <div class="project-card" style="cursor: pointer;">
                     <div class="project-image">
-                        <img src="assets/images/arduino, home automation.jpg" alt="Arduino Home Automation">
+                        <img src="assets/images/projects/landing page swanair app.png" alt="SwanAir Travel & Safaris">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Arduino Home Automation</h3>
-                        <p class="project-description">Smart home control system with security access management, autonomous operation capabilities, mobile app integration, and real-time monitoring.</p>
+                        <h3 class="project-title">SwanAir Travel & Safaris Costing Platform</h3>
+                        <p class="project-description">A professional costing platform for travel planning that supports structured pricing, faster quotations, and better client decision-making.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Arduino</span>
-                            <span class="tech-tag">C/C++</span>
-                            <span class="tech-tag">IoT</span>
-                            <span class="tech-tag">Blynk</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">NestJS</span>
                         </div>
                     </div>
                 </div>
@@ -1224,14 +1595,12 @@
                         <img src="assets/images/htmlcssjs-pic.png" alt="Web Development">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Full-Stack Web Applications</h3>
-                        <p class="project-description">Responsive websites with user authentication, database integration, modern UI/UX design, SEO optimization, and performance optimization.</p>
+                        <h3 class="project-title">Linux Home Lab</h3>
+                        <p class="project-description">A self-hosted lab environment built to support hands-on learning in Linux administration, Docker, SSH security, and home networking.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Ubuntu Server</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Networking</span>
                         </div>
                     </div>
                 </div>
@@ -1242,13 +1611,12 @@
                         <img src="assets/images/server-configuration/2.jpg" alt="Server Configuration">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Enterprise Server Configuration</h3>
-                        <p class="project-description">Windows Server setup, Active Directory management, VMware virtualization, network infrastructure, and enterprise system maintenance.</p>
+                        <h3 class="project-title">Student Attendance Management System</h3>
+                        <p class="project-description">A digital attendance workflow that helps institutions track records more efficiently and maintain clearer reporting for administrators.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Windows Server</span>
-                            <span class="tech-tag">Active Directory</span>
-                            <span class="tech-tag">VMware</span>
-                            <span class="tech-tag">Network Security</span>
+                            <span class="tech-tag">Web App</span>
+                            <span class="tech-tag">Reporting</span>
+                            <span class="tech-tag">Management</span>
                         </div>
                     </div>
                 </div>
@@ -1259,13 +1627,12 @@
                         <img src="assets/images/projects/portfolio-website.svg" alt="Personal Portfolio">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Personal Portfolio Website</h3>
-                        <p class="project-description">Professional portfolio design with project showcase, skills sections, contact integration, SEO optimization, and cross-browser compatibility.</p>
+                        <h3 class="project-title">Smart Home Control System</h3>
+                        <p class="project-description">An IoT-oriented home control concept focused on convenience, remote access, and practical automation for everyday use.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Automation</span>
                         </div>
                     </div>
                 </div>
@@ -1344,7 +1711,7 @@
     <!-- Resume Section -->
     <section id="resume" class="section resume">
         <div class="container">
-            <h2 class="section-title">Experience & Education</h2>
+            <h2 class="section-title">Experience</h2>
             <p class="section-subtitle">A timeline of the roles, internships, and studies that have shaped my technical path.</p>
             
             <!-- Resume Actions -->
@@ -1362,14 +1729,14 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">
                             <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
-                            Full-stack Developer (Apprentice)
+                            Refactory Apprenticeship
                         </h3>
                         <div class="timeline-company">Refactory Academy</div>
                         <div class="timeline-date">June 2025 - Present</div>
-                        <p>Currently enrolled in intensive full-stack development apprenticeship program. Learning modern web technologies, working on real-world projects, and developing skills in project management and agile methodologies.</p>
+                        <p>Full-stack apprenticeship focused on shipping production-ready software, collaborating in team environments, and strengthening engineering discipline across the delivery lifecycle.</p>
                         <div style="margin-top: 1rem;">
-                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Full-Stack Development</span>
-                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Project Management</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Full-Stack</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Production Delivery</span>
                         </div>
                     </div>
                 </div>
@@ -1378,15 +1745,14 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">
                             <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
-                            IT Intern
+                            NCR Uganda
                         </h3>
                         <div class="timeline-company">NCR Uganda/Service and Computer Industries(SCI)</div>
                         <div class="timeline-date">June 2024</div>
-                        <p>Configured Windows Server environments, Active Directory systems, VMware virtualization, and provided technical support. Gained hands-on experience with enterprise-level IT infrastructure.</p>
+                        <p>Configured Windows Server environments, Active Directory systems, VMware virtualization, and provided technical support within an enterprise IT environment.</p>
                         <div style="margin-top: 1rem;">
-                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Windows Server</span>
-                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Active Directory</span>
-                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">VMware</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Infrastructure</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Support</span>
                         </div>
                     </div>
                 </div>
@@ -1399,7 +1765,7 @@
                         </h3>
                         <div class="timeline-company">Self-Employed</div>
                         <div class="timeline-date">2023 - Present</div>
-                        <p>Designed responsive websites using HTML, CSS, JavaScript, and PHP. Implemented server-side functionality with database integration and created user-friendly interfaces focused on accessibility.</p>
+                        <p>Built responsive web solutions for clients and personal projects, with a focus on clear user experiences, dependable delivery, and maintainable code.</p>
                     </div>
                 </div>
                 
@@ -1411,7 +1777,7 @@
                         </h3>
                         <div class="timeline-company">Makerere University Business School</div>
                         <div class="timeline-date">2023 - Present</div>
-                        <p>Comprehensive computer science education with focus on software development, algorithms, and system administration.</p>
+                        <p>Comprehensive computer science education with focus on software development, systems thinking, and practical problem solving.</p>
                     </div>
                 </div>
                 
@@ -1531,7 +1897,8 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Let's Work Together</h3>
+                    <h3>Let's Build Something Meaningful Together.</h3>
+                    <p style="margin-bottom: 2rem;">Whether you're hiring a software engineer or looking for a technical partner, I'd love to hear about your project.</p>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
@@ -1646,32 +2013,7 @@
             });
         });
 
-        // Skill bars animation
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const progress = bar.getAttribute('data-progress');
-                        bar.style.width = progress + '%';
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Initialize progress bars on page load
-        setTimeout(() => {
-            const progressBars = document.querySelectorAll('.skill-progress');
-            progressBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                bar.style.width = progress + '%';
-            });
-        }, 1000);
+        // Skill bars animation disabled for now.
         const filterButtons = document.querySelectorAll('.filter-btn');
         const skillCategories = document.querySelectorAll('.skill-category');
 
