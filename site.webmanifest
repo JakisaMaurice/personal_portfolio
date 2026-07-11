@@ -1,0 +1,27 @@
+{
+  "name": "Mungu Jakisa Maurice - Portfolio",
+  "short_name": "Mungu Jakisa",
+  "description": "Full Stack Software Engineer | DevOps Engineer | Systems Administrator based in Kampala, Uganda",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0091ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/profile pic.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/profile pic.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "portfolio", "software", "engineering"],
+  "lang": "en",
+  "dir": "ltr"
+}

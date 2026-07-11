@@ -1,18 +1,15 @@
-# Robots.txt for Maurice Jakisa Portfolio
+# Robots.txt for Mungu Jakisa Maurice Portfolio
 # Professional Website SEO Configuration
-# Created: 2025-11-28
+# Domain: https://mungujakisamaurice.com/
 
 User-agent: *
-# Allow all crawlers access to main content
 Allow: /
 Allow: /assets/
 Allow: /assets/images/
 Allow: /assets/documents/
 Allow: /blog-articles/
 
-# Disallow sensitive or non-indexable areas
 Disallow: /admin/
-Disallow: /admin/dashboard
 Disallow: /api/
 Disallow: /private/
 Disallow: /_temp/
@@ -23,22 +20,14 @@ Disallow: /api/contact.php
 Disallow: /insert.php
 Disallow: /connect.php
 
-# Allow specific important files
 Allow: /sitemap.xml
-Allow: /manifest.json
-Allow: /service-worker.js
+Allow: /site.webmanifest
 Allow: /robots.txt
 
-# Crawl delay (in seconds) - be respectful to search engines
 Crawl-delay: 1
 
-# Sitemap location
-Sitemap: https://mauricejakisa.com/sitemap.xml
+Sitemap: https://mungujakisamaurice.com/sitemap.xml
 
-# Preferred domain (avoid duplicate content issues)
-# Note: This would be set up at the server level or DNS level
-
-# Specific bot rules
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
@@ -54,7 +43,6 @@ Crawl-delay: 1
 User-agent: facebookexternalhit
 Allow: /
 
-# Block known bad bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -67,7 +55,6 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
-# Social media bots - Allow for proper social sharing
 User-agent: facebookexternalhit
 Allow: /
 User-agent: Twitterbot
@@ -75,21 +62,15 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Archive.org bot
 User-agent: ia_archiver
 Allow: /
 
-# SEO and analytics bots
 User-agent: Google-Analytics
 Allow: /
 
-# Block access to sensitive files
 Disallow: /*.sql$
 Disallow: /*.md$
 Disallow: /*.config$
 Disallow: /.htaccess
 Disallow: /web.config
 Disallow: /error_log
-
-# Host directive (if using multiple domains)
-# Host: https://mauricejakisa.com
