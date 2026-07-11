@@ -17,6 +17,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body[data-theme="dark"] {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .projects-hero,
+        body[data-theme="dark"] .projects-section,
+        body[data-theme="dark"] .projects-category,
+        body[data-theme="dark"] .project-card,
+        body[data-theme="dark"] .server-config-card,
+        body[data-theme="dark"] .stats-section {
+            background-color: #111827;
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .category-title,
+        body[data-theme="dark"] .project-title,
+        body[data-theme="dark"] .server-config-title,
+        body[data-theme="dark"] .stats-label,
+        body[data-theme="dark"] .project-content,
+        body[data-theme="dark"] .server-config-content {
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .category-description,
+        body[data-theme="dark"] .project-description,
+        body[data-theme="dark"] .server-config-description,
+        body[data-theme="dark"] .project-features li,
+        body[data-theme="dark"] .server-config-features li,
+        body[data-theme="dark"] .stat-label {
+            color: #cbd5e1;
+        }
+
+        body[data-theme="dark"] .tech-tag,
+        body[data-theme="dark"] .tech-badge {
+            background-color: #334155;
+            color: #f8fafc;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            background-color: var(--bg-light);
+        }
+
         /* Page-specific styles for projects page */
         .projects-hero {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
@@ -527,9 +592,10 @@
         </div>
     </div>
 
-    <nav class="navbar">
+<nav class="navbar">
         <div class="nav-container">
             <div class="logo"></div>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -570,6 +636,26 @@
         
         .logo { font-size: 1.5rem; font-weight: 700; color: #0091ff; }
         
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            background-color: var(--bg-light);
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -625,6 +711,32 @@
             .nav-links a {
                 font-size: 1.2rem;
             }
+        }
+
+        body[data-theme="dark"] .navbar {
+            background: rgba(17, 24, 39, 0.95);
+        }
+
+        body[data-theme="dark"] .nav-links a {
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        body[data-theme="dark"] .hamburger span {
+            background: #f8fafc;
+        }
+
+        body[data-theme="dark"] .theme-toggle {
+            background-color: rgba(17, 24, 39, 0.8);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        body[data-theme="dark"] .theme-toggle:hover {
+            background-color: var(--bg-light);
         }
     </style>
 
@@ -1179,6 +1291,7 @@
         });
     </script>
     
+    <script src="assets/js/theme.js"></script>
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');

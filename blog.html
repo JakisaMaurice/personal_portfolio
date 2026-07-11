@@ -17,6 +17,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body[data-theme="dark"] {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .blog-page,
+        body[data-theme="dark"] .featured-post,
+        body[data-theme="dark"] .blog-card,
+        body[data-theme="dark"] .newsletter-section {
+            background-color: #111827;
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .blog-title,
+        body[data-theme="dark"] .blog-card-title,
+        body[data-theme="dark"] .blog-author,
+        body[data-theme="dark"] .author-name,
+        body[data-theme="dark"] .featured-title,
+        body[data-theme="dark"] .newsletter-title {
+            color: #f8fafc;
+        }
+
+        body[data-theme="dark"] .blog-subtitle,
+        body[data-theme="dark"] .blog-excerpt,
+        body[data-theme="dark"] .blog-meta,
+        body[data-theme="dark"] .newsletter-text,
+        body[data-theme="dark"] .featured-excerpt {
+            color: #cbd5e1;
+        }
+
+        body[data-theme="dark"] .filter-btn,
+        body[data-theme="dark"] .blog-tag {
+            background-color: #334155;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            background-color: var(--bg-light);
+        }
+
         /* Blog-specific styles */
         .blog-page {
             padding: var(--space-4xl) 0;
@@ -365,9 +428,10 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <div class="nav-container">
             <div class="logo"></div>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -406,8 +470,28 @@
             padding: 0 2rem;
         }
         
-        .logo { font-size: 1.5rem; font-weight: 700; color: #0091ff; }
+.logo { font-size: 1.5rem; font-weight: 700; color: #0091ff; }
         
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            background-color: var(--bg-light);
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -807,6 +891,7 @@
         });
     </script>
     
+    <script src="assets/js/theme.js"></script>
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
