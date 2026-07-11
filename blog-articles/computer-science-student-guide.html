@@ -24,7 +24,7 @@
         }
 
         .article-container {
-            max-width: 800px;
+            max-width: 920px;
             margin: 0 auto;
             padding: 0 var(--space-xl);
         }
@@ -109,6 +109,26 @@
             margin-bottom: var(--space-sm);
         }
 
+        .insight-box {
+            background: linear-gradient(135deg, #f5fbff 0%, #eef7ff 100%);
+            border: 1px solid #d6e9f7;
+            border-radius: 14px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .insight-box h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .article-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
         .back-to-blog {
             display: inline-flex;
             align-items: center;
@@ -177,8 +197,9 @@
             <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#highlights">Services</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#resume">Resume</a></li>
+                <li><a href="../index.html#resume">Experience</a></li>
                 <li><a href="../index.html#blog">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
@@ -254,25 +275,45 @@
                 </header>
 
                 <article class="article-content">
-                    <p><strong>Introduction</strong></p>
-                    <p>Studying computer science is not just about passing exams — it's about building skills that translate to the industry. This article reflects my journey balancing academics, projects, and self-learning.</p>
+                    <p>Being a computer science student in Uganda has taught me that academics alone are not enough. The strongest students are usually the ones who learn to turn theory into something tangible, whether that is a website, a system, a small automation project, or a problem-solving portfolio.</p>
 
-                    <h2>Why Projects Matter More Than Grades</h2>
+                    <p>My journey has been shaped by balancing lecture work with practical building. That balance helped me understand that the industry values curiosity, consistency, and proof of work more than perfect grades alone.</p>
+
+                    <div class="insight-box">
+                        <h3>What I learned from moving from student to builder</h3>
+                        <ul>
+                            <li>Assignments sharpened my fundamentals, but projects taught me how to think under real constraints.</li>
+                            <li>Working on systems and software helped me understand how different technologies connect in practice.</li>
+                            <li>Building a portfolio early made my growth visible to others, including potential employers and collaborators.</li>
+                        </ul>
+                    </div>
+
+                    <h2>Why projects matter more than perfect grades</h2>
+                    <p>Grades can show discipline, but projects show ability. Through project work I learned how to debug under pressure, break down complex problems, and keep learning even when I did not have all the answers. In most real-world situations, employers want to see evidence of thinking and execution more than a perfect transcript.</p>
+
+                    <h2>How I balanced academics and practical work</h2>
+                    <p>I learned that it is not necessary to build a huge project every week. Sometimes a smaller project completed well is more valuable than a larger idea that never gets finished. My approach became more structured: learn the concept, build something small, test it, and document what I learned.</p>
+
+                    <p>That rhythm helped me build confidence gradually. It also made it easier to explain my work to others because I could point to something real instead of only talking about theory.</p>
+
+                    <h2>What I would recommend to students today</h2>
                     <ul>
-                        <li>Problem-solving</li>
-                        <li>Debugging under pressure</li>
-                        <li>Learning independently</li>
+                        <li>Choose one core area to learn deeply, then expand gradually.</li>
+                        <li>Build small projects often and document them clearly.</li>
+                        <li>Publish your work on GitHub and keep a simple portfolio updated.</li>
+                        <li>Apply for internships and freelance opportunities early, even if you feel underprepared.</li>
+                        <li>Learn to explain your work clearly because communication is a major part of professional growth.</li>
                     </ul>
-                    <p>Projects also gave me confidence.</p>
 
-                    <h2>Learning Outside the Classroom</h2>
-                    <p>I invested time in web development, embedded systems, and server administration, each area reinforcing the other.</p>
+                    <h2>What helped me the most</h2>
+                    <p>I spent time exploring web development, embedded systems, networking, and server administration. Each of these areas taught me a different kind of thinking, and together they strengthened my confidence as a builder. The more I built, the more I understood that learning is not only about consuming information. It is also about turning that information into something useful.</p>
 
-                    <h2>Building a Portfolio Early</h2>
-                    <p>A portfolio shows consistency, demonstrates growth, and makes learning visible.</p>
+                    <p>The best way to grow is not to wait until you feel completely ready. It is to build, learn from feedback, and keep improving.</p>
 
-                    <h2>Advice to Students</h2>
-                    <p>Don't wait to feel "ready". Build, break, fix, and repeat.</p>
+                    <div class="article-links">
+                        <a href="../index.html" class="btn btn-primary">View My Portfolio</a>
+                        <a href="https://github.com/JakisaMaurice" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+                    </div>
                 </article>
 
                 <footer class="article-footer">

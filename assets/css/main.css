@@ -913,16 +913,33 @@ ul, ol {
     justify-content: center;
     width: 44px;
     height: 44px;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: #ffffff;
     border-radius: 50%;
-    color: white;
+    color: #0f172a;
     transition: all var(--transition-base);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #dbeafe;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
 .social-link:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+}
+
+.contact .social-link.whatsapp {
+    color: #25D366;
+}
+
+.contact .social-link.gmail {
+    color: #DB4437;
+}
+
+.contact .social-link.github {
+    color: #24292F;
+}
+
+.contact .social-link.linkedin {
+    color: #0A66C2;
 }
 
 .footer-bottom {

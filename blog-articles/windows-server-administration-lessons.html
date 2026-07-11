@@ -24,7 +24,7 @@
         }
 
         .article-container {
-            max-width: 800px;
+            max-width: 920px;
             margin: 0 auto;
             padding: 0 var(--space-xl);
         }
@@ -109,6 +109,26 @@
             margin-bottom: var(--space-sm);
         }
 
+        .insight-box {
+            background: linear-gradient(135deg, #f5fbff 0%, #eef7ff 100%);
+            border: 1px solid #d6e9f7;
+            border-radius: 14px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .insight-box h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .article-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
         .back-to-blog {
             display: inline-flex;
             align-items: center;
@@ -177,8 +197,9 @@
             <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#highlights">Services</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#resume">Resume</a></li>
+                <li><a href="../index.html#resume">Experience</a></li>
                 <li><a href="../index.html#blog">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
@@ -254,33 +275,47 @@
                 </header>
 
                 <article class="article-content">
-                    <p><strong>Introduction</strong></p>
-                    <p>During my internship at NCR / SCI, I moved from theory to real enterprise systems. This article highlights what I learned in real operational Windows Server environments.</p>
+                    <p>My internship at NCR Uganda was one of the clearest reminders that systems administration is not just about operating software; it is about keeping people, processes, and infrastructure working reliably. It pushed me from theory into real operational environments where mistakes have consequences.</p>
 
-                    <h2>What I Worked On</h2>
+                    <p>That experience gave me a much stronger appreciation for structure, documentation, and careful troubleshooting. It also showed me how closely infrastructure work relates to software delivery and long-term reliability.</p>
+
+                    <div class="insight-box">
+                        <h3>What I learned from working with enterprise systems</h3>
+                        <ul>
+                            <li>Server administration requires careful planning, clear documentation, and consistent follow-through.</li>
+                            <li>Active Directory and user management directly affect security and day-to-day operations.</li>
+                            <li>Virtualization helps teams test, isolate, and scale infrastructure more effectively.</li>
+                        </ul>
+                    </div>
+
+                    <h2>What I worked on</h2>
                     <ul>
-                        <li>Windows Server installation and configuration</li>
-                        <li>Active Directory domain setup</li>
-                        <li>User and group management</li>
-                        <li>VMware virtual machines</li>
-                        <li>Basic network and printer configuration</li>
+                        <li>Windows Server setup and configuration</li>
+                        <li>Active Directory administration and user access management</li>
+                        <li>VMware-based virtual machine deployment and support</li>
+                        <li>Network troubleshooting, hardware support, and general infrastructure maintenance</li>
+                        <li>Monitoring, maintenance routines, and environment reliability checks</li>
                     </ul>
 
-                    <h2>Understanding Active Directory</h2>
-                    <p>Centralized identity management, role-based access control, and proper structure and naming conventions. Shifted my perspective on security and scalability.</p>
+                    <h2>Why this experience changed my thinking</h2>
+                    <p>One of the biggest lessons was discovering how much impact a small misconfiguration can have across an entire environment. A single wrong setting can affect user access, network connectivity, or service reliability. That made me appreciate the importance of documentation, testing, and communication in IT operations.</p>
 
-                    <h2>Virtualization with VMware</h2>
-                    <p>Understanding resource sharing, isolation, and snapshots — preparing me for cloud computing concepts.</p>
+                    <p>I also saw first-hand that infrastructure work is not separate from development. Good systems make software deployment easier, safer, and more dependable. That perspective shaped my interest in DevOps, systems engineering, and reliable engineering practice.</p>
 
-                    <h2>Real Lessons You Don't Get in Class</h2>
+                    <h2>Lessons that stayed with me</h2>
                     <ul>
-                        <li>Documentation is critical</li>
-                        <li>One misconfiguration can affect many users</li>
-                        <li>Always test before deploying</li>
+                        <li>Reliability matters more than speed when systems support real users.</li>
+                        <li>Good documentation saves time and reduces repeat mistakes.</li>
+                        <li>Infrastructure work requires calm troubleshooting and patience.</li>
+                        <li>Strong systems thinking makes you better at software delivery as well.</li>
                     </ul>
 
-                    <h2>How This Shaped Me</h2>
-                    <p>Strengthened my interest in systems engineering, infrastructure, and reliability-focused development.</p>
+                    <p>Looking back, this internship helped me see that engineering is not only about writing code. It is also about building environments that people can rely on every day.</p>
+
+                    <div class="article-links">
+                        <a href="../index.html" class="btn btn-primary">View My Portfolio</a>
+                        <a href="https://github.com/JakisaMaurice" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+                    </div>
                 </article>
 
                 <footer class="article-footer">

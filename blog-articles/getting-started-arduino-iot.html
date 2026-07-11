@@ -24,7 +24,7 @@
         }
 
         .article-container {
-            max-width: 800px;
+            max-width: 920px;
             margin: 0 auto;
             padding: 0 var(--space-xl);
         }
@@ -109,6 +109,26 @@
             margin-bottom: var(--space-sm);
         }
 
+        .insight-box {
+            background: linear-gradient(135deg, #f5fbff 0%, #eef7ff 100%);
+            border: 1px solid #d6e9f7;
+            border-radius: 14px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .insight-box h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .article-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
         .back-to-blog {
             display: inline-flex;
             align-items: center;
@@ -177,8 +197,9 @@
             <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#highlights">Services</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#resume">Resume</a></li>
+                <li><a href="../index.html#resume">Experience</a></li>
                 <li><a href="../index.html#blog">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
@@ -254,46 +275,69 @@
                 </header>
 
                 <article class="article-content">
-                    <p><strong>Introduction</strong></p>
-                    <p>When I first got into Arduino and IoT, my goal was simple: build something real that actually works, not just blink LEDs on a breadboard.</p>
-                    <p>This article is based on a real home automation project I implemented using Arduino, sensors, relays, and a mobile IoT platform. The project helped me understand how hardware, software, and networking come together in real-world systems.</p>
+                    <p>My first Arduino and IoT project was important because it showed me that hardware can be just as rewarding as software when approached with curiosity and discipline. The goal was not to build something flashy, but to build something practical that could solve a real everyday problem.</p>
 
-                    <h2>Why Arduino and IoT?</h2>
+                    <p>That project gave me a better understanding of how physical systems, software logic, and networked control all work together. It also reminded me that embedded systems demand patience, testing, and a strong respect for reliability.</p>
+
+                    <div class="insight-box">
+                        <h3>What this project taught me</h3>
+                        <ul>
+                            <li>Hardware projects force you to think about timing, power, and safety in a very practical way.</li>
+                            <li>Good software structure becomes even more important when your system interacts with physical components.</li>
+                            <li>Testing a real system is rarely as simple as testing a web app or script.</li>
+                        </ul>
+                    </div>
+
+                    <h2>Why I chose Arduino and IoT</h2>
+                    <p>Arduino is a great gateway into embedded systems because it makes it possible to prototype quickly and learn by doing. What interested me even more was combining Arduino with the Internet of Things so I could control devices remotely from a smartphone rather than only through local switches.</p>
+
+                    <p>Working with IoT introduced concepts that do not usually appear in beginner programming tutorials, including communication between hardware and cloud services, remote device management, sensor monitoring, automation logic, network reliability, and electrical safety.</p>
+
+                    <h2>Project overview</h2>
+                    <p>The smart home system consisted of several components working together. At the center was an Arduino board responsible for reading sensor inputs and controlling connected devices through relay modules. The system also included a mobile application for remote control and a stable power supply to keep the hardware operating safely.</p>
+
+                    <div class="insight-box">
+                        <h3>Simple system architecture</h3>
+                        <p><strong>Arduino board</strong> reads sensors and controls relays. <strong>Blynk app</strong> sends commands from a phone. <strong>Power supply</strong> and wiring keep the system stable and safe.</p>
+                    </div>
+
+                    <h2>How the system worked</h2>
+                    <p>The basic loop was simple: read sensor values, check for incoming commands, evaluate automation conditions, and then activate or deactivate the relevant relay. That pattern introduced me to the idea of event-driven systems, where hardware responds to changing conditions rather than waiting for constant manual input.</p>
+
+                    <pre><code>void loop() {
+  readSensors();
+  checkCommands();
+  evaluateAutomation();
+  updateRelays();
+}</code></pre>
+
+                    <h2>Challenges I faced during development</h2>
+                    <p>Power supply issues were one of the earliest obstacles. At first I assumed the problem was in the code, but after testing the hardware individually I realized the relay behaviour was being affected by unstable power delivery.</p>
+
+                    <p>As more sensors were added, the control logic became harder to manage. I started separating responsibilities into smaller functions for reading sensors, processing commands, updating relay states, and handling automation rules. That made the program easier to read and maintain.</p>
+
+                    <p>Timing and responsiveness also became important. Using long delays made the system feel less reliable, so I learned to reduce unnecessary waiting and structure the logic more carefully. That experience taught me that efficient timing matters just as much as correct logic in embedded programming.</p>
+
+                    <p>Debugging beyond the code was another major lesson. Sometimes the issue was a loose jumper cable, an incorrect pin assignment, a sensor calibration problem, or a power fluctuation. Other times it was genuinely a programming issue. The habit of isolating each component and testing it independently saved a lot of time and frustration.</p>
+
+                    <h2>Lessons I learned</h2>
                     <ul>
-                        <li>It bridges software and hardware</li>
-                        <li>It allows rapid prototyping</li>
-                        <li>It forces you to think about power, timing, and reliability</li>
+                        <li>Always test hardware components individually before integrating them.</li>
+                        <li>Organize embedded programs into small, reusable functions instead of placing everything inside a single loop.</li>
+                        <li>Never overlook power management when working with electronic devices.</li>
+                        <li>Debugging embedded systems requires investigating both software and hardware.</li>
+                        <li>Build incrementally and verify one feature at a time.</li>
                     </ul>
-                    <p>IoT added another layer: remote control, monitoring, and automation using a phone or web dashboard.</p>
 
-                    <h2>System Overview</h2>
-                    <ul>
-                        <li>Arduino microcontroller</li>
-                        <li>Relay modules to control appliances</li>
-                        <li>Sensors (for state detection and automation logic)</li>
-                        <li>IoT platform (Blynk) for remote control</li>
-                        <li>Power regulation and wiring considerations</li>
-                    </ul>
-                    <p>The Arduino acted as the control unit, reading sensor data and responding to commands from the IoT app.</p>
+                    <h2>What I would improve next time</h2>
+                    <p>If I rebuilt this project today, I would consider using a more capable microcontroller such as the ESP32, improving fault tolerance, reducing blocking operations, and documenting the architecture more clearly. I would also improve the separation between hardware control and application logic so the project is easier to maintain and extend.</p>
 
-                    <h2>How the System Worked (In Simple Terms)</h2>
-                    <p>The Arduino continuously listens for sensor input and commands from the IoT platform. When a command is received, it validates it and triggers the appropriate relay. Sensors provide feedback, allowing automation rules and preventing unsafe states. This taught me that IoT is about logic, safety, and reliability.</p>
+                    <p>To make this article stronger, I would also add a hero image of the completed system, a simple architecture diagram, a wiring schematic, a small code snippet, photos from the build process, and a GitHub link if the project is shared publicly.</p>
 
-                    <h2>Challenges I Faced</h2>
-                    <ul>
-                        <li>Power fluctuations affecting relay behavior</li>
-                        <li>Timing issues when handling multiple inputs</li>
-                        <li>Understanding how to structure Arduino code cleanly</li>
-                    </ul>
-                    <p>Solutions included separating logic into functions, using delays carefully, and testing components independently.</p>
-
-                    <h2>What This Project Taught Me</h2>
-                    <ul>
-                        <li>How embedded systems think differently from web apps</li>
-                        <li>How hardware constraints affect software design</li>
-                        <li>How to debug both code and physical connections</li>
-                    </ul>
-                    <p>This project became the foundation for my interest in embedded systems and system-level engineering.</p>
+                    <div class="article-links">
+                        <a href="../index.html" class="btn btn-primary">View My Portfolio</a>
+                        <a href="https://github.com/JakisaMaurice" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+                    </div>
                 </article>
 
                 <footer class="article-footer">

@@ -603,7 +603,7 @@
             font-weight: 500;
         }
         
-        /* Resume Section */
+        /* Experience Section */
         .resume {
             background: #f8fafc;
         }
@@ -867,7 +867,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#highlights">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
+                <li><a href="#resume">Experience</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -880,7 +880,7 @@
         <div class="nav-dot" data-section="about" data-tooltip="About"></div>
         <div class="nav-dot" data-section="highlights" data-tooltip="Services"></div>
         <div class="nav-dot" data-section="projects" data-tooltip="Projects"></div>
-        <div class="nav-dot" data-section="resume" data-tooltip="Resume"></div>
+        <div class="nav-dot" data-section="resume" data-tooltip="Experience"></div>
         <div class="nav-dot" data-section="contact" data-tooltip="Contact"></div>
     </div>
 
@@ -893,7 +893,7 @@
                     <p>I'm <strong class="highlight">Mungu Jakisa Maurice</strong>, a Full Stack Software Engineer based in Kampala, Uganda. I build modern web applications, enterprise systems, and cloud-backed solutions from concept to production.</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="assets/documents/MUNGU%20JAKISA%20MAURICE%20RESUME.pdf" class="btn btn-secondary" download>Download Resume</a>
+                        <a href="assets/documents/MUNGU%20JAKISA%20MAURICE%20-%20RESUME.pdf" class="btn btn-secondary" download>Download Resume</a>
                         <a href="#contact" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
@@ -908,7 +908,7 @@
     <section id="about" class="section about">
         <div class="container">
                 <div class="about-text">
-                    <h2>About Me</h2>
+                    <h2>About</h2>
                     <p>Technology has always fascinated me because of its ability to solve real-world problems. For me, software engineering is not just about writing code. It is about understanding challenges, designing thoughtful solutions, and building products that continue creating value long after deployment.</p>
                     <p>My experience extends beyond application development into systems administration, networking, DevOps, and cloud infrastructure. I enjoy understanding how every layer of a system works, from the user interface to the servers that keep it running. That broader perspective helps me build reliable, scalable solutions and take ownership of projects from concept to production.</p>
                     <p>I have had the opportunity to contribute to production software for organizations such as Refactory Academy and SwanAir Travels &amp; Safaris, while also gaining hands-on experience in enterprise IT environments through systems administration and network support. Today, I am focused on building modern, maintainable software that solves meaningful business problems and supports long-term growth.</p>
@@ -1503,6 +1503,7 @@
                         <span class="pill"><i class="fas fa-code"></i> Full Stack Software Engineering</span>
                         <span class="pill"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</span>
                         <span class="pill"><i class="fas fa-server"></i> Systems &amp; Network Administration</span>
+                        <span class="pill"><i class="fas fa-microchip"></i> Embedded Systems</span>
                     </div>
                 </div>
 
@@ -1523,10 +1524,10 @@
                     <h3>Achievements & Experience</h3>
                     <p>Experience across production software delivery, enterprise support, and project ownership has shaped my approach to solving problems with reliability and clarity.</p>
                     <div class="achievement-list">
-                        <span class="pill gray"><i class="fas fa-check"></i> Production software delivery</span>
-                        <span class="pill gray"><i class="fas fa-check"></i> End-to-end project ownership</span>
-                        <span class="pill gray"><i class="fas fa-check"></i> Infrastructure and systems expertise</span>
-                        <span class="pill gray"><i class="fas fa-check"></i> Continuous learning mindset</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Refactory Apprenticeship Certification</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Diploma in Computer Science</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> National Certificate in Accounting and Finance</span>
+                        <span class="pill gray"><i class="fas fa-check"></i> Delivery of production systems</span>
                     </div>
                 </div>
             </div>
@@ -1558,9 +1559,9 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <!-- Refactory Interview Scheduler -->
-                <div class="project-card">
+                <div class="project-card" onclick="window.location.href='projects.html#refactory-interview-scheduler'" style="cursor: pointer;">
                     <div class="project-image">
-                        <img src="assets/images/projects/portfolio-website.svg" alt="Refactory Interview Scheduler">
+                        <img src="assets/images/projects/refactory-interview-scheduler.png" alt="Refactory Interview Scheduler">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Refactory Interview Scheduler</h3>
@@ -1574,7 +1575,7 @@
                 </div>
                 
                 <!-- SwanAir Travel & Safaris -->
-                <div class="project-card" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='projects.html#swanair-costing-platform'" style="cursor: pointer;">
                     <div class="project-image">
                         <img src="assets/images/projects/landing page swanair app.png" alt="SwanAir Travel & Safaris">
                     </div>
@@ -1590,23 +1591,24 @@
                 </div>
                 
                 <!-- Web Development Projects -->
-                <div class="project-card" onclick="window.location.href='https://jakisamaurice.github.io/schoolWebsite'" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='projects.html#linux-homelab'" style="cursor: pointer;">
                     <div class="project-image">
-                        <img src="assets/images/htmlcssjs-pic.png" alt="Web Development">
+                        <img src="assets/images/projects/ubuntu.png" alt="Web Development">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Linux Home Lab</h3>
-                        <p class="project-description">A self-hosted lab environment built to support hands-on learning in Linux administration, Docker, SSH security, and home networking.</p>
+                        <p class="project-description">A self-hosted lab environment for hands-on learning in Ubuntu Server administration, Docker, SSH/Tailscale security, NFS storage, and home networking.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Ubuntu Server</span>
                             <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Networking</span>
+                            <span class="tech-tag">Linux Networking</span>
+                            <span class="tech-tag">SSH</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Server Configuration -->
-                <div class="project-card">
+                <div class="project-card" onclick="window.location.href='projects.html#school-attendance-system'" style="cursor: pointer;">
                     <div class="project-image">
                         <img src="assets/images/server-configuration/2.jpg" alt="Server Configuration">
                     </div>
@@ -1622,9 +1624,9 @@
                 </div>
                 
                 <!-- Personal Portfolio -->
-                <div class="project-card" onclick="window.location.href='https://mungujakisamaurice.onrender.com'" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='projects.html#home-automation'" style="cursor: pointer;">
                     <div class="project-image">
-                        <img src="assets/images/projects/portfolio-website.svg" alt="Personal Portfolio">
+                        <img src="assets/images/arduino, home automation.jpg" alt="Personal Portfolio">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Smart Home Control System</h3>
@@ -1638,7 +1640,7 @@
                 </div>
                 
                 <!-- GitHub Projects -->
-                <div class="project-card" onclick="window.location.href='https://github.com/JakisaMaurice/recipe_app'" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='projects.html#flutter-recipe-app'" style="cursor: pointer;">
                     <div class="project-image">
                         <img src="assets/images/projects/recipe-app.svg" alt="Flutter Recipe App">
                     </div>
@@ -1653,9 +1655,9 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='https://jakisamaurice.github.io/schoolWebsite'" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='projects.html#school-website-platform'" style="cursor: pointer;">
                     <div class="project-image">
-                        <img src="assets/images/projects/school-website.svg" alt="School Website">
+                        <img src="assets/images/projects/westwood.png" alt="School Website">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Complete School Website</h3>
@@ -1670,7 +1672,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='https://school-attendance-management-system.onrender.com'" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='projects.html#school-attendance-system'" style="cursor: pointer;">
                     <div class="project-image">
                         <img src="assets/images/projects/attendance-system.svg" alt="Attendance System">
                     </div>
@@ -1685,21 +1687,6 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/projects/linux-homelab.svg" alt="Linux Home Lab">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Linux Home Lab Server</h3>
-                        <p class="project-description">Self-hosted infrastructure with Ubuntu Server, Docker containerization, NFS file server, SSH/Tailscale security, and Cockpit management.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Ubuntu Server</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Linux Networking</span>
-                            <span class="tech-tag">SSH</span>
-                        </div>
-                    </div>
-                </div>
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
@@ -1712,14 +1699,14 @@
     <section id="resume" class="section resume">
         <div class="container">
             <h2 class="section-title">Experience</h2>
-            <p class="section-subtitle">A timeline of the roles, internships, and studies that have shaped my technical path.</p>
+            <p class="section-subtitle">A timeline of my experience in software engineering, systems administration, and production delivery.</p>
             
             <!-- Resume Actions -->
             <div style="text-align: center; margin-bottom: 3rem;">
-                <a href="ATS-Resume-Maurice-Jakisa.html" class="btn btn-primary" target="_blank" style="margin: 0.5rem;">
+                <a href="assets/documents/MUNGU%20JAKISA%20MAURICE%20-%20RESUME.pdf" class="btn btn-primary" target="_blank" style="margin: 0.5rem;">
                     View Resume
                 </a>
-                <a href="assets/documents/MUNGU JAKISA MAURICE RESUME.pdf" class="btn btn-secondary" download style="margin: 0.5rem;">
+                <a href="assets/documents/MUNGU%20JAKISA%20MAURICE%20-%20RESUME.pdf" class="btn btn-secondary" download style="margin: 0.5rem;">
                     Download PDF
                 </a>
             </div>
@@ -1729,11 +1716,11 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">
                             <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
-                            Refactory Apprenticeship
+                            Fullstack Software Engineer (Contract)
                         </h3>
                         <div class="timeline-company">Refactory Academy</div>
-                        <div class="timeline-date">June 2025 - Present</div>
-                        <p>Full-stack apprenticeship focused on shipping production-ready software, collaborating in team environments, and strengthening engineering discipline across the delivery lifecycle.</p>
+                        <div class="timeline-date">June 2026</div>
+                        <p>Built the Refactory Interview Scheduler from requirement analysis and architecture through deployment automation, secure APIs, and production support for a recruitment platform.</p>
                         <div style="margin-top: 1rem;">
                             <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Full-Stack</span>
                             <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Production Delivery</span>
@@ -1745,11 +1732,43 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">
                             <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
-                            NCR Uganda
+                            Fullstack Software Developer & Project Lead
                         </h3>
-                        <div class="timeline-company">NCR Uganda/Service and Computer Industries(SCI)</div>
-                        <div class="timeline-date">June 2024</div>
-                        <p>Configured Windows Server environments, Active Directory systems, VMware virtualization, and provided technical support within an enterprise IT environment.</p>
+                        <div class="timeline-company">SwanAir Travels and Safaris</div>
+                        <div class="timeline-date">2025 - January 2026</div>
+                        <p>Directed the development of a travel and safaris costing platform with intelligent pricing engines, secure authentication, CI/CD deployment, and Linux server operations for a real-world tour operations business.</p>
+                        <div style="margin-top: 1rem;">
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">SaaS</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">DevOps</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
+                            Fullstack Developer (Apprentice)
+                        </h3>
+                        <div class="timeline-company">Refactory Academy</div>
+                        <div class="timeline-date">June 2025 - March 2026</div>
+                        <p>Built production-focused software in an intensive apprenticeship, strengthening full-stack engineering discipline, team collaboration, and modern delivery practices.</p>
+                        <div style="margin-top: 1rem;">
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Apprenticeship</span>
+                            <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Software Engineering</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-briefcase" style="color: #0091ff; margin-right: 0.5rem;"></i>
+                            IT Intern
+                        </h3>
+                        <div class="timeline-company">NCR Uganda (SCI) Services and Computer Industries</div>
+                        <div class="timeline-date">June 2024 - August 2024</div>
+                        <p>Maintained enterprise hardware and software, supported Windows Server and Active Directory environments, deployed VMware virtual machines, and contributed to network troubleshooting and infrastructure operations.</p>
                         <div style="margin-top: 1rem;">
                             <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">Infrastructure</span>
                             <span style="background: rgba(0, 145, 255, 0.1); color: #0091ff; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Support</span>
@@ -1765,7 +1784,7 @@
                         </h3>
                         <div class="timeline-company">Self-Employed</div>
                         <div class="timeline-date">2023 - Present</div>
-                        <p>Built responsive web solutions for clients and personal projects, with a focus on clear user experiences, dependable delivery, and maintainable code.</p>
+                        <p>Designed and developed responsive websites for clients and personal projects, covering front-end and back-end implementation, authentication, database integration, and project delivery.</p>
                     </div>
                 </div>
                 
@@ -1777,7 +1796,7 @@
                         </h3>
                         <div class="timeline-company">Makerere University Business School</div>
                         <div class="timeline-date">2023 - Present</div>
-                        <p>Comprehensive computer science education with focus on software development, systems thinking, and practical problem solving.</p>
+                        <p>Studying computer science with focus on software development, systems thinking, and practical problem solving.</p>
                     </div>
                 </div>
                 
@@ -1789,7 +1808,7 @@
                         </h3>
                         <div class="timeline-company">Uganda College of Commerce Pakwach</div>
                         <div class="timeline-date">2019 - 2021</div>
-                        <p>Completed accounting and finance certification with focus on financial management, bookkeeping, and business operations.</p>
+                        <p>Completed a National Certificate in Accounting and Finance with focus on financial management, bookkeeping, and business operations.</p>
                     </div>
                 </div>
             </div>
@@ -1809,8 +1828,8 @@
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #0091ff; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Featured</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Getting Started with Arduino and IoT</h3>
-                        <p class="project-description">A comprehensive guide based on real Arduino home automation project experience. Learn hardware setup, programming concepts, and integration with IoT platforms.</p>
+                        <h3 class="project-title">Lessons from My First Arduino and IoT Project</h3>
+                        <p class="project-description">A practical reflection on building a smart home system with Arduino, sensors, relays, and an IoT platform.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Arduino</span>
                             <span class="tech-tag">IoT</span>
@@ -1830,8 +1849,8 @@
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Web Dev</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Modern Web Development Lessons</h3>
-                        <p class="project-description">Insights from real freelance projects covering mobile responsiveness, performance optimization, security considerations, and client work lessons.</p>
+                        <h3 class="project-title">Modern Web Development: What I Learned</h3>
+                        <p class="project-description">A reflection on responsive design, maintainability, performance, and the habits that make a portfolio or client site reliable.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">PHP</span>
@@ -1850,8 +1869,8 @@
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #8b5cf6; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Server</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Windows Server Administration Lessons</h3>
-                        <p class="project-description">Hands-on experience from NCR Uganda internship covering Windows Server 2019, Active Directory, VMware virtualization, and enterprise infrastructure.</p>
+                        <h3 class="project-title">Windows Server Administration: Lessons from the Field</h3>
+                        <p class="project-description">A grounded look at Active Directory, virtualization, troubleshooting, and the realities of enterprise infrastructure work.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Windows Server</span>
                             <span class="tech-tag">Active Directory</span>
@@ -1864,22 +1883,22 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='blog-articles/computer-science-student-guide.html'" style="cursor: pointer;">
+                <div class="project-card" onclick="window.location.href='blog-articles/tech-industry-uganda-insights.html'" style="cursor: pointer;">
                     <div class="project-image">
-                        <img src="assets/images/banner_image.jpg" alt="CS Student Guide">
+                        <img src="assets/images/projects/refactory-interview-scheduler.png" alt="Uganda Tech Insights">
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Career</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Computer Science Student Guide</h3>
-                        <p class="project-description">Practical advice for CS students including balancing academics with projects, building portfolios, and preparing for the tech industry.</p>
+                        <h3 class="project-title">Reflections on Uganda’s Tech Industry</h3>
+                        <p class="project-description">An insider view of the opportunities, challenges, and practical path to growth in Uganda’s changing tech ecosystem.</p>
                         <div class="tech-tags">
-                            <span class="tech-tag">Education</span>
+                            <span class="tech-tag">Uganda Tech</span>
                             <span class="tech-tag">Career</span>
-                            <span class="tech-tag">Portfolio</span>
+                            <span class="tech-tag">Industry</span>
                         </div>
                         <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #666;">
-                            <span><i class="fas fa-calendar"></i> Oct 28, 2025</span>
-                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                            <span><i class="fas fa-calendar"></i> Oct 20, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
                         </div>
                     </div>
                 </div>
@@ -1913,6 +1932,23 @@
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>Kampala, Uganda</div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.8rem; color: #0f172a;">Connect with me</h4>
+                        <div class="social-links">
+                            <a href="https://wa.me/+256750302070" class="social-link whatsapp" aria-label="WhatsApp Contact" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:jakisamaurice@gmail.com" class="social-link gmail" aria-label="Gmail Contact" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-google" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/JakisaMaurice" class="social-link github" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mungu-jakisa-maurice" class="social-link linkedin" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 

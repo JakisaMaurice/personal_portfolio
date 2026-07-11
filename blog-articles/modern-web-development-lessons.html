@@ -24,7 +24,7 @@
         }
 
         .article-container {
-            max-width: 800px;
+            max-width: 920px;
             margin: 0 auto;
             padding: 0 var(--space-xl);
         }
@@ -109,6 +109,26 @@
             margin-bottom: var(--space-sm);
         }
 
+        .insight-box {
+            background: linear-gradient(135deg, #f5fbff 0%, #eef7ff 100%);
+            border: 1px solid #d6e9f7;
+            border-radius: 14px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .insight-box h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .article-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
         .back-to-blog {
             display: inline-flex;
             align-items: center;
@@ -177,8 +197,9 @@
             <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#highlights">Services</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#resume">Resume</a></li>
+                <li><a href="../index.html#resume">Experience</a></li>
                 <li><a href="../index.html#blog">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
@@ -254,23 +275,54 @@
                 </header>
 
                 <article class="article-content">
-                    <p><strong>Introduction</strong></p>
-                    <p>Building my portfolio website was not just about design — it was about solving real problems: responsiveness, performance, accessibility, and maintainability. This article shares lessons I learned while building and iterating on my professional portfolio.</p>
+                    <p>Modern web development is no longer just about making pages look good. It is about making them useful, reliable, accessible, and maintainable. My experience building a portfolio and client-facing applications taught me that the details matter more than most beginners expect.</p>
 
-                    <h2>From Static Pages to Structured Systems</h2>
-                    <p>I started with basic HTML and CSS, but quickly realized structure and consistency matter. I designed reusable layouts, consistent spacing, and a clean navigation system.</p>
+                    <p>What started as a simple website project became a deeper lesson in product thinking. I had to consider layout systems, performance, accessibility, content structure, and long-term maintainability at the same time.</p>
 
-                    <h2>Mobile Responsiveness Is Not Optional</h2>
-                    <p>If it doesn't work well on mobile, it's broken. I focused on flexible grids, media queries, and touch-friendly navigation.</p>
+                    <div class="insight-box">
+                        <h3>What I learned while building real web products</h3>
+                        <ul>
+                            <li>Good structure makes a site easier to scale and update over time.</li>
+                            <li>Responsive design is a core requirement, not an extra feature.</li>
+                            <li>Performance, accessibility, and clean code improve both user experience and developer confidence.</li>
+                        </ul>
+                    </div>
 
-                    <h2>Performance and Clean Code</h2>
-                    <p>Image optimization, lazy loading, and minimal JavaScript improved speed and usability.</p>
+                    <h2>Defining the purpose before writing code</h2>
+                    <p>One of the biggest lessons I learned was that a portfolio should be designed around the person visiting it. Employers, clients, and collaborators are usually trying to answer a few simple questions: who are you, what have you built, and why should I trust your work?</p>
 
-                    <h2>Security Awareness (Even Without a Backend)</h2>
-                    <p>Clean form handling, input validation awareness, and planning for future backend integration.</p>
+                    <p>That realization changed how I approached the layout. Instead of trying to showcase everything at once, I focused on the core message: a clear story of my skills, projects, and growth.</p>
 
-                    <h2>Key Takeaway</h2>
-                    <p>A portfolio is not a design exercise — it's a technical statement of how you think and work.</p>
+                    <h2>From static pages to reusable components</h2>
+                    <p>I started with simple HTML and CSS pages, but as the site grew I noticed that the same patterns were repeating across sections. Navigation, project cards, buttons, and footer structure all needed consistency. That repetition made updates slower and more error-prone.</p>
+
+                    <p>Thinking in terms of reusable components helped me create a cleaner and more maintainable structure. It also reinforced an important engineering habit: avoid unnecessary repetition whenever possible.</p>
+
+                    <h2>Designing for mobile first</h2>
+                    <p>Most users now experience websites on mobile first, so responsive design should not be an afterthought. Touch-friendly controls, flexible layouts, and a simple content hierarchy matter just as much as visual design.</p>
+
+                    <p>Testing on different screen sizes also helped me identify layout issues that were not visible on desktop. Small adjustments such as improving padding, spacing, and button placement made a significant difference in usability.</p>
+
+                    <h2>Performance matters more than fancy animations</h2>
+                    <p>It is easy to get excited about motion effects and visual polish. However, performance should remain a priority. Image optimization, minimal JavaScript, lightweight styling, and removing unnecessary assets all reduce friction and improve the first impression of the site.</p>
+
+                    <p>A fast-loading portfolio feels more professional because it signals that the developer cares about the experience of the user, not just the appearance of the interface.</p>
+
+                    <h2>Writing clean and maintainable code</h2>
+                    <p>As the project evolved, I realized that writing code for myself required the same discipline as writing code for a team. Quick fixes might work today, but they become harder to understand tomorrow. That is why meaningful naming, consistent file organization, and regular refactoring became part of my process.</p>
+
+                    <h2>Accessibility is part of good design</h2>
+                    <p>Accessibility was not something I fully appreciated at first, but it became clear that websites should be usable by as many people as possible. Semantic HTML, proper headings, descriptive link text, meaningful alt text, and keyboard-friendly navigation are all part of creating a thoughtful product.</p>
+
+                    <h2>Thinking about security early</h2>
+                    <p>Even on a lightweight portfolio, security should still be considered early. Input validation, secure form handling, protection against spam, and safe deployment practices are much easier to build in at the beginning than to retrofit later.</p>
+
+                    <p>A portfolio is not just a visual project. It is a statement of how you think, how you solve problems for real users, and how you build with long-term quality in mind.</p>
+
+                    <div class="article-links">
+                        <a href="../index.html" class="btn btn-primary">View My Portfolio</a>
+                        <a href="https://github.com/JakisaMaurice" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+                    </div>
                 </article>
 
                 <footer class="article-footer">
