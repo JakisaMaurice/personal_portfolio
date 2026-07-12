@@ -2513,133 +2513,101 @@
         </div>
     </section>
 
-    <!-- Back to Top Button -->
+<!-- Back to Top Button -->
     <button class="back-to-top" onclick="scrollToTop()">
         ↑
     </button>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
     <script>
-        // EmailJS
-        emailjs.init('WodX_wdPXT8DpPqZ_');
-        
-        // Contact form
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('.submit-btn');
-            const msg = document.getElementById('formMessage');
+        // Initialize EmailJS after libraries load
+        document.addEventListener('DOMContentLoaded', function() {
+            emailjs.init('WodX_wdPXT8DpPqZ_');
             
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-            
-            emailjs.sendForm('service_65f38bi', 'template_gdf9rpk', this)
-                .then(() => {
-                    msg.className = 'form-message success';
-                    msg.textContent = 'Message sent successfully!';
-                    msg.style.display = 'block';
-                    this.reset();
-                })
-                .finally(() => {
-                    btn.textContent = 'Send Message';
-                    btn.disabled = false;
-                });
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            // Dot navigation click handlers
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const section = dot.getAttribute('data-section');
+                    document.getElementById(section).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
 
-        // Active section tracking
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.section');
-            const dots = document.querySelectorAll('.nav-dot');
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
             
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 300) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('data-section') === current) {
-                    dot.classList.add('active');
-                }
-            });
-        });
-
-        // Dot navigation
-        document.querySelectorAll('.nav-dot').forEach(dot => {
-            dot.addEventListener('click', () => {
-                const section = dot.getAttribute('data-section');
-                document.getElementById(section).scrollIntoView({
-                    behavior: 'smooth'
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                    hamburger.setAttribute('aria-expanded', !isExpanded);
+                    navLinks.classList.toggle('active');
                 });
-            });
-        });
-
-        // Skill bars animation disabled for now.
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const skillCategories = document.querySelectorAll('.skill-category');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filter = button.getAttribute('data-filter');
-
-                skillCategories.forEach(category => {
-                    const categoryType = category.getAttribute('data-category');
-                    if (filter === 'all' || categoryType === filter) {
-                        category.style.display = 'block';
-                    } else {
-                        category.style.display = 'none';
+                
+                // Close menu when clicking on links
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Handle escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.focus();
+                    }
+                });
+            }
+            
+            // Active section tracking for dot navigation
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('.section');
+                const dots = document.querySelectorAll('.nav-dot');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 300) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('data-section') === current) {
+                        dot.classList.add('active');
                     }
                 });
             });
-        });
-    </script>
-    
-    <script src="assets/js/theme.js"></script>
-    <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-        
-        // Close menu when clicking on links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
+            
+            // Back to top functionality
+            window.scrollToTop = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            
+            // Show/hide back to top button
+            window.addEventListener('scroll', () => {
+                const backToTop = document.querySelector('.back-to-top');
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
             });
-        });
-    </script>
-    
-    <script>
-        // Back to top functionality
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-        // Show/hide back to top button
-        window.addEventListener('scroll', () => {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
         });
     </script>
 </body>
