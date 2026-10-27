@@ -393,6 +393,24 @@
           "maintainer": {
             "@id": "https://mungujakisamaurice.com/#person"
           }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://mungujakisamaurice.com/projects.html#design-labs-engine",
+          "name": "Design Labs Engine",
+          "url": "https://www.designlabsengine.com/",
+          "description": "A technology and innovation venture focused on engineering digital solutions, developing software platforms, and turning ideas into practical technology.",
+          "founder": {
+            "@id": "https://mungujakisamaurice.com/#person"
+          },
+          "knowsAbout": [
+            "Software Engineering",
+            "Web Application Development",
+            "Digital Platforms",
+            "Business Systems",
+            "Emerging Technologies",
+            "Systems Engineering"
+          ]
         }
       ]
     }
@@ -2124,7 +2142,26 @@
     <section id="projects" class="section projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
+            <div style="text-align: center; margin-top: calc(-1 * var(--space-md)); margin-bottom: var(--space-xl);">
+                <a href="projects.html" class="btn btn-primary">View All Projects</a>
+            </div>
             <div class="projects-grid">
+                <!-- Design Labs Engine (Featured) -->
+                <div class="project-card" onclick="window.location.href='projects.html#design-labs-engine'" style="cursor: pointer;">
+                    <div class="project-image">
+                        <img src="assets/images/dle-homepage.png" alt="Design Labs Engine website homepage" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Design Labs Engine: Technology &amp; Innovation Venture</h3>
+                        <p class="project-description">Building a technology and innovation venture focused on engineering digital solutions, developing software platforms, and turning ideas into practical technology.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Technology</span>
+                            <span class="tech-tag">Software Engineering</span>
+                            <span class="tech-tag">Entrepreneurship</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Refactory Interview Scheduler -->
                 <div class="project-card" onclick="window.location.href='projects.html#refactory-interview-scheduler'" style="cursor: pointer;">
                     <div class="project-image">
