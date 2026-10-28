@@ -18,9 +18,15 @@
     <meta property="og:title" content="Surviving and Thriving as a Computer Science Student">
     <meta property="og:description" content="Practical advice for computer science students on balancing academics, building projects, and preparing for the tech industry.">
     <meta property="og:type" content="article">
+    <link rel="canonical" href="https://mungujakisamaurice.com/blog-articles/computer-science-student-guide.html">
+    <meta property="og:url" content="https://mungujakisamaurice.com/blog-articles/computer-science-student-guide.html">
+    <meta property="og:image" content="https://mungujakisamaurice.com/assets/images/banner_image.jpg">
+    <meta property="og:site_name" content="Mungu Jakisa Maurice Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mungujakisamaurice.com/assets/images/banner_image.jpg">
     <title>Surviving and Thriving as a Computer Science Student - Mungu Jakisa Maurice</title>
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -223,9 +229,9 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"></div>
+            <div class="logo"><a href="../index.html">Mungu Jakisa Maurice</a></div>
             <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+            <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
@@ -396,7 +402,7 @@
 
                 <footer class="article-footer">
                     <div class="author-card">
-                        <img src="../assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                        <img src="../assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar" loading="lazy">
                         <div class="author-info">
                             <h4>Mungu Jakisa Maurice</h4>
                             <p>Computer Science student passionate about embedded systems, web development, and building real-world solutions.</p>
@@ -469,5 +475,5 @@
             }
         });
     </script>
-<script>function toggleMenu(){document.querySelector(".nav-links").classList.toggle("active");}document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{document.querySelector(".nav-links").classList.remove("active");});});</script></body>
+<script>function toggleMenu(){const open=document.querySelector(".nav-links").classList.toggle("active");document.querySelector(".hamburger").setAttribute("aria-expanded",open);}document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{document.querySelector(".nav-links").classList.remove("active");document.querySelector(".hamburger").setAttribute("aria-expanded","false");});});</script></body>
 </html>

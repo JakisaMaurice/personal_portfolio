@@ -18,9 +18,15 @@
     <meta property="og:title" content="Technical Blog - Mungu Jakisa Maurice">
     <meta property="og:description" content="Thoughts on technology, development, and innovation">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://mungujakisamaurice.com/blog.html">
+    <meta property="og:url" content="https://mungujakisamaurice.com/blog.html">
+    <meta property="og:image" content="https://mungujakisamaurice.com/assets/images/profile-pic.jpeg">
+    <meta property="og:site_name" content="Mungu Jakisa Maurice Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mungujakisamaurice.com/assets/images/profile-pic.jpeg">
     <title>Blog - Mungu Jakisa Maurice</title>
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -446,13 +452,13 @@
 <body>
 <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"></div>
+            <div class="logo"><a href="index.html">Mungu Jakisa Maurice</a></div>
             <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-            <div class="hamburger" onclick="toggleMenu()">
+            <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -580,7 +586,7 @@
                 <!-- Featured Post -->
                 <article class="featured-post" onclick="window.location.href='blog-articles/getting-started-arduino-iot.html'">
                     <div class="featured-image">
-                        <img src="assets/images/home-automation/1.jpg" alt="Arduino IoT Project" loading="lazy">
+                        <img src="assets/images/home-automation/1.webp" alt="Arduino IoT Project" loading="lazy">
                         <span class="featured-category">Featured</span>
                     </div>
                     <div class="featured-content">
@@ -642,7 +648,7 @@
                             </div>
                             <div class="blog-footer">
                                 <div class="author-info">
-                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar" loading="lazy">
                                     <span class="author-name">Mungu Jakisa Maurice</span>
                                 </div>
                                 <div class="read-more">
@@ -682,7 +688,7 @@
                             </div>
                             <div class="blog-footer">
                                 <div class="author-info">
-                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar" loading="lazy">
                                     <span class="author-name">Mungu Jakisa Maurice</span>
                                 </div>
                                 <div class="read-more">
@@ -722,7 +728,7 @@
                             </div>
                             <div class="blog-footer">
                                 <div class="author-info">
-                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar" loading="lazy">
                                     <span class="author-name">Mungu Jakisa Maurice</span>
                                 </div>
                                 <div class="read-more">
@@ -735,7 +741,7 @@
                     <!-- Academic Projects Article -->
                     <article class="blog-card" data-category="career" onclick="window.location.href='blog-articles/tech-industry-uganda-insights.html'">
                         <div class="blog-image">
-                            <img src="assets/images/projects/refactory-interview-scheduler.png" alt="Tech Industry Uganda" loading="lazy">
+                            <img src="assets/images/projects/refactory-interview-scheduler.webp" alt="Tech Industry Uganda" loading="lazy">
                             <span class="blog-category">Career & Learning</span>
                         </div>
                         <div class="blog-content">
@@ -760,7 +766,7 @@
                             </div>
                             <div class="blog-footer">
                                 <div class="author-info">
-                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                                    <img src="assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar" loading="lazy">
                                     <span class="author-name">Mungu Jakisa Maurice</span>
                                 </div>
                                 <div class="read-more">
@@ -844,7 +850,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/continuous-scroll.js"></script>
     <script>
         // Blog-specific functionality
         function openArticle(articleId) {
@@ -910,11 +915,13 @@
     <script src="assets/js/theme.js"></script>
     <script>
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const open = document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.hamburger').setAttribute('aria-expanded', open);
         }
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
             });
         });
     </script>

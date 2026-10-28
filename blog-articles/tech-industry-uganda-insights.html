@@ -18,9 +18,15 @@
     <meta property="og:title" content="The Tech Industry in Uganda: Opportunities and Challenges">
     <meta property="og:description" content="An insider's perspective on Uganda's growing tech sector and how to position yourself for success in the local market.">
     <meta property="og:type" content="article">
+    <link rel="canonical" href="https://mungujakisamaurice.com/blog-articles/tech-industry-uganda-insights.html">
+    <meta property="og:url" content="https://mungujakisamaurice.com/blog-articles/tech-industry-uganda-insights.html">
+    <meta property="og:image" content="https://mungujakisamaurice.com/assets/images/og/tech-industry-uganda.jpg">
+    <meta property="og:site_name" content="Mungu Jakisa Maurice Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mungujakisamaurice.com/assets/images/og/tech-industry-uganda.jpg">
     <title>The Tech Industry in Uganda: Opportunities and Challenges - Mungu Jakisa Maurice</title>
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -334,9 +340,9 @@
 <body>
 <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"></div>
+            <div class="logo"><a href="../index.html">Mungu Jakisa Maurice</a></div>
             <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+            <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
@@ -526,12 +532,12 @@
 
                     <div class="project-showcase">
                         <div class="project-card">
-                            <img src="../assets/images/projects/refactory-interview-scheduler.png" alt="Refactory Interview Scheduler" loading="lazy">
+                            <img src="../assets/images/projects/refactory-interview-scheduler.webp" alt="Refactory Interview Scheduler" loading="lazy">
                             <h4>Refactory Interview Scheduler</h4>
                             <p>A recruitment platform built to simplify scheduling, improve coordination, and support a fast-moving event workflow.</p>
                         </div>
                         <div class="project-card">
-                            <img src="../assets/images/projects/landing page swanair app.png" alt="SwanAir Costing Platform" loading="lazy">
+                            <img src="../assets/images/projects/swanair-landing.webp" alt="SwanAir Costing Platform" loading="lazy">
                             <h4>SwanAir Costing Platform</h4>
                             <p>A real-world travel and safaris costing platform created to support pricing, itinerary planning, and digital operations.</p>
                         </div>
@@ -573,7 +579,7 @@
 
                 <footer class="article-footer">
                     <div class="author-card">
-                        <img src="../assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar">
+                        <img src="../assets/images/profile picture.jpg" alt="Mungu Jakisa Maurice" class="author-avatar" loading="lazy">
                         <div class="author-info">
                             <h4>Mungu Jakisa Maurice</h4>
                             <p>Computer Science student passionate about embedded systems, web development, and building real-world solutions.</p>
@@ -646,5 +652,5 @@
             }
         });
     </script>
-<script>function toggleMenu(){document.querySelector(".nav-links").classList.toggle("active");}document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{document.querySelector(".nav-links").classList.remove("active");});});</script></body>
+<script>function toggleMenu(){const open=document.querySelector(".nav-links").classList.toggle("active");document.querySelector(".hamburger").setAttribute("aria-expanded",open);}document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{document.querySelector(".nav-links").classList.remove("active");document.querySelector(".hamburger").setAttribute("aria-expanded","false");});});</script></body>
 </html>

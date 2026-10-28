@@ -257,7 +257,13 @@ const statistics = {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const statElement = entry.target;
-                        const targetValue = this.extractTargetValue(statElement.textContent);
+                        const originalText = statElement.textContent.trim();
+                        statObserver.unobserve(statElement);
+                        // Leave text-only stats (e.g. "Cloud") as they are
+                        if (!/\d/.test(originalText)) return;
+                        const targetValue = this.extractTargetValue(originalText);
+                        // Keep whatever follows the number (e.g. "+" in "15+", "/7" in "24/7")
+                        const suffix = originalText.replace(/^\D*\d+/, '');
                         const duration = 2000; // 2 seconds animation
                         const startTime = performance.now();
 
@@ -267,12 +273,7 @@ const statistics = {
                             const progress = Math.min(elapsedTime / duration, 1);
                             const currentValue = Math.floor(targetValue * progress);
 
-                            // Format the value with + if it's a plus value
-                            const formattedValue = targetValue.toString().includes('+')
-                                ? `${currentValue}+`
-                                : currentValue;
-
-                            statElement.textContent = formattedValue;
+                            statElement.textContent = `${currentValue}${suffix}`;
 
                             if (progress < 1) {
                                 requestAnimationFrame(animate);
@@ -283,7 +284,6 @@ const statistics = {
                         };
 
                         requestAnimationFrame(animate);
-                        statObserver.unobserve(statElement);
                     }
                 });
             },
@@ -459,10 +459,9 @@ const contactForm = {
 };
 
 // ===== PERFORMANCE MODULE =====
-const performance = {
+const performanceModule = {
     init() {
         this.lazyLoadImages();
-        this.preloadCriticalResources();
     },
 
     lazyLoadImages() {
@@ -484,12 +483,6 @@ const performance = {
                 imageObserver.observe(img);
             });
         }
-    },
-
-    preloadCriticalResources() {
-        // Preload hero image
-        const heroImg = new Image();
-        heroImg.src = 'assets/images/optimized/banner_image2.webp';
     }
 };
 
@@ -571,7 +564,7 @@ class PortfolioApp {
             animations.init();
             statistics.init();
             contactForm.init();
-            performance.init();
+            performanceModule.init();
             accessibility.init();
             errorHandler.init();
 

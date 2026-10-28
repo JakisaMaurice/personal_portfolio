@@ -18,9 +18,15 @@
     <meta property="og:title" content="Projects by Mungu Jakisa Maurice">
     <meta property="og:description" content="Portfolio of web development, automation, and server configuration projects">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://mungujakisamaurice.com/projects.html">
+    <meta property="og:url" content="https://mungujakisamaurice.com/projects.html">
+    <meta property="og:image" content="https://mungujakisamaurice.com/assets/images/profile-pic.jpeg">
+    <meta property="og:site_name" content="Mungu Jakisa Maurice Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mungujakisamaurice.com/assets/images/profile-pic.jpeg">
     <title>Projects - Mungu Jakisa Maurice</title>
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -531,6 +537,11 @@
         color: var(--primary-color);
     }
 
+    .tech-badge-icon {
+        width: 1em;
+        height: 1em;
+    }
+
     /* Enhanced Project Card */
     .server-config-card {
         transition: all 0.3s ease;
@@ -597,26 +608,15 @@
     </script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-logo">
-                <!-- Loading text removed as requested -->
-            </div>
-            <div class="loading-spinner"></div>
-            <p class="loading-message">Loading your experience...</p>
-        </div>
-    </div>
-
 <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"></div>
+            <div class="logo"><a href="index.html">Mungu Jakisa Maurice</a></div>
             <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-            <div class="hamburger" onclick="toggleMenu()">
+            <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -804,7 +804,7 @@
                     <div class="projects-grid">
                         <div class="project-card single">
                             <div class="project-image">
-                                <img src="assets/images/dle-homepage.png" alt="Design Labs Engine website homepage">
+                                <img src="assets/images/dle-homepage.webp" alt="Design Labs Engine website homepage">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Design Labs Engine: Technology &amp; Innovation Venture</h3>
@@ -852,7 +852,7 @@
                     <div class="projects-grid">
                         <div class="project-card single">
                             <div class="project-image">
-                                <img src="assets/images/home-automation/1.jpg" alt="Home Automation System">
+                                <img src="assets/images/home-automation/1.webp" alt="Home Automation System" loading="lazy">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Smart Home Control System</h3>
@@ -887,9 +887,9 @@
                     </div>
                     
                     <div class="projects-grid">
-                        <div class="project-card single">
+                        <div class="project-card single" id="refactory-interview-scheduler">
                             <div class="project-image">
-                                <img src="assets/images/projects/refactory-interview-scheduler.png" alt="Refactory Interview Scheduler">
+                                <img src="assets/images/projects/refactory-interview-scheduler.webp" alt="Refactory Interview Scheduler" loading="lazy">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Refactory Interview Scheduler</h3>
@@ -915,7 +915,7 @@
 
                         <div class="project-card single" id="swanair-costing-platform">
                             <div class="project-image">
-                                <img src="assets/images/projects/landing page swanair app.png" alt="SwanAir Travel & Safaris Costing Platform">
+                                <img src="assets/images/projects/swanair-landing.webp" alt="SwanAir Travel & Safaris Costing Platform" loading="lazy">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">SwanAir Travel & Safaris Costing Platform</h3>
@@ -953,7 +953,7 @@
                     <div class="server-config-grid">
                         <div class="server-config-card">
                             <div class="server-config-image">
-                                <img src="assets/images/server-configuration/2.jpg" alt="Server Configuration">
+                                <img src="assets/images/server-configuration/2.jpg" alt="Server Configuration" loading="lazy">
                             </div>
                             <div class="server-config-content">
                                 <h3 class="server-config-title">Server Configuration & Setup</h3>
@@ -973,7 +973,7 @@
 
                         <div class="server-config-card">
                             <div class="server-config-image">
-                                <img src="assets/images/server-configuration/4.jpg" alt="Network Configuration">
+                                <img src="assets/images/server-configuration/4.jpg" alt="Network Configuration" loading="lazy">
                             </div>
                             <div class="server-config-content">
                                 <h3 class="server-config-title">Network Configuration</h3>
@@ -993,7 +993,7 @@
 
                         <div class="server-config-card">
                             <div class="server-config-image">
-                                <img src="assets/images/server-configuration/5.jpg" alt="Hypervisor Configuration">
+                                <img src="assets/images/server-configuration/5.jpg" alt="Hypervisor Configuration" loading="lazy">
                             </div>
                             <div class="server-config-content">
                                 <h3 class="server-config-title">Hypervisor Configuration</h3>
@@ -1025,7 +1025,7 @@
 
                 <div class="server-config-grid">
                     <div class="server-config-card" id="flutter-recipe-app">
-                        <img src="assets/images/projects/recipe-app.svg" alt="Flutter Recipe App" class="project-thumbnail">
+                        <img src="assets/images/projects/recipe-app.svg" alt="Flutter Recipe App" class="project-thumbnail" loading="lazy">
                         <div class="server-config-content">
                             <h3 class="server-config-title">Flutter Recipe App</h3>
                             <p class="server-config-description">
@@ -1033,10 +1033,10 @@
                             </p>
                             <div class="tech-badges">
                                 <span class="tech-badge">
-                                    <i class="fab fa-flutter"></i> Flutter
+                                    <img src="assets/icons/flutter.svg" alt="" class="tech-badge-icon" loading="lazy"> Flutter
                                 </span>
                                 <span class="tech-badge">
-                                    <i class="fab fa-dart"></i> Dart
+                                    <img src="assets/icons/dart.svg" alt="" class="tech-badge-icon" loading="lazy"> Dart
                                 </span>
                                 <span class="tech-badge">
                                     <i class="fas fa-mobile-alt"></i> Mobile
@@ -1061,7 +1061,7 @@
                     </div>
 
                     <div class="server-config-card" id="school-website-platform">
-                        <img src="assets/images/projects/westwood.png" alt="School Website" class="project-thumbnail">
+                        <img src="assets/images/projects/westwood.webp" alt="School Website" class="project-thumbnail" loading="lazy">
                         <div class="server-config-content">
                             <h3 class="server-config-title">School Website Platform</h3>
                             <p class="server-config-description">
@@ -1103,7 +1103,7 @@
                     </div>
 
                     <div class="server-config-card" id="school-attendance-system">
-                        <img src="assets/images/projects/attendance-system.svg" alt="Attendance Management System" class="project-thumbnail">
+                        <img src="assets/images/projects/attendance-system.svg" alt="Attendance Management System" class="project-thumbnail" loading="lazy">
                         <div class="server-config-content">
                             <h3 class="server-config-title">School Attendance System</h3>
                             <p class="server-config-description">
@@ -1140,7 +1140,7 @@
                     </div>
 
                     <div class="server-config-card">
-                        <img src="assets/images/projects/portfolio-website" alt="Personal Portfolio" class="project-thumbnail">
+                        <img src="assets/images/projects/portfolio-website.webp" alt="Personal Portfolio" class="project-thumbnail" loading="lazy">
                         <div class="server-config-content">
                             <h3 class="server-config-title">Personal Portfolio Website</h3>
                             <p class="server-config-description">
@@ -1184,7 +1184,7 @@
 
                     <!-- Travel & Safaris Costing Software -->
                     <div class="server-config-card">
-                        <img src="assets/images/projects/landing page swanair app.png" alt="Travel & Safaris Costing Software" class="project-thumbnail">
+                        <img src="assets/images/projects/swanair-landing.webp" alt="Travel & Safaris Costing Software" class="project-thumbnail" loading="lazy">
                         <div class="server-config-content">
                             <h3 class="server-config-title">Travel & Safaris Costing Software</h3>
                             <p class="server-config-description">
@@ -1229,7 +1229,7 @@
                     
                     <div class="server-config-grid">
                         <div class="server-config-card">
-                            <img src="assets/images/projects/ubuntu.png" alt="Linux Home Lab Server" class="project-thumbnail">
+                            <img src="assets/images/projects/ubuntu.png" alt="Linux Home Lab Server" class="project-thumbnail" loading="lazy">
                             <div class="server-config-content">
                                 <h3 class="server-config-title">Linux Home Lab Server</h3>
                                 <p class="server-config-description">
@@ -1331,22 +1331,8 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/continuous-scroll.js"></script>
-    <!-- Loading Screen Handler -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            
-            // Hide loading screen when page is fully loaded
-            window.addEventListener('load', function() {
-                setTimeout(() => {
-                    loadingScreen.classList.add('fade-out');
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500);
-                }, 800); // Show loading for at least 800ms for smooth experience
-            });
-
             // Update current year in footer
             const yearSpan = document.getElementById('current-year');
             if (yearSpan) {
@@ -1358,11 +1344,13 @@
     <script src="assets/js/theme.js"></script>
     <script>
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const open = document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.hamburger').setAttribute('aria-expanded', open);
         }
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
             });
         });
     </script>

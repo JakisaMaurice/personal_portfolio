@@ -1,76 +1,15 @@
 # Robots.txt for Mungu Jakisa Maurice Portfolio
-# Professional Website SEO Configuration
 # Domain: https://mungujakisamaurice.com/
 
+# All crawlers may index the whole site
 User-agent: *
-Allow: /
-Allow: /assets/
-Allow: /assets/images/
-Allow: /assets/documents/
-Allow: /blog-articles/
+Disallow:
 
-Disallow: /admin/
-Disallow: /api/
-Disallow: /private/
-Disallow: /_temp/
-Disallow: /backup/
-Disallow: /*.log$
-Disallow: /*.tmp$
-Disallow: /api/contact.php
-Disallow: /insert.php
-Disallow: /connect.php
-
-Allow: /sitemap.xml
-Allow: /site.webmanifest
-Allow: /robots.txt
-
-Crawl-delay: 1
-
-Sitemap: https://mungujakisamaurice.com/sitemap.xml
-
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-User-agent: facebookexternalhit
-Allow: /
-
+# SEO scraper bots are blocked
 User-agent: AhrefsBot
-Disallow: /
-
 User-agent: MJ12bot
-Disallow: /
-
 User-agent: DotBot
-Disallow: /
-
 User-agent: SemrushBot
 Disallow: /
 
-User-agent: facebookexternalhit
-Allow: /
-User-agent: Twitterbot
-Allow: /
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: ia_archiver
-Allow: /
-
-User-agent: Google-Analytics
-Allow: /
-
-Disallow: /*.sql$
-Disallow: /*.md$
-Disallow: /*.config$
-Disallow: /.htaccess
-Disallow: /web.config
-Disallow: /error_log
+Sitemap: https://mungujakisamaurice.com/sitemap.xml

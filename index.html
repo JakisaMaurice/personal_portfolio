@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link rel="preload" as="image" href="assets/images/profile pic.jpeg">
+    <link rel="preload" as="image" href="assets/images/profile-pic.jpeg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
     <title>Mungu Jakisa Maurice | Full Stack Software Engineer | DevOps Engineer | Systems Administrator</title>
@@ -33,11 +33,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/profile pic.jpeg">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/profile pic.jpeg">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/profile pic.jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/profile-pic.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="assets/images/profile-pic.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="assets/images/profile-pic.jpeg">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="mask-icon" href="assets/images/profile pic.jpeg" color="#0091ff">
     <meta name="msapplication-TileColor" content="#0091ff">
     <meta name="msapplication-config" content="/browserconfig.xml">
 
@@ -45,9 +44,9 @@
     <meta property="og:url" content="https://mungujakisamaurice.com/">
     <meta property="og:title" content="Mungu Jakisa Maurice | Full Stack Software Engineer | DevOps | Systems Admin">
     <meta property="og:description" content="Full Stack Software Engineer, DevOps Engineer & Systems Administrator based in Kampala, Uganda. Expert in React, TypeScript, NestJS, Django, Docker, Linux & Cloud Infrastructure.">
-    <meta property="og:image" content="https://mungujakisamaurice.com/assets/images/profile pic.jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://mungujakisamaurice.com/assets/images/profile-pic.jpeg">
+    <meta property="og:image:width" content="561">
+    <meta property="og:image:height" content="478">
     <meta property="og:image:alt" content="Mungu Jakisa Maurice - Professional Profile Photo">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Mungu Jakisa Maurice Portfolio">
@@ -61,7 +60,7 @@
     <meta name="twitter:url" content="https://mungujakisamaurice.com/">
     <meta name="twitter:title" content="Mungu Jakisa Maurice | Full Stack Software Engineer | DevOps | Systems Admin">
     <meta name="twitter:description" content="Full Stack Software Engineer, DevOps Engineer & Systems Administrator in Uganda. Expert in React, TypeScript, NestJS, Django, Docker, Linux & Cloud Infrastructure.">
-    <meta name="twitter:image" content="https://mungujakisamaurice.com/assets/images/profile pic.jpeg">
+    <meta name="twitter:image" content="https://mungujakisamaurice.com/assets/images/profile-pic.jpeg">
     <meta name="twitter:image:alt" content="Mungu Jakisa Maurice - Professional Profile Photo">
 
     <!-- Google Search Console Verification -->
@@ -87,7 +86,7 @@
           ],
           "description": "Full Stack Software Engineer, DevOps Engineer & Systems Administrator based in Kampala, Uganda. Building reliable software, scalable systems & cloud infrastructure.",
           "url": "https://mungujakisamaurice.com/",
-          "image": "https://mungujakisamaurice.com/assets/images/profile pic.jpeg",
+          "image": "https://mungujakisamaurice.com/assets/images/profile-pic.jpeg",
           "nationality": "Ugandan",
           "country": "UG",
           "email": "mailto:jakisamaurice@gmail.com",
@@ -707,7 +706,7 @@
         
         /* Hero Section */
         .hero {
-            background: url('assets/images/photo-1644325349124-d1756b79dd42.png') center/cover;
+            background: url('assets/images/photo-1644325349124-d1756b79dd42.webp') center/cover;
             color: white;
             text-align: center;
             position: relative;
@@ -1092,6 +1091,28 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
+
+        /* Whole card clickable through its title link */
+        .card-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .card-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .card-link:focus-visible {
+            outline: none;
+        }
+
+        .project-card:focus-within {
+            outline: 3px solid #0091ff;
+            outline-offset: 3px;
+        }
         
         .project-card:hover {
             transform: translateY(-10px);
@@ -1440,13 +1461,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"></div>
+            <div class="logo"><a href="#home">Mungu Jakisa Maurice</a></div>
             <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-            <div class="hamburger" onclick="toggleMenu()">
+            <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1526,49 +1547,49 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/javascript.svg" alt="JavaScript">
+                                <img class="skill-icon-img" src="assets/icons/javascript.svg" alt="JavaScript" loading="lazy">
                                 <div class="skill-name">JavaScript (ES6+)</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="90"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/typescript.svg" alt="TypeScript">
+                                <img class="skill-icon-img" src="assets/icons/typescript.svg" alt="TypeScript" loading="lazy">
                                 <div class="skill-name">TypeScript</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="85"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/python.svg" alt="Python">
+                                <img class="skill-icon-img" src="assets/icons/python.svg" alt="Python" loading="lazy">
                                 <div class="skill-name">Python</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/php.svg" alt="PHP">
+                                <img class="skill-icon-img" src="assets/icons/php.svg" alt="PHP" loading="lazy">
                                 <div class="skill-name">PHP</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/cplusplus.svg" alt="C and C++">
+                                <img class="skill-icon-img" src="assets/icons/cplusplus.svg" alt="C and C++" loading="lazy">
                                 <div class="skill-name">C/C++</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/dart.svg" alt="Dart">
+                                <img class="skill-icon-img" src="assets/icons/dart.svg" alt="Dart" loading="lazy">
                                 <div class="skill-name">Dart</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="65"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/bash.svg" alt="Bash shell scripting">
+                                <img class="skill-icon-img" src="assets/icons/bash.svg" alt="Bash shell scripting" loading="lazy">
                                 <div class="skill-name">Bash / Shell Scripting</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
@@ -1584,14 +1605,14 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/react.svg" alt="React">
+                                <img class="skill-icon-img" src="assets/icons/react.svg" alt="React" loading="lazy">
                                 <div class="skill-name">React</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/html5.svg" alt="HTML5">
+                                <img class="skill-icon-img" src="assets/icons/html5.svg" alt="HTML5" loading="lazy">
                                 <div class="skill-name">HTML5</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="95"></div>
@@ -1605,21 +1626,21 @@
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/tailwindcss.svg" alt="Tailwind CSS">
+                                <img class="skill-icon-img" src="assets/icons/tailwindcss.svg" alt="Tailwind CSS" loading="lazy">
                                 <div class="skill-name">Tailwind CSS</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/javascript.svg" alt="JavaScript">
+                                <img class="skill-icon-img" src="assets/icons/javascript.svg" alt="JavaScript" loading="lazy">
                                 <div class="skill-name">JavaScript (ES6+)</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="90"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/typescript.svg" alt="TypeScript">
+                                <img class="skill-icon-img" src="assets/icons/typescript.svg" alt="TypeScript" loading="lazy">
                                 <div class="skill-name">TypeScript</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="85"></div>
@@ -1635,28 +1656,28 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/nestjs.svg" alt="NestJS">
+                                <img class="skill-icon-img" src="assets/icons/nestjs.svg" alt="NestJS" loading="lazy">
                                 <div class="skill-name">NestJS</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/django.svg" alt="Django">
+                                <img class="skill-icon-img" src="assets/icons/django.svg" alt="Django" loading="lazy">
                                 <div class="skill-name">Django</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/django.svg" alt="Django REST Framework">
+                                <img class="skill-icon-img" src="assets/icons/django.svg" alt="Django REST Framework" loading="lazy">
                                 <div class="skill-name">Django REST Framework</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/nodedotjs.svg" alt="Node.js">
+                                <img class="skill-icon-img" src="assets/icons/nodedotjs.svg" alt="Node.js" loading="lazy">
                                 <div class="skill-name">Node.js</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
@@ -1693,21 +1714,21 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/postgresql.svg" alt="PostgreSQL">
+                                <img class="skill-icon-img" src="assets/icons/postgresql.svg" alt="PostgreSQL" loading="lazy">
                                 <div class="skill-name">PostgreSQL</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/mysql.svg" alt="MySQL">
+                                <img class="skill-icon-img" src="assets/icons/mysql.svg" alt="MySQL" loading="lazy">
                                 <div class="skill-name">MySQL</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/prisma.svg" alt="Prisma ORM">
+                                <img class="skill-icon-img" src="assets/icons/prisma.svg" alt="Prisma ORM" loading="lazy">
                                 <div class="skill-name">Prisma ORM</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
@@ -1751,21 +1772,21 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/docker.svg" alt="Docker">
+                                <img class="skill-icon-img" src="assets/icons/docker.svg" alt="Docker" loading="lazy">
                                 <div class="skill-name">Docker</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/docker.svg" alt="Docker Compose">
+                                <img class="skill-icon-img" src="assets/icons/docker.svg" alt="Docker Compose" loading="lazy">
                                 <div class="skill-name">Docker Compose</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/githubactions.svg" alt="GitHub Actions">
+                                <img class="skill-icon-img" src="assets/icons/githubactions.svg" alt="GitHub Actions" loading="lazy">
                                 <div class="skill-name">GitHub Actions</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
@@ -1779,35 +1800,35 @@
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/digitalocean.svg" alt="DigitalOcean">
+                                <img class="skill-icon-img" src="assets/icons/digitalocean.svg" alt="DigitalOcean" loading="lazy">
                                 <div class="skill-name">DigitalOcean</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="65"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/linux.svg" alt="Linux Servers">
+                                <img class="skill-icon-img" src="assets/icons/linux.svg" alt="Linux Servers" loading="lazy">
                                 <div class="skill-name">Linux Servers</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/ubuntu.svg" alt="Ubuntu Server">
+                                <img class="skill-icon-img" src="assets/icons/ubuntu.svg" alt="Ubuntu Server" loading="lazy">
                                 <div class="skill-name">Ubuntu Server</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/nginx.svg" alt="Nginx">
+                                <img class="skill-icon-img" src="assets/icons/nginx.svg" alt="Nginx" loading="lazy">
                                 <div class="skill-name">Nginx</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-shield-halved skill-icon"></i>
+                                <i class="fas fa-shield-alt skill-icon"></i>
                                 <div class="skill-name">SSL/TLS Config</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
@@ -1837,7 +1858,7 @@
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/ubuntu.svg" alt="Ubuntu Server">
+                                <img class="skill-icon-img" src="assets/icons/ubuntu.svg" alt="Ubuntu Server" loading="lazy">
                                 <div class="skill-name">Ubuntu Server</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="85"></div>
@@ -1953,14 +1974,14 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/git.svg" alt="Git">
+                                <img class="skill-icon-img" src="assets/icons/git.svg" alt="Git" loading="lazy">
                                 <div class="skill-name">Git</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/github.svg" alt="GitHub">
+                                <img class="skill-icon-img" src="assets/icons/github.svg" alt="GitHub" loading="lazy">
                                 <div class="skill-name">GitHub</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
@@ -1974,14 +1995,14 @@
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/postman.svg" alt="Postman">
+                                <img class="skill-icon-img" src="assets/icons/postman.svg" alt="Postman" loading="lazy">
                                 <div class="skill-name">Postman</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/xampp.svg" alt="XAMPP">
+                                <img class="skill-icon-img" src="assets/icons/xampp.svg" alt="XAMPP" loading="lazy">
                                 <div class="skill-name">XAMPP</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="80"></div>
@@ -1995,7 +2016,7 @@
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/linuxmint.svg" alt="Linux Mint">
+                                <img class="skill-icon-img" src="assets/icons/linuxmint.svg" alt="Linux Mint" loading="lazy">
                                 <div class="skill-name">Linux Mint</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
@@ -2011,21 +2032,21 @@
                         </h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/arduino.svg" alt="Arduino">
+                                <img class="skill-icon-img" src="assets/icons/arduino.svg" alt="Arduino" loading="lazy">
                                 <div class="skill-name">Arduino</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="85"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/raspberrypi.svg" alt="Raspberry Pi">
+                                <img class="skill-icon-img" src="assets/icons/raspberrypi.svg" alt="Raspberry Pi" loading="lazy">
                                 <div class="skill-name">Raspberry Pi</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="70"></div>
                                 </div> -->
                             </div>
                             <div class="skill-item">
-                                <img class="skill-icon-img" src="assets/icons/cplusplus.svg" alt="Embedded C and C++">
+                                <img class="skill-icon-img" src="assets/icons/cplusplus.svg" alt="Embedded C and C++" loading="lazy">
                                 <div class="skill-name">Embedded C/C++</div>
                                 <!-- <div class="skill-bar">
                                     <div class="skill-progress" data-progress="75"></div>
@@ -2147,12 +2168,12 @@
             </div>
             <div class="projects-grid">
                 <!-- Design Labs Engine (Featured) -->
-                <div class="project-card" onclick="window.location.href='projects.html#design-labs-engine'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/dle-homepage.png" alt="Design Labs Engine website homepage" width="400" height="225" loading="lazy">
+                        <img src="assets/images/dle-homepage.webp" alt="Design Labs Engine website homepage" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Design Labs Engine: Technology &amp; Innovation Venture</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#design-labs-engine">Design Labs Engine: Technology &amp; Innovation Venture</a></h3>
                         <p class="project-description">Building a technology and innovation venture focused on engineering digital solutions, developing software platforms, and turning ideas into practical technology.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Technology</span>
@@ -2163,12 +2184,12 @@
                 </div>
 
                 <!-- Refactory Interview Scheduler -->
-                <div class="project-card" onclick="window.location.href='projects.html#refactory-interview-scheduler'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/refactory-interview-scheduler.png" alt="Refactory Interview Scheduler" width="400" height="225" loading="lazy">
+                        <img src="assets/images/projects/refactory-interview-scheduler.webp" alt="Refactory Interview Scheduler" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Refactory Interview Scheduler</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#refactory-interview-scheduler">Refactory Interview Scheduler</a></h3>
                         <p class="project-description">A scheduling platform designed to streamline interview coordination, reduce manual follow-up, and improve hiring workflow visibility.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Product Design</span>
@@ -2179,12 +2200,12 @@
                 </div>
                 
                 <!-- SwanAir Travel & Safaris -->
-                <div class="project-card" onclick="window.location.href='projects.html#swanair-costing-platform'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/landing page swanair app.png" alt="SwanAir Travel & Safaris" width="400" height="225" loading="lazy">
+                        <img src="assets/images/projects/swanair-landing.webp" alt="SwanAir Travel & Safaris" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">SwanAir Travel & Safaris Costing Platform</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#swanair-costing-platform">SwanAir Travel & Safaris Costing Platform</a></h3>
                         <p class="project-description">A professional costing platform for travel planning that supports structured pricing, faster quotations, and better client decision-making.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">React</span>
@@ -2195,12 +2216,12 @@
                 </div>
                 
                 <!-- Web Development Projects -->
-                <div class="project-card" onclick="window.location.href='projects.html#linux-homelab'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/projects/ubuntu.png" alt="Linux Home Lab" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Linux Home Lab</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#linux-homelab">Linux Home Lab</a></h3>
                         <p class="project-description">A self-hosted lab environment for hands-on learning in Ubuntu Server administration, Docker, SSH/Tailscale security, NFS storage, and home networking.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Ubuntu Server</span>
@@ -2212,12 +2233,12 @@
                 </div>
                 
                 <!-- Server Configuration -->
-                <div class="project-card" onclick="window.location.href='blog-articles/windows-server-administration-lessons.html'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/server-configuration/2.jpg" alt="Windows Server Administration" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Windows Server Administration</h3>
+                        <h3 class="project-title"><a class="card-link" href="blog-articles/windows-server-administration-lessons.html">Windows Server Administration</a></h3>
                         <p class="project-description">Enterprise server configuration and management covering Active Directory, VMware virtualization, network troubleshooting, and infrastructure reliability.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Windows Server</span>
@@ -2229,12 +2250,12 @@
                 </div>
                 
                 <!-- Personal Portfolio -->
-                <div class="project-card" onclick="window.location.href='projects.html#home-automation'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/arduino, home automation.jpg" alt="Smart Home Control System" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Smart Home Control System</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#home-automation">Smart Home Control System</a></h3>
                         <p class="project-description">An IoT-oriented home control concept focused on convenience, remote access, and practical automation for everyday use.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Arduino</span>
@@ -2245,12 +2266,12 @@
                 </div>
                 
                 <!-- GitHub Projects -->
-                <div class="project-card" onclick="window.location.href='projects.html#flutter-recipe-app'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/projects/recipe-app.svg" alt="Flutter Recipe App" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Flutter Recipe App</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#flutter-recipe-app">Flutter Recipe App</a></h3>
                         <p class="project-description">Cross-platform mobile application with recipe search, filtering, user favorites, offline storage, and modern UI with animations.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Flutter</span>
@@ -2260,12 +2281,12 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='projects.html#school-website-platform'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/westwood.png" alt="Complete School Website" width="400" height="225" loading="lazy">
+                        <img src="assets/images/projects/westwood.webp" alt="Complete School Website" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Complete School Website</h3>
+                        <h3 class="project-title"><a class="card-link" href="projects.html#school-website-platform">Complete School Website</a></h3>
                         <p class="project-description">Educational platform with student/teacher portals, course management, event calendar, announcements, and inquiry system.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">HTML5</span>
@@ -2412,13 +2433,13 @@
             <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.1rem;">Exploring technology, development, and innovation through practical insights</p>
             
 <div class="projects-grid">
-                <div class="project-card" onclick="window.location.href='blog-articles/getting-started-arduino-iot.html'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/home-automation/1.jpg" alt="Arduino IoT Guide" width="400" height="225" loading="lazy">
+                        <img src="assets/images/home-automation/1.webp" alt="Arduino IoT Guide" width="400" height="225" loading="lazy">
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #0091ff; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Featured</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Lessons from My First Arduino and IoT Project</h3>
+                        <h3 class="project-title"><a class="card-link" href="blog-articles/getting-started-arduino-iot.html">Lessons from My First Arduino and IoT Project</a></h3>
                         <p class="project-description">A practical reflection on building a smart home system with Arduino, sensors, relays, and an IoT platform.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Arduino</span>
@@ -2433,13 +2454,13 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='blog-articles/modern-web-development-lessons.html'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/web-dev/1.jpg" alt="Web Development Lessons" width="400" height="225" loading="lazy">
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Web Dev</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Modern Web Development: What I Learned</h3>
+                        <h3 class="project-title"><a class="card-link" href="blog-articles/modern-web-development-lessons.html">Modern Web Development: What I Learned</a></h3>
                         <p class="project-description">A reflection on responsive design, maintainability, performance, and the habits that make a portfolio or client site reliable.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">JavaScript</span>
@@ -2453,13 +2474,13 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='blog-articles/windows-server-administration-lessons.html'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
                         <img src="assets/images/server-configuration/1.jpg" alt="Server Administration" width="400" height="225" loading="lazy">
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #8b5cf6; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Server</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Windows Server Administration: Lessons from the Field</h3>
+                        <h3 class="project-title"><a class="card-link" href="blog-articles/windows-server-administration-lessons.html">Windows Server Administration: Lessons from the Field</a></h3>
                         <p class="project-description">A grounded look at Active Directory, virtualization, troubleshooting, and the realities of enterprise infrastructure work.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Windows Server</span>
@@ -2473,13 +2494,13 @@
                     </div>
                 </div>
                 
-                <div class="project-card" onclick="window.location.href='blog-articles/tech-industry-uganda-insights.html'" style="cursor: pointer;">
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/images/projects/refactory-interview-scheduler.png" alt="Uganda Tech Insights" width="400" height="225" loading="lazy">
+                        <img src="assets/images/projects/refactory-interview-scheduler.webp" alt="Uganda Tech Insights" width="400" height="225" loading="lazy">
                         <div style="position: absolute; top: 1rem; left: 1rem; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Career</div>
                     </div>
 <div class="project-content">
-                        <h3 class="project-title">Reflections on Uganda's Tech Industry</h3>
+                        <h3 class="project-title"><a class="card-link" href="blog-articles/tech-industry-uganda-insights.html">Reflections on Uganda's Tech Industry</a></h3>
                         <p class="project-description">An insider view of the opportunities, challenges, and practical path to growth in Uganda's changing tech ecosystem.</p>
                         <div class="tech-tags">
                             <span class="tech-tag">Uganda Tech</span>
@@ -2566,12 +2587,38 @@
         </div>
     </section>
 
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="social-links" style="justify-content: center; margin-bottom: var(--space-md);">
+                    <a href="https://github.com/JakisaMaurice" class="social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="http://wa.me/+256750302070" class="social-link" aria-label="WhatsApp Contact">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:jakisamaurice@gmail.com" class="social-link" aria-label="Email Contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mungu-jakisa-maurice-346036247" class="social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="footer-copyright">
+                    © <span id="current-year">2026</span> Mungu Jakisa Maurice. All rights reserved.
+                    Founder of <a href="https://www.designlabsengine.com/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Design Labs Engine</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+
 <!-- Back to Top Button -->
-    <button class="back-to-top" onclick="scrollToTop()">
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
         ↑
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/main.js" defer></script>
     <script>
